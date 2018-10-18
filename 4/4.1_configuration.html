@@ -1,0 +1,1130 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.1.配置说明 · dble manual</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ActionTech">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4.2_command.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../0/0_overview.html">
+            
+                <a href="../0/0_overview.html">
+            
+                    
+                    0.概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../0/0.1_release_note.html">
+            
+                <a href="../0/0.1_release_note.html">
+            
+                    
+                    0.1.Release Note
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    1.适用场景
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../1/1.0_mysql_replication.html">
+            
+                <a href="../1/1.0_mysql_replication.html">
+            
+                    
+                    1.0.MySQL的单向复制/聚合/分散
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../1/1.1_bidirectional_replication.html">
+            
+                <a href="../1/1.1_bidirectional_replication.html">
+            
+                    
+                    1.1.跨数据中心的双向复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../1/1.2_sync_between_cloud.html">
+            
+                <a href="../1/1.2_sync_between_cloud.html">
+            
+                    
+                    1.2.公有云间的数据同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../1/1.3_mysql_kafka.html">
+            
+                <a href="../1/1.3_mysql_kafka.html">
+            
+                    
+                    1.3.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    2.快速开始
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../2/2.0_mysql_replication_1_1.html">
+            
+                <a href="../2/2.0_mysql_replication_1_1.html">
+            
+                    
+                    2.0.MySQL的单向复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../2/2.1_mysql_replication_n_1.html">
+            
+                <a href="../2/2.1_mysql_replication_n_1.html">
+            
+                    
+                    2.1.MySQL的聚合复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../2/2.2_mysql_replication_1_n.html">
+            
+                <a href="../2/2.2_mysql_replication_1_n.html">
+            
+                    
+                    2.2.MySQL的数据分散
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../2/2.3_dc_to_dc_bidirectional.html">
+            
+                <a href="../2/2.3_dc_to_dc_bidirectional.html">
+            
+                    
+                    2.3.MySQL的跨数据中心的双向复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../2/2.4_ali_to_jd.html">
+            
+                <a href="../2/2.4_ali_to_jd.html">
+            
+                    
+                    2.4.阿里云到京东云的MySQL复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../2/2.5_mysql_kafka.html">
+            
+                <a href="../2/2.5_mysql_kafka.html">
+            
+                    
+                    2.5.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    3.功能说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../3/3.0_function_scenario_mapping.html">
+            
+                <a href="../3/3.0_function_scenario_mapping.html">
+            
+                    
+                    3.0.功能/场景的映射列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../3/3.1_limitation.html">
+            
+                <a href="../3/3.1_limitation.html">
+            
+                    
+                    3.1.使用限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../3/3.2_ports.html">
+            
+                <a href="../3/3.2_ports.html">
+            
+                    
+                    3.2.端口使用说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../3/3.3_impact_on_dest.html">
+            
+                <a href="../3/3.3_impact_on_dest.html">
+            
+                    
+                    3.3.对目标端数据库的影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../3/3.4_metrics.html">
+            
+                <a href="../3/3.4_metrics.html">
+            
+                    
+                    3.4.监控项说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    4.安装/配置说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <span>
+            
+                    
+                    4.0.安装步骤
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.2" data-path="4.1_configuration.html">
+            
+                <a href="4.1_configuration.html">
+            
+                    
+                    4.1.配置说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="4.2_command.html">
+            
+                <a href="4.2_command.html">
+            
+                    
+                    4.2.命令说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="4.3_http_api.html">
+            
+                <a href="4.3_http_api.html">
+            
+                    
+                    4.3.HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="4.4_mysql_user_privileges.html">
+            
+                <a href="4.4_mysql_user_privileges.html">
+            
+                    
+                    4.4.MySQL 用户权限说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    5.设计说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../5/5.1_resource_estimation.html">
+            
+                <a href="../5/5.1_resource_estimation.html">
+            
+                    
+                    5.1.时间/资源估算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../5/5.2_architecture.html">
+            
+                <a href="../5/5.2_architecture.html">
+            
+                    
+                    5.2 基本架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../5/5.3_kafka_message_format.html">
+            
+                <a href="../5/5.3_kafka_message_format.html">
+            
+                    
+                    5.3 Kafka 消息格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../6/howto_contribute.html">
+            
+                <a href="../6/howto_contribute.html">
+            
+                    
+                    6.如何参与
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../7/7_roadmap.html">
+            
+                <a href="../7/7_roadmap.html">
+            
+                    
+                    7.路线图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4.1.配置说明</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x914D;&#x7F6E;&#x8BF4;&#x660E;">&#x914D;&#x7F6E;&#x8BF4;&#x660E;</h1>
+<h2 id="dtleconf">dtle.conf</h2>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x7C7B;&#x522B;</th>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x53D6;&#x503C;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x5168;&#x5C40;&#x53C2;&#x6570;</td>
+<td>data_dir</td>
+<td>&quot;/opt/dtle/data&quot;</td>
+<td>-</td>
+<td>dtle&#x8FD0;&#x884C;&#x6570;&#x636E;&#x7684;&#x5B58;&#x653E;&#x8DEF;&#x5F84;</td>
+</tr>
+<tr>
+<td>&#x5168;&#x5C40;&#x53C2;&#x6570;</td>
+<td>bind_addr</td>
+<td>&quot;0.0.0.0&quot;</td>
+<td>-</td>
+<td>&#x5BF9;&#x5916;&#x670D;&#x52A1;&#x7684;ip&#x5730;&#x5740;&#xFF0C;&#x53C2;&#x8003;<a href="https://www.consul.io/docs/agent/options.html#_bind" target="_blank">&#x8BF4;&#x660E;</a></td>
+</tr>
+<tr>
+<td>&#x5168;&#x5C40;&#x53C2;&#x6570;</td>
+<td>log_level</td>
+<td>&quot;INFO&quot;</td>
+<td>&quot;DEBUG&quot;/ &quot;INFO&quot;/ &quot;WARN&quot;/ &quot;ERR&quot;</td>
+<td>&#x65E5;&#x5FD7;&#x7EA7;&#x522B;</td>
+</tr>
+<tr>
+<td>&#x5168;&#x5C40;&#x53C2;&#x6570;</td>
+<td>log_file</td>
+<td>&quot;/var/log/dtle/dtle.log&quot;</td>
+<td>-</td>
+<td>&#x65E5;&#x5FD7;&#x8DEF;&#x5F84;</td>
+</tr>
+<tr>
+<td>&#x5168;&#x5C40;&#x53C2;&#x6570;</td>
+<td>log_to_stdout</td>
+<td>false</td>
+<td>true/false</td>
+<td>&#x662F;&#x5426;&#x5C06;&#x65E5;&#x5FD7;&#x8F93;&#x51FA;&#x5230;&#x6807;&#x51C6;&#x6D41;</td>
+</tr>
+<tr>
+<td>&#x7AEF;&#x53E3;&#x53C2;&#x6570; (ports)</td>
+<td>http</td>
+<td>8190</td>
+<td>-</td>
+<td>http&#x670D;&#x52A1;&#x7684;&#x7AEF;&#x53E3;&#x53F7;</td>
+</tr>
+<tr>
+<td>&#x7AEF;&#x53E3;&#x53C2;&#x6570; (ports)</td>
+<td>rpc</td>
+<td>8191</td>
+<td>-</td>
+<td>&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x901A;&#x4FE1;&#x7AEF;&#x53E3;</td>
+</tr>
+<tr>
+<td>&#x7AEF;&#x53E3;&#x53C2;&#x6570; (ports)</td>
+<td>serf</td>
+<td>8192</td>
+<td>-</td>
+<td>&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x901A;&#x4FE1;&#x7AEF;&#x53E3;</td>
+</tr>
+<tr>
+<td>&#x7AEF;&#x53E3;&#x53C2;&#x6570; (ports)</td>
+<td>nats</td>
+<td>8193</td>
+<td>-</td>
+<td>&#x6570;&#x636E;&#x4F20;&#x8F93;&#x7684;&#x7AEF;&#x53E3;</td>
+</tr>
+<tr>
+<td>&#x670D;&#x52A1;&#x7AEF;&#x53C2;&#x6570; (manager)</td>
+<td>enabled</td>
+<td>true</td>
+<td>true/false</td>
+<td>&#x672C;&#x8282;&#x70B9;&#x662F;&#x5426;&#x4F5C;&#x4E3A;&#x670D;&#x52A1;&#x7AEF;</td>
+</tr>
+<tr>
+<td>&#x670D;&#x52A1;&#x7AEF;&#x53C2;&#x6570; (manager)</td>
+<td>join</td>
+<td>[&quot;127.0.0.1&quot;]</td>
+<td>&#x53EF;&#x914D;&#x7F6E;&#x591A;&#x503C;&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;<code>[ &quot;ip1&quot;, &quot;ip2&quot;, &quot;ip3&quot;, ... ]</code></td>
+<td>&#x5F53;&#x8282;&#x70B9;&#x4F5C;&#x4E3A;&#x670D;&#x52A1;&#x7AEF;&#x65F6;, &#x542F;&#x52A8;&#x65F6;&#x52A0;&#x5165;&#x7684;&#x96C6;&#x7FA4;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>&#x670D;&#x52A1;&#x7AEF;&#x53C2;&#x6570; (manager)</td>
+<td>bootstrap_expect</td>
+<td>1</td>
+<td>1/3/5</td>
+<td>&#x670D;&#x52A1;&#x7AEF;&#x8282;&#x70B9;&#x96C6;&#x7FA4;&#x7684;&#x9884;&#x671F;&#x6570;&#x91CF;. &#x96C6;&#x7FA4;&#x542F;&#x52A8;&#x65F6;, &#x5728;&#x8FBE;&#x6210;&#x9884;&#x671F;&#x6570;&#x91CF;&#x524D;, &#x670D;&#x52A1;&#x7AEF;&#x5BF9;&#x5916;&#x4E0D;&#x63D0;&#x4F9B;&#x670D;&#x52A1;</td>
+</tr>
+<tr>
+<td>&#x670D;&#x52A1;&#x7AEF;&#x53C2;&#x6570; (manager)</td>
+<td>heartbeat_grace</td>
+<td>&quot;30s&quot;</td>
+<td>&#x65F6;&#x95F4;&#x63CF;&#x8FF0;&#x5B57;&#x7B26;&#x4E32;</td>
+<td>&#x5FC3;&#x8DF3;&#x68C0;&#x67E5;&#x7684;&#x5BB9;&#x5FCD;&#x65F6;&#x95F4;, &#x65F6;&#x95F4;&#x5185;&#x82E5;&#x5FC3;&#x8DF3;&#x68C0;&#x67E5;&#x5747;&#x5931;&#x8D25;, &#x5219;&#x5224;&#x5B9A;&#x8282;&#x70B9;&#x4E3A;&#x5F02;&#x5E38;&#x72B6;&#x6001;, &#x5C06;&#x8FDB;&#x884C;&#x4EFB;&#x52A1;&#x5207;&#x6362;</td>
+</tr>
+<tr>
+<td>&#x670D;&#x52A1;&#x7AEF;&#x53C2;&#x6570; (manager)</td>
+<td>retry_max</td>
+<td>3</td>
+<td>-</td>
+<td>&#x8282;&#x70B9;&#x542F;&#x52A8;&#x65F6;, &#x52A0;&#x5165;&#x670D;&#x52A1;&#x7AEF;&#x96C6;&#x7FA4;&#x7684;&#x91CD;&#x8BD5;&#x6B21;&#x6570;</td>
+</tr>
+<tr>
+<td>&#x670D;&#x52A1;&#x7AEF;&#x53C2;&#x6570; (manager)</td>
+<td>retry_interval</td>
+<td>&quot;15s&quot;</td>
+<td>&#x65F6;&#x95F4;&#x63CF;&#x8FF0;&#x5B57;&#x7B26;&#x4E32;</td>
+<td>&#x8282;&#x70B9;&#x542F;&#x52A8;&#x65F6;, &#x52A0;&#x5165;&#x670D;&#x52A1;&#x7AEF;&#x96C6;&#x7FA4;&#x7684;&#x91CD;&#x8BD5;&#x95F4;&#x9694;</td>
+</tr>
+<tr>
+<td>&#x5BA2;&#x6237;&#x7AEF;&#x53C2;&#x6570; (agent)</td>
+<td>enabled</td>
+<td>true</td>
+<td>true/false</td>
+<td>&#x672C;&#x8282;&#x70B9;&#x662F;&#x5426;&#x4F5C;&#x4E3A;&#x5BA2;&#x6237;&#x7AEF;</td>
+</tr>
+<tr>
+<td>&#x5BA2;&#x6237;&#x7AEF;&#x53C2;&#x6570; (agent)</td>
+<td>managers</td>
+<td>[&quot;127.0.0.1:8191&quot;]</td>
+<td>&#x53EF;&#x914D;&#x7F6E;&#x591A;&#x503C;&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;<code>[ &quot;ip1&quot;, &quot;ip2&quot;, &quot;ip3&quot;, ... ]</code></td>
+<td>&#x5F53;&#x8282;&#x70B9;&#x4F5C;&#x4E3A;&#x5BA2;&#x6237;&#x7AEF;&#x65F6;, &#x542F;&#x52A8;&#x65F6;&#x52A0;&#x5165;&#x7684;&#x670D;&#x52A1;&#x7AEF;&#x96C6;&#x7FA4;&#x7684;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>&#x7F51;&#x7EDC;&#x7ED1;&#x5B9A;&#x5730;&#x5740; (addresses)</td>
+<td>http</td>
+<td>&quot;0.0.0.0&quot;</td>
+<td>-</td>
+<td>http&#x670D;&#x52A1;&#x7684;&#x7ED1;&#x5B9A;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>&#x7F51;&#x7EDC;&#x7ED1;&#x5B9A;&#x5730;&#x5740; (addresses)</td>
+<td>rpc</td>
+<td>&quot;0.0.0.0&quot;</td>
+<td>-</td>
+<td>&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x901A;&#x4FE1;&#x7684;&#x7ED1;&#x5B9A;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>&#x7F51;&#x7EDC;&#x7ED1;&#x5B9A;&#x5730;&#x5740; (addresses)</td>
+<td>serf</td>
+<td>&quot;0.0.0.0&quot;</td>
+<td>-</td>
+<td>&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x901A;&#x4FE1;&#x7684;&#x7ED1;&#x5B9A;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x5730;&#x5740; (advertise)</td>
+<td>http</td>
+<td>&quot;0.0.0.0&quot;</td>
+<td>-</td>
+<td>http&#x670D;&#x52A1;&#x7684;&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x5730;&#x5740;, &#x53EF;&#x7528;&#x4E8E;&#x914D;&#x7F6E;NAT</td>
+</tr>
+<tr>
+<td>&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x5730;&#x5740; (advertise)</td>
+<td>rpc</td>
+<td>&quot;0.0.0.0&quot;</td>
+<td>-</td>
+<td>&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x901A;&#x4FE1;&#x7684;&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x5730;&#x5740;, &#x53EF;&#x7528;&#x4E8E;&#x914D;&#x7F6E;NAT</td>
+</tr>
+<tr>
+<td>&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x5730;&#x5740; (advertise)</td>
+<td>serf</td>
+<td>&quot;0.0.0.0&quot;</td>
+<td>-</td>
+<td>&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x901A;&#x4FE1;&#x7684;&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x5730;&#x5740;, &#x53EF;&#x7528;&#x4E8E;&#x914D;&#x7F6E;NAT</td>
+</tr>
+<tr>
+<td>&#x7F51;&#x7EDC;&#x914D;&#x7F6E; (network)</td>
+<td>max_payload</td>
+<td>&quot;100MB&quot;</td>
+<td>-</td>
+<td>&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#x7684;&#x5355;&#x4E2A;&#x6D88;&#x606F;&#x7684;&#x5927;&#x5C0F;&#x4E0A;&#x9650;</td>
+</tr>
+<tr>
+<td>&#x76D1;&#x63A7; (metric)</td>
+<td>collection_interval</td>
+<td>&quot;&quot;</td>
+<td>-</td>
+<td>&#x76D1;&#x63A7;&#x91C7;&#x96C6;&#x7684;&#x5468;&#x671F;. &#x82E5;&#x4E0D;&#x914D;&#x7F6E;, &#x5219;&#x7981;&#x7528;&#x76D1;&#x63A7;&#x91C7;&#x96C6;.</td>
+</tr>
+<tr>
+<td>&#x76D1;&#x63A7; (metric)</td>
+<td>publish_allocation_metrics</td>
+<td>true</td>
+<td>-</td>
+<td>&#x662F;&#x5426;&#x6536;&#x96C6;&#x4EFB;&#x52A1;&#x76D1;&#x63A7;&#x4FE1;&#x606F;.</td>
+</tr>
+<tr>
+<td>&#x76D1;&#x63A7; (metric)</td>
+<td>publish_node_metrics</td>
+<td>true</td>
+<td>-</td>
+<td>&#x662F;&#x5426;&#x6536;&#x96C6;&#x8282;&#x70B9;&#x76D1;&#x63A7;&#x4FE1;&#x606F;.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x4F5C;&#x4E1A;job&#x914D;&#x7F6E;">&#x4F5C;&#x4E1A;(job)&#x914D;&#x7F6E;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x5FC5;&#x586B;?</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x6E90;&#x7AEF;/&#x76EE;&#x6807;&#x7AEF; &#x53EF;&#x914D;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>-</td>
+<td>&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;UUID</td>
+<td>&#x4F5C;&#x4E1A;ID. &#x82E5;&#x4E0D;&#x6307;&#x5B9A;, &#x5219;&#x81EA;&#x52A8;&#x751F;&#x6210;UUID</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>-</td>
+<td>-</td>
+<td>&#x4F5C;&#x4E1A;&#x540D;. &#x52A9;&#x8BB0;&#x7528;, &#x53EF;&#x91CD;&#x590D;.</td>
+</tr>
+<tr>
+<td>Failover</td>
+<td>&#x5426;</td>
+<td>Bool</td>
+<td>-</td>
+<td>false</td>
+<td>&#x662F;&#x5426;&#x5141;&#x8BB8;&#x6545;&#x969C;&#x65F6;&#x8FDB;&#x884C;&#x4F5C;&#x4E1A;&#x8F6C;&#x79FB;</td>
+</tr>
+<tr>
+<td>Tasks</td>
+<td>&#x662F;</td>
+<td>Array</td>
+<td>-</td>
+<td>-</td>
+<td>&#x4F5C;&#x4E1A;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x96C6;&#x5408;. &#x5143;&#x7D20;&#x7C7B;&#x578B;&#x4E3A;Task</td>
+</tr>
+<tr>
+<td>Task.Type</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>-</td>
+<td>-</td>
+<td>&#x4EFB;&#x52A1;&#x7684;&#x7C7B;&#x578B;. &#x53EF;&#x53D6;&#x503C;: Src (&#x4ECE;&#x6E90;&#x6570;&#x636E;&#x5E93;&#x62BD;&#x53D6;) / Dest (&#x5411;&#x76EE;&#x6807;&#x6570;&#x636E;&#x5E93;&#x56DE;&#x653E;)</td>
+</tr>
+<tr>
+<td>Task.Driver</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>-</td>
+<td>&quot;MySQL&quot;</td>
+<td>&#x6570;&#x636E;&#x5E93;&#x7684;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td>Task.NodeId</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>-</td>
+<td>&#x968F;&#x673A;&#x9009;&#x53D6;&#x6267;&#x884C;&#x8282;&#x70B9;</td>
+<td>&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x8282;&#x70B9;&#x7684;&#x8282;&#x70B9;ID (&#x53EF;&#x901A;&#x8FC7; <code>GET /nodes</code> &#x83B7;&#x53D6;). &#x82E5;&#x4E0D;&#x6307;&#x5B9A;&#x5219;&#x968F;&#x673A;&#x9009;&#x53D6;</td>
+</tr>
+<tr>
+<td>Task.NodeName</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>-</td>
+<td>&#x968F;&#x673A;&#x9009;&#x53D6;&#x6267;&#x884C;&#x8282;&#x70B9;</td>
+<td>&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x8282;&#x70B9;&#x7684;&#x8282;&#x70B9;&#x540D; (&#x53EF;&#x901A;&#x8FC7; <code>GET /nodes</code> &#x83B7;&#x53D6;). &#x82E5;&#x4E0D;&#x6307;&#x5B9A;&#x5219;&#x968F;&#x673A;&#x9009;&#x53D6;</td>
+</tr>
+<tr>
+<td>Task.Config.<br>Gtid</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>&#x9ED8;&#x8BA4;&#x4E3A; &#x5168;&#x91CF;+&#x589E;&#x91CF; &#x4EFB;&#x52A1;</td>
+<td>MySQL&#x7684;GTID&#x70B9;&#x4F4D;, &#x53EF;&#x53D6;&#x503C;: <br> 1. &#x9ED8;&#x8BA4;&#x4E3A;&#x7A7A;, &#x5219;&#x4E3A; &lt;&#x5168;&#x91CF;+&#x589E;&#x91CF;&gt; &#x590D;&#x5236;&#x4EFB;&#x52A1; <br> 2. &#x6B63;&#x786E;&#x7684;GTID, &#x5219;&#x4ECE;&#x6307;&#x5B9A;&#x7684;GTID&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x5F00;&#x59CB;&#x589E;&#x91CF;&#x590D;&#x5236; <br> 3. &#x82E5;&#x914D;&#x7F6E;&#x4E0D;&#x5B58;&#x5728;&#x7684;GTID, &#x4E14;SID&#x662F;&#x6E90;&#x7AEF;MySQL, &#x5219;&#x62A5;&#x9519; <br> 4. &#x82E5;&#x914D;&#x7F6E;&#x4E0D;&#x5B58;&#x5728;&#x7684;GTID, &#x4E14;SID&#x4E0D;&#x662F;&#x6E90;&#x7AEF;MySQL, &#x5219;&#x589E;&#x91CF;&#x4ECE;&#x6E90;&#x7AEF;&#x590D;&#x5236;&#x6240;&#x6709;&#x4E8B;&#x52A1;</td>
+</tr>
+<tr>
+<td>Task.Config.<br>DropTableIfExists</td>
+<td>&#x5426;</td>
+<td>Bool</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>false</td>
+<td>&#x5168;&#x91CF;&#x590D;&#x5236;&#x65F6;, &#x5728;&#x76EE;&#x6807;&#x7AEF;&#x5220;&#x9664;&#x53C2;&#x4E0E;&#x590D;&#x5236;&#x7684;&#x8868;, &#x4E4B;&#x540E;&#x7531;dtle&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x8868;&#x7ED3;&#x6784; (&#x76F8;&#x5173;&#x53C2;&#x6570;: <code>SkipCreateDbTable</code>). &#x5982;&#x679C;&#x5F00;&#x542F;&#x6B64;&#x9009;&#x9879;, &#x76EE;&#x6807;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x9700;&#x8981;&#x6709;&#x76F8;&#x5E94;&#x8868;&#x7684;<code>DROP</code>&#x6743;&#x9650;.</td>
+</tr>
+<tr>
+<td>Task.Config.<br>ApproveHeterogeneous</td>
+<td>&#x5426;</td>
+<td>Bool</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>true</td>
+<td>&#x589E;&#x91CF;&#x590D;&#x5236;&#x65F6;, &#x662F;&#x5426;&#x5C06;&#x6570;&#x636E;&#x8F6C;&#x4E3A;SQL&#x6267;&#x884C;. &#x4EE5;&#x4E0B;&#x573A;&#x666F;&#x9700;&#x8BBE;&#x7F6E;&#x4E3A;<code>true</code>: <br> 1. &#x76EE;&#x6807;&#x7AEF;&#x4E0D;&#x662F;MySQL <br> 2. &#x76EE;&#x6807;MySQL&#x6CA1;&#x6709;super&#x6743;&#x9650;</td>
+</tr>
+<tr>
+<td>Task.Config.<br>SkipCreateDbTable</td>
+<td>&#x5426;</td>
+<td>Bool</td>
+<td>&#x76EE;&#x6807;&#x7AEF;</td>
+<td>false</td>
+<td>&#x4E0D;&#x4E3A;&#x76EE;&#x6807;&#x5E93;&#x521B;&#x5EFA;&#x590D;&#x5236;&#x5E93;&#x548C;&#x590D;&#x5236;&#x8868;. &#x5982;&#x679C;&#x5173;&#x95ED;&#x6B64;&#x9009;&#x9879;, &#x76EE;&#x6807;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x9700;&#x8981;&#x6709;&#x76F8;&#x5E94;&#x8868;&#x7684;<code>CREATE</code>&#x6743;&#x9650;.</td>
+</tr>
+<tr>
+<td>Task.Config.<br>ParallelWorkers</td>
+<td>&#x5426;</td>
+<td>Int</td>
+<td>&#x76EE;&#x6807;&#x7AEF;</td>
+<td>1</td>
+<td>&#x56DE;&#x653E;&#x7AEF;&#x7684;&#x5E76;&#x53D1;&#x6570;. &#x5F53;&#x503C;&#x5927;&#x4E8E;1, &#x4E14;&#x6E90;&#x7AEF;MySQL&#x652F;&#x6301; <a href="https://dev.mysql.com/doc/refman/5.7/en/replication-options-slave.html#sysvar_slave_parallel_workers" target="_blank">MTS</a>&#x65F6;, &#x76EE;&#x6807;&#x7AEF;&#x4F1A;&#x8FDB;&#x884C;&#x5E76;&#x884C;&#x56DE;&#x653E;</td>
+</tr>
+<tr>
+<td>Task.Config.<br>ReplChanBufferSize</td>
+<td>&#x5426;</td>
+<td>Int</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>600</td>
+<td>&#x590D;&#x5236;&#x4EFB;&#x52A1;&#x7F13;&#x5B58;&#x7684;&#x5927;&#x5C0F;, &#x5355;&#x4F4D;&#x4E3A;&#x4E8B;&#x52A1;&#x6570;</td>
+</tr>
+<tr>
+<td>Task.Config.<br>ChunkSize</td>
+<td>&#x5426;</td>
+<td>Int</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>2000</td>
+<td>&#x5168;&#x91CF;&#x590D;&#x5236;&#x65F6;, &#x6BCF;&#x6B21;&#x8BFB;&#x53D6;-&#x4F20;&#x8F93;-&#x5199;&#x5165;&#x7684;&#x884C;&#x6570;</td>
+</tr>
+<tr>
+<td>Task.Config.<br>ExpandSyntaxSupport</td>
+<td>&#x5426;</td>
+<td>Bool</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>false</td>
+<td>&#x652F;&#x6301;&#x590D;&#x5236; &#x7528;&#x6237;&#x6743;&#x9650;/&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;DDL/&#x51FD;&#x6570;DDL</td>
+</tr>
+<tr>
+<td>Task.Config.<br>MsgBytesLimit</td>
+<td>&#x5426;</td>
+<td>Int</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>20480</td>
+<td>&#x5355;&#x4E2A;&#x6D88;&#x606F;&#x5927;&#x5C0F;&#x9650;&#x5236;&#xFF0C;&#x5355;&#x4F4D;&#x662F;&#x5B57;&#x8282;</td>
+</tr>
+<tr>
+<td>Task.Config.<br>MsgsLimit</td>
+<td>&#x5426;</td>
+<td>Int</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>65536</td>
+<td>&#x6D88;&#x606F;&#x6570;&#x91CF;&#x9650;&#x5236;</td>
+</tr>
+<tr>
+<td>Task.Config.<br>BytesLimit</td>
+<td>&#x5426;</td>
+<td>Int</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>67108864</td>
+<td>&#x6D88;&#x606F;&#x5927;&#x5C0F;&#x9650;&#x5236;</td>
+</tr>
+<tr>
+<td>Task.Config.<br>ReplicateDoDb</td>
+<td>&#x5426;</td>
+<td>Array</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>-</td>
+<td>&#x5982;&#x4E3A;&#x7A7A;, &#x5219;&#x590D;&#x5236;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F8B;. &#x53EF;&#x586B;&#x5199;&#x591A;&#x503C;.</td>
+</tr>
+<tr>
+<td>Task.Config.<br>ReplicateDoDb.TableSchema</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>-</td>
+<td>&#x6570;&#x636E;&#x5E93;&#x540D;</td>
+</tr>
+<tr>
+<td>Task.Config.<br>ReplicateDoDb.Tables</td>
+<td>&#x5426;</td>
+<td>Array</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>-</td>
+<td>&#x53EF;&#x914D;&#x7F6E;&#x591A;&#x5F20;&#x8868;, &#x7C7B;&#x578B;&#x4E3A;Table. &#x82E5;&#x4E0D;&#x914D;&#x7F6E;, &#x5219;&#x590D;&#x5236;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x8868;</td>
+</tr>
+<tr>
+<td>Task.Config.<br>ReplicateDoDb.Table.TableName</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>-</td>
+<td>&#x8868;&#x540D;</td>
+</tr>
+<tr>
+<td>Task.Config.<br>ReplicateDoDb.Table.Where</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>-</td>
+<td>&#x53EA;&#x590D;&#x5236;&#x6EE1;&#x8DB3;&#x8BE5;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;&#x884C;. &#x8BED;&#x6CD5;&#x4E3A;SQL&#x8868;&#x8FBE;&#x5F0F;, &#x8FD4;&#x56DE;&#x503C;&#x5E94;&#x4E3A;&#x5E03;&#x5C14;&#x503C;. &#x53EF;&#x4EE5;&#x5F15;&#x7528;&#x8868;&#x4E2D;&#x7684;&#x5217;&#x540D;.</td>
+</tr>
+<tr>
+<td>Task.Config.<br>ConnectionConfig.Host</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&#x4E24;&#x7AEF;</td>
+<td>-</td>
+<td>&#x6570;&#x636E;&#x6E90;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>Task.Config.<br>ConnectionConfig.Port</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&#x4E24;&#x7AEF;</td>
+<td>-</td>
+<td>&#x6570;&#x636E;&#x6E90;&#x7AEF;&#x53E3;</td>
+</tr>
+<tr>
+<td>Task.Config.<br>ConnectionConfig.User</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&#x4E24;&#x7AEF;</td>
+<td>-</td>
+<td>&#x6570;&#x636E;&#x6E90;&#x7528;&#x6237;&#x540D;</td>
+</tr>
+<tr>
+<td>Task.Config.<br>ConnectionConfig.Password</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&#x4E24;&#x7AEF;</td>
+<td>-</td>
+<td>&#x6570;&#x636E;&#x6E90;&#x5BC6;&#x7801;</td>
+</tr>
+<tr>
+<td>Task.Config.<br>ConnectionConfig.Charset</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&#x4E24;&#x7AEF;</td>
+<td>&quot;utf8&quot;</td>
+<td>&#x6570;&#x636E;&#x6E90;&#x7684;&#x5B57;&#x7B26;&#x96C6;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="4.2_command.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 4.2.命令说明">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.1.配置说明","level":"1.6.2","depth":2,"next":{"title":"4.2.命令说明","level":"1.6.3","depth":2,"path":"4/4.2_command.md","ref":"4/4.2_command.md","articles":[]},"previous":{"title":"4.0.安装步骤","level":"1.6.1","depth":2,"ref":"","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"4/4.1_configuration.md","mtime":"2018-10-09T08:29:31.863Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-15T12:15:26.010Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
