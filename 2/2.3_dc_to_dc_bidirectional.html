@@ -605,7 +605,7 @@ docker network connect dtle-net-public dtle-dc2
 <p>&#x4FEE;&#x6539;&#x5BB9;&#x5668;dtle-dc1&#x5185;&#x7684;&#x914D;&#x7F6E;&#x5E76;&#x91CD;&#x542F;:</p>
 <pre><code>docker exec -u root -it dtle-dc1 vi /etc/dtle/dtle.conf
 ...
-docker exec -u root -it dtle-dc1 rm -rf /dtle/data/*
+docker exec -u root -it dtle-dc1 rm -rf /dtle/data
 docker restart dtle-dc1
 </code></pre><p>&#x914D;&#x7F6E;<code>/etc/dtle/dtle.conf</code>&#x4FEE;&#x6539;&#x7684;&#x5185;&#x5BB9;&#x5982;&#x4E0B;: </p>
 <pre><code># Setup data dir
@@ -640,11 +640,11 @@ agent {
 <p>&#x4FEE;&#x6539;&#x5BB9;&#x5668;dtle-dc2&#x5185;&#x7684;&#x914D;&#x7F6E;&#x5E76;&#x91CD;&#x542F;:</p>
 <pre><code>docker exec -u root -it dtle-dc2 vi /etc/dtle/dtle.conf
 ...
-docker exec -u root -it dtle-dc2 rm -rf /dtle/data/*
+docker exec -u root -it dtle-dc2 rm -rf /dtle/data
 docker restart dtle-dc2
 </code></pre><p>&#x914D;&#x7F6E;<code>/etc/dtle/dtle.conf</code>&#x4FEE;&#x6539;&#x7684;&#x5185;&#x5BB9;&#x5982;&#x4E0B;: </p>
 <pre><code># Setup data dir
-data_dir = &quot;/udup/data&quot;
+data_dir = &quot;/dtle/data&quot;
 
 bind_addr = &quot;172.22.0.3&quot;
 advertise {
@@ -761,8 +761,8 @@ agent {
 </code></pre><p>&#x67E5;&#x770B;&#x4F5C;&#x4E1A;&#x72B6;&#x6001;</p>
 <pre><code>&gt; curl -XGET &quot;127.0.0.1:8191/v1/job/f0d4b250-40b3-060f-a096-ae6c7896ba72&quot; -s | jq &apos;.Status&apos;
 &lt; &quot;running&quot;
-</code></pre><h2 id="&#x914D;&#x7F6E;dc1&#x5230;dc2&#x7684;&#x590D;&#x5236;">&#x914D;&#x7F6E;dc1&#x5230;dc2&#x7684;&#x590D;&#x5236;</h2>
-<p>&#x83B7;&#x53D6;mysql-dc1&#x7684;GTID: </p>
+</code></pre><h2 id="&#x914D;&#x7F6E;dc2&#x5230;dc1&#x7684;&#x590D;&#x5236;">&#x914D;&#x7F6E;dc2&#x5230;dc1&#x7684;&#x590D;&#x5236;</h2>
+<p>&#x83B7;&#x53D6;mysql-dc2&#x7684;GTID: </p>
 <pre><code>&gt; mysql -h 127.0.0.1 -P 33062 -uroot -ppass -e &quot;show master status\G&quot; 
 &lt; *************************** 1. row ***************************
              File: bin.000003
@@ -879,7 +879,7 @@ Executed_Gtid_Set: 41f102d4-d29f-11e8-8de7-0242ac130002:6-7,
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.3.MySQL的跨数据中心的双向复制","level":"1.4.4","depth":2,"next":{"title":"2.4.阿里云到京东云的MySQL复制","level":"1.4.5","depth":2,"path":"2/2.4_ali_to_jd.md","ref":"2/2.4_ali_to_jd.md","articles":[]},"previous":{"title":"2.2.MySQL的数据分散","level":"1.4.3","depth":2,"path":"2/2.2_mysql_replication_1_n.md","ref":"2/2.2_mysql_replication_1_n.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"2/2.3_dc_to_dc_bidirectional.md","mtime":"2018-10-18T07:12:20.112Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-18T08:11:26.573Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.3.MySQL的跨数据中心的双向复制","level":"1.4.4","depth":2,"next":{"title":"2.4.阿里云到京东云的MySQL复制","level":"1.4.5","depth":2,"path":"2/2.4_ali_to_jd.md","ref":"2/2.4_ali_to_jd.md","articles":[]},"previous":{"title":"2.2.MySQL的数据分散","level":"1.4.3","depth":2,"path":"2/2.2_mysql_replication_1_n.md","ref":"2/2.2_mysql_replication_1_n.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"2/2.3_dc_to_dc_bidirectional.md","mtime":"2018-10-20T06:53:51.363Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-20T10:03:17.639Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
