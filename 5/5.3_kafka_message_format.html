@@ -589,7 +589,228 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="todo">TODO</h1>
+                                <h1 id="kafka-&#x6D88;&#x606F;&#x683C;&#x5F0F;">Kafka &#x6D88;&#x606F;&#x683C;&#x5F0F;</h1>
+<p>dtle Kafka &#x8F93;&#x51FA;, &#x6D88;&#x606F;&#x683C;&#x5F0F;&#x517C;&#x5BB9; <a href="https://debezium.io" target="_blank">Debezium</a></p>
+<p>&#x5176;&#x6D88;&#x606F;&#x683C;&#x5F0F;&#x5177;&#x4F53;&#x53EF;&#x53C2;&#x8003; <a href="https://debezium.io/docs/tutorial/#viewing-the-change-eventsl" target="_blank">https://debezium.io/docs/tutorial/#viewing-the-change-eventsl</a></p>
+<p>&#x6B64;&#x5904;&#x6982;&#x8981;&#x8BF4;&#x660E;</p>
+<ul>
+<li>&#x6BCF;&#x884C;&#x6570;&#x636E;&#x53D8;&#x66F4;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x6D88;&#x606F;</li>
+<li>&#x6BCF;&#x4E2A;&#x6D88;&#x606F;&#x5206;&#x4E3A;key&#x548C;value<ul>
+<li>key&#x662F;&#x8BE5;&#x6B21;&#x53D8;&#x66F4;&#x7684;&#x4E3B;&#x952E;</li>
+<li>value&#x662F;&#x8BE5;&#x6B21;&#x53D8;&#x66F4;&#x7684;&#x6574;&#x884C;&#x6570;&#x636E;</li>
+</ul>
+</li>
+<li>key&#x548C;value&#x5404;&#x81EA;&#x53C8;&#x6709;schema&#x548C;payload<ul>
+<li>payload&#x662F;&#x5177;&#x4F53;&#x7684;&#x6570;&#x636E;</li>
+<li>schema&#x6307;&#x660E;&#x4E86;&#x6570;&#x636E;&#x7684;&#x683C;&#x5F0F;, &#x5373;payload&#x7684;&#x89E3;&#x8BFB;&#x65B9;&#x5F0F;, &#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x201C;&#x7C7B;&#x5B9A;&#x4E49;&#x201D;<ul>
+<li>&#x6CE8;&#x610F;&#x548C;SQL schema&#x542B;&#x4E49;&#x4E0D;&#x540C;</li>
+<li>&#x8868;&#x7ED3;&#x6784;&#x4F1A;&#x5305;&#x542B;&#x5728; Kafka Connect schema &#x4E2D;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="key">Key</h2>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x7684;key. &#x53EA;&#x662F;&#x7B80;&#x5355;&#x7684;&#x5305;&#x542B;&#x4E86;&#x4E3B;&#x952E;.</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;schema&quot;</span>: {
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;struct&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;dbserver1.inventory.customers.Key&quot;</span>
+    <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">&quot;fields&quot;</span>: [
+      {
+        <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;id&quot;</span>,
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;int32&quot;</span>,
+        <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>
+      }
+    ]
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">1004</span>
+  }
+}
+</code></pre>
+<h2 id="value">Value</h2>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x7684;value, &#x5176;&#x7C7B;&#x578B;&#x4E3A; <code>topic.schema.table.Envelope</code>, &#x62E5;&#x6709;5&#x4E2A;&#x5B57;&#x6BB5;</p>
+<ul>
+<li><code>before</code>, &#x590D;&#x6742;&#x7C7B;&#x578B; <code>topic.schema.table.Value</code>, &#x4E3A;&#x8BE5;&#x8868;&#x7684;&#x8868;&#x7ED3;&#x6784;.</li>
+<li><code>after</code>, &#x590D;&#x6742;&#x7C7B;&#x578B;, &#x540C;&#x4E0A;</li>
+<li><code>source</code>, &#x590D;&#x6742;&#x7C7B;&#x578B;, &#x4E3A;&#x8BE5;&#x6B21;&#x53D8;&#x66F4;&#x7684;&#x5143;&#x6570;&#x636E;</li>
+<li><code>op</code>: <code>string</code>. &#x7528;&quot;i&quot;, &quot;d&quot;, &quot;u&quot; &#x5206;&#x522B;&#x8868;&#x8FBE;&#x64CD;&#x4F5C;&#x7C7B;&#x578B;: &#x589E;&#x3001;&#x5220;&#x3001;&#x6539;</li>
+<li><code>ts_ms</code>: <code>int64</code>. dtle &#x5904;&#x7406;&#x8BE5;&#x884C;&#x53D8;&#x66F4;&#x7684;&#x65F6;&#x95F4;.</li>
+</ul>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;schema&quot;</span>: {
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;struct&quot;</span>,
+    <span class="hljs-string">&quot;fields&quot;</span>: [
+      {
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;struct&quot;</span>,
+        <span class="hljs-string">&quot;fields&quot;</span>: [
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;int32&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;id&quot;</span>
+          },
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;first_name&quot;</span>
+          },
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;last_name&quot;</span>
+          },
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;email&quot;</span>
+          }
+        ],
+        <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;dbserver1.inventory.customers.Value&quot;</span>,
+        <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;before&quot;</span>
+      },
+      {
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;struct&quot;</span>,
+        <span class="hljs-string">&quot;fields&quot;</span>: [
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;int32&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;id&quot;</span>
+          },
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;first_name&quot;</span>
+          },
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;last_name&quot;</span>
+          },
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;email&quot;</span>
+          }
+        ],
+        <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;dbserver1.inventory.customers.Value&quot;</span>,
+        <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;after&quot;</span>
+      },
+      {
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;struct&quot;</span>,
+        <span class="hljs-string">&quot;fields&quot;</span>: [
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;version&quot;</span>
+          },
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;name&quot;</span>
+          },
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;int64&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;server_id&quot;</span>
+          },
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;int64&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;ts_sec&quot;</span>
+          },
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;gtid&quot;</span>
+          },
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;file&quot;</span>
+          },
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;int64&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;pos&quot;</span>
+          },
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;int32&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;row&quot;</span>
+          },
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;snapshot&quot;</span>
+          },
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;int64&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;thread&quot;</span>
+          },
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;db&quot;</span>
+          },
+          {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;table&quot;</span>
+          }
+        ],
+        <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;io.debezium.connector.mysql.Source&quot;</span>,
+        <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;source&quot;</span>
+      },
+      {
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;op&quot;</span>
+      },
+      {
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;int64&quot;</span>,
+        <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;field&quot;</span>: <span class="hljs-string">&quot;ts_ms&quot;</span>
+      }
+    ],
+    <span class="hljs-string">&quot;optional&quot;</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;dbserver1.inventory.customers.Envelope&quot;</span>,
+    <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-number">1</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;before&quot;</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-string">&quot;after&quot;</span>: {
+      <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">1004</span>,
+      <span class="hljs-string">&quot;first_name&quot;</span>: <span class="hljs-string">&quot;Anne&quot;</span>,
+      <span class="hljs-string">&quot;last_name&quot;</span>: <span class="hljs-string">&quot;Kretchmar&quot;</span>,
+      <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;annek@noanswer.org&quot;</span>
+    },
+    <span class="hljs-string">&quot;source&quot;</span>: {
+      <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;0.8.3.Final&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;dbserver1&quot;</span>,
+      <span class="hljs-string">&quot;server_id&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">&quot;ts_sec&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">&quot;gtid&quot;</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-string">&quot;file&quot;</span>: <span class="hljs-string">&quot;mysql-bin.000003&quot;</span>,
+      <span class="hljs-string">&quot;pos&quot;</span>: <span class="hljs-number">154</span>,
+      <span class="hljs-string">&quot;row&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">&quot;snapshot&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">&quot;thread&quot;</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-string">&quot;db&quot;</span>: <span class="hljs-string">&quot;inventory&quot;</span>,
+      <span class="hljs-string">&quot;table&quot;</span>: <span class="hljs-string">&quot;customers&quot;</span>
+    },
+    <span class="hljs-string">&quot;op&quot;</span>: <span class="hljs-string">&quot;c&quot;</span>,
+    <span class="hljs-string">&quot;ts_ms&quot;</span>: <span class="hljs-number">1486500577691</span>
+  }
+}
+</code></pre>
+<h2 id="mysql&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5230;-kafka-connect-schema-types&#x7684;&#x8F6C;&#x6362;">MySQL&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5230; &#x201C;Kafka Connect schema types&#x201D;&#x7684;&#x8F6C;&#x6362;</h2>
+<p>&#x89C1; <a href="https://debezium.io/docs/connectors/mysql/#data-types" target="_blank">https://debezium.io/docs/connectors/mysql/#data-types</a></p>
 
                                 
                                 </section>
@@ -633,7 +854,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.3 Kafka 消息格式","level":"1.7.3","depth":2,"next":{"title":"6.如何参与","level":"1.8","depth":1,"path":"6/howto_contribute.md","ref":"6/howto_contribute.md","articles":[]},"previous":{"title":"5.2 基本架构","level":"1.7.2","depth":2,"path":"5/5.2_architecture.md","ref":"5/5.2_architecture.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"5/5.3_kafka_message_format.md","mtime":"2018-10-23T03:35:57.124Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-23T03:41:42.775Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.3 Kafka 消息格式","level":"1.7.3","depth":2,"next":{"title":"6.如何参与","level":"1.8","depth":1,"path":"6/howto_contribute.md","ref":"6/howto_contribute.md","articles":[]},"previous":{"title":"5.2 基本架构","level":"1.7.2","depth":2,"path":"5/5.2_architecture.md","ref":"5/5.2_architecture.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"5/5.3_kafka_message_format.md","mtime":"2018-10-23T09:57:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-23T10:19:46.099Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
