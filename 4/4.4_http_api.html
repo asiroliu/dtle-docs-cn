@@ -1,0 +1,1191 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.4.HTTP API说明 · dble manual</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ActionTech">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4.5_mysql_user_privileges.html" />
+    
+    
+    <link rel="prev" href="4.3_job_configuration.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../0/0_overview.html">
+            
+                <a href="../0/0_overview.html">
+            
+                    
+                    0.概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    1.适用场景
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../1/1.0_mysql_replication.html">
+            
+                <a href="../1/1.0_mysql_replication.html">
+            
+                    
+                    1.0.MySQL的单向复制/聚合/分散
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../1/1.1_bidirectional_replication.html">
+            
+                <a href="../1/1.1_bidirectional_replication.html">
+            
+                    
+                    1.1.跨数据中心的双向复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../1/1.2_sync_between_cloud.html">
+            
+                <a href="../1/1.2_sync_between_cloud.html">
+            
+                    
+                    1.2.公有云间的数据同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../1/1.3_mysql_kafka.html">
+            
+                <a href="../1/1.3_mysql_kafka.html">
+            
+                    
+                    1.3.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    2.快速开始
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../2/2.0_mysql_replication_1_1.html">
+            
+                <a href="../2/2.0_mysql_replication_1_1.html">
+            
+                    
+                    2.0.MySQL的单向复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../2/2.1_mysql_replication_n_1.html">
+            
+                <a href="../2/2.1_mysql_replication_n_1.html">
+            
+                    
+                    2.1.MySQL的聚合复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../2/2.2_mysql_replication_1_n.html">
+            
+                <a href="../2/2.2_mysql_replication_1_n.html">
+            
+                    
+                    2.2.MySQL的数据分散
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../2/2.3_dc_to_dc_bidirectional.html">
+            
+                <a href="../2/2.3_dc_to_dc_bidirectional.html">
+            
+                    
+                    2.3.MySQL的跨数据中心的双向复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../2/2.4_ali_to_jd.html">
+            
+                <a href="../2/2.4_ali_to_jd.html">
+            
+                    
+                    2.4.阿里云到京东云的MySQL复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../2/2.5_mysql_kafka.html">
+            
+                <a href="../2/2.5_mysql_kafka.html">
+            
+                    
+                    2.5.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    3.功能说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../3/3.0_function_scenario_mapping.html">
+            
+                <a href="../3/3.0_function_scenario_mapping.html">
+            
+                    
+                    3.0.功能/场景的映射列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../3/3.1_limitation.html">
+            
+                <a href="../3/3.1_limitation.html">
+            
+                    
+                    3.1.使用限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../3/3.2_ports.html">
+            
+                <a href="../3/3.2_ports.html">
+            
+                    
+                    3.2.端口使用说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../3/3.3_impact_on_dest.html">
+            
+                <a href="../3/3.3_impact_on_dest.html">
+            
+                    
+                    3.3.对目标端数据库的影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../3/3.4_metrics.html">
+            
+                <a href="../3/3.4_metrics.html">
+            
+                    
+                    3.4.监控项说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    4.安装/配置说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="4.0_installation.html">
+            
+                <a href="4.0_installation.html">
+            
+                    
+                    4.0.安装步骤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="4.1_node_configuration.html">
+            
+                <a href="4.1_node_configuration.html">
+            
+                    
+                    4.1.节点配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="4.2_command.html">
+            
+                <a href="4.2_command.html">
+            
+                    
+                    4.2.命令说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="4.3_job_configuration.html">
+            
+                <a href="4.3_job_configuration.html">
+            
+                    
+                    4.3.作业(job)配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.5" data-path="4.4_http_api.html">
+            
+                <a href="4.4_http_api.html">
+            
+                    
+                    4.4.HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="4.5_mysql_user_privileges.html">
+            
+                <a href="4.5_mysql_user_privileges.html">
+            
+                    
+                    4.5.MySQL 用户权限说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    5.设计说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../5/5.1_resource_estimation.html">
+            
+                <a href="../5/5.1_resource_estimation.html">
+            
+                    
+                    5.1.时间/资源估算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../5/5.2_architecture.html">
+            
+                <a href="../5/5.2_architecture.html">
+            
+                    
+                    5.2 基本架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../5/5.3_kafka_message_format.html">
+            
+                <a href="../5/5.3_kafka_message_format.html">
+            
+                    
+                    5.3 Kafka 消息格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../6/howto_contribute.html">
+            
+                <a href="../6/howto_contribute.html">
+            
+                    
+                    6.如何参与
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../7/7_roadmap.html">
+            
+                <a href="../7/7_roadmap.html">
+            
+                    
+                    7.路线图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4.4.HTTP API说明</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="http-api-&#x8BF4;&#x660E;">HTTP API &#x8BF4;&#x660E;</h1>
+<h2 id="&#x5217;&#x51FA;&#x6240;&#x6709;&#x4F5C;&#x4E1A;">&#x5217;&#x51FA;&#x6240;&#x6709;&#x4F5C;&#x4E1A;</h2>
+<p>API: <code>GET /v1/jobs</code></p>
+<p>&#x6837;&#x4F8B;: </p>
+<pre><code>&gt; curl -XGET &quot;172.17.5.6:8190/v1/jobs&quot; | jq
+&lt; [
+  {
+    &quot;CreateIndex&quot;: 59,
+    &quot;ID&quot;: &quot;8ce4b408-8c64-41b9-04d7-baf451348e89&quot;,
+    &quot;JobModifyIndex&quot;: 469,
+    &quot;JobSummary&quot;: {
+      &quot;Constraints&quot;: null,
+      &quot;CreateIndex&quot;: 59,
+      &quot;Datacenters&quot;: [
+        &quot;dc1&quot;
+      ],
+      &quot;EnforceIndex&quot;: false,
+      &quot;Failover&quot;: false,
+      &quot;ID&quot;: &quot;8ce4b408-8c64-41b9-04d7-baf451348e89&quot;,
+      &quot;JobModifyIndex&quot;: 469,
+      &quot;ModifyIndex&quot;: 469,
+      &quot;Name&quot;: &quot;test1-2&quot;,
+      &quot;Orders&quot;: [],
+      &quot;Region&quot;: &quot;global&quot;,
+      &quot;Status&quot;: &quot;running&quot;,
+      &quot;StatusDescription&quot;: &quot;&quot;,
+      &quot;Tasks&quot;: [
+        {
+          &quot;Config&quot;: {
+            &quot;ExpandSyntaxSupport&quot;: false,
+            &quot;NatsAddr&quot;: &quot;127.0.0.1:8193&quot;,
+            &quot;ReplChanBufferSize&quot;: &quot;600&quot;,
+            &quot;ReplicateDoDb&quot;: [
+              {
+                &quot;TableSchema&quot;: &quot;db1&quot;,
+                &quot;Tables&quot;: [
+                  {
+                    &quot;TableName&quot;: &quot;tb1&quot;
+                  }
+                ]
+              }
+            ],
+            &quot;ChunkSize&quot;: &quot;2000&quot;,
+            &quot;ApproveHeterogeneous&quot;: true,
+            &quot;DropTableIfExists&quot;: false,
+            &quot;ConnectionConfig&quot;: {
+              &quot;Password&quot;: &quot;*&quot;,
+              &quot;Host&quot;: &quot;172.100.9.3&quot;,
+              &quot;Port&quot;: &quot;3306&quot;,
+              &quot;User&quot;: &quot;lx1&quot;
+            },
+            &quot;TrafficAgainstLimits&quot;: 0,
+            &quot;Gtid&quot;: &quot;8868d98f-af5e-11e8-9aa9-0242ac110002:1-171&quot;,
+            &quot;SkipCreateDbTable&quot;: false
+          },
+          &quot;ConfigLock&quot;: {},
+          &quot;Constraints&quot;: null,
+          &quot;Driver&quot;: &quot;MySQL&quot;,
+          &quot;Leader&quot;: false,
+          &quot;NodeID&quot;: &quot;&quot;,
+          &quot;NodeName&quot;: &quot;dtle&quot;,
+          &quot;Type&quot;: &quot;Src&quot;
+        },
+        {
+          &quot;Config&quot;: {
+            &quot;NatsAddr&quot;: &quot;127.0.0.1:8193&quot;,
+            &quot;Gtid&quot;: &quot;8868d98f-af5e-11e8-9aa9-0242ac110002:1-171&quot;,
+            &quot;SkipCreateDbTable&quot;: false,
+            &quot;DropTableIfExists&quot;: false,
+            &quot;ExpandSyntaxSupport&quot;: false,
+            &quot;ReplChanBufferSize&quot;: &quot;600&quot;,
+            &quot;ApproveHeterogeneous&quot;: true,
+            &quot;ConnectionConfig&quot;: {
+              &quot;User&quot;: &quot;test1&quot;,
+              &quot;Password&quot;: &quot;*&quot;,
+              &quot;Host&quot;: &quot;172.100.9.6&quot;,
+              &quot;Port&quot;: &quot;3306&quot;
+            }
+          },
+          &quot;ConfigLock&quot;: {},
+          &quot;Constraints&quot;: null,
+          &quot;Driver&quot;: &quot;MySQL&quot;,
+          &quot;Leader&quot;: true,
+          &quot;NodeID&quot;: &quot;&quot;,
+          &quot;NodeName&quot;: &quot;dtle&quot;,
+          &quot;Type&quot;: &quot;Dest&quot;
+        }
+      ],
+      &quot;Type&quot;: &quot;synchronous&quot;
+    },
+    &quot;ModifyIndex&quot;: 469,
+    &quot;Name&quot;: &quot;test1-2&quot;,
+    &quot;Status&quot;: &quot;running&quot;,
+    &quot;StatusDescription&quot;: &quot;&quot;,
+    &quot;Type&quot;: &quot;synchronous&quot;
+  },
+  {
+    &quot;CreateIndex&quot;: 66,
+    &quot;ID&quot;: &quot;ae2a74ac-1ee7-7f82-4b52-2f1ca759eab5&quot;,
+    &quot;JobModifyIndex&quot;: 469,
+    &quot;JobSummary&quot;: {
+      &quot;Constraints&quot;: null,
+      &quot;CreateIndex&quot;: 66,
+      &quot;Datacenters&quot;: [
+        &quot;dc1&quot;
+      ],
+      &quot;EnforceIndex&quot;: false,
+      &quot;Failover&quot;: false,
+      &quot;ID&quot;: &quot;ae2a74ac-1ee7-7f82-4b52-2f1ca759eab5&quot;,
+      &quot;JobModifyIndex&quot;: 469,
+      &quot;ModifyIndex&quot;: 469,
+      &quot;Name&quot;: &quot;test1-2&quot;,
+      &quot;Orders&quot;: [],
+      &quot;Region&quot;: &quot;global&quot;,
+      &quot;Status&quot;: &quot;running&quot;,
+      &quot;StatusDescription&quot;: &quot;&quot;,
+      &quot;Tasks&quot;: [
+        {
+          &quot;Config&quot;: {
+            &quot;ConnectionConfig&quot;: {
+              &quot;Host&quot;: &quot;172.100.9.3&quot;,
+              &quot;Port&quot;: &quot;3306&quot;,
+              &quot;User&quot;: &quot;lx1&quot;,
+              &quot;Password&quot;: &quot;*&quot;
+            },
+            &quot;TrafficAgainstLimits&quot;: 0,
+            &quot;NatsAddr&quot;: &quot;127.0.0.1:8193&quot;,
+            &quot;ReplicateDoDb&quot;: [
+              {
+                &quot;Tables&quot;: [
+                  {
+                    &quot;TableName&quot;: &quot;tb1&quot;
+                  }
+                ],
+                &quot;TableSchema&quot;: &quot;db1&quot;
+              }
+            ],
+            &quot;DropTableIfExists&quot;: false,
+            &quot;ExpandSyntaxSupport&quot;: false,
+            &quot;ChunkSize&quot;: &quot;2000&quot;,
+            &quot;SkipCreateDbTable&quot;: false,
+            &quot;Gtid&quot;: &quot;8868d98f-af5e-11e8-9aa9-0242ac110002:1-171&quot;,
+            &quot;ApproveHeterogeneous&quot;: true,
+            &quot;ReplChanBufferSize&quot;: &quot;600&quot;
+          },
+          &quot;ConfigLock&quot;: {},
+          &quot;Constraints&quot;: null,
+          &quot;Driver&quot;: &quot;MySQL&quot;,
+          &quot;Leader&quot;: false,
+          &quot;NodeID&quot;: &quot;&quot;,
+          &quot;NodeName&quot;: &quot;dtle&quot;,
+          &quot;Type&quot;: &quot;Src&quot;
+        },
+        {
+          &quot;Config&quot;: {
+            &quot;DropTableIfExists&quot;: false,
+            &quot;ExpandSyntaxSupport&quot;: false,
+            &quot;NatsAddr&quot;: &quot;127.0.0.1:8193&quot;,
+            &quot;ReplChanBufferSize&quot;: &quot;600&quot;,
+            &quot;ApproveHeterogeneous&quot;: true,
+            &quot;ConnectionConfig&quot;: {
+              &quot;Port&quot;: &quot;3306&quot;,
+              &quot;User&quot;: &quot;test1&quot;,
+              &quot;Password&quot;: &quot;*&quot;,
+              &quot;Host&quot;: &quot;172.100.9.6&quot;
+            },
+            &quot;Gtid&quot;: &quot;8868d98f-af5e-11e8-9aa9-0242ac110002:1-171&quot;,
+            &quot;SkipCreateDbTable&quot;: false
+          },
+          &quot;ConfigLock&quot;: {},
+          &quot;Constraints&quot;: null,
+          &quot;Driver&quot;: &quot;MySQL&quot;,
+          &quot;Leader&quot;: true,
+          &quot;NodeID&quot;: &quot;&quot;,
+          &quot;NodeName&quot;: &quot;dtle&quot;,
+          &quot;Type&quot;: &quot;Dest&quot;
+        }
+      ],
+      &quot;Type&quot;: &quot;synchronous&quot;
+    },
+    &quot;ModifyIndex&quot;: 469,
+    &quot;Name&quot;: &quot;test1-2&quot;,
+    &quot;Status&quot;: &quot;running&quot;,
+    &quot;StatusDescription&quot;: &quot;&quot;,
+    &quot;Type&quot;: &quot;synchronous&quot;
+  }
+]
+</code></pre><h2 id="&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x4F5C;&#x4E1A;&#x7684;&#x4FE1;&#x606F;">&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x4F5C;&#x4E1A;&#x7684;&#x4FE1;&#x606F;</h2>
+<p>API: <code>GET /v1/job/{ID}</code></p>
+<p>&#x6837;&#x4F8B;: </p>
+<pre><code>&gt; curl -XGET &quot;172.17.5.6:8190/v1/job/8ce4b408-8c64-41b9-04d7-baf451348e89&quot; | jq
+&lt; {
+  &quot;Constraints&quot;: null,
+  &quot;CreateIndex&quot;: 59,
+  &quot;Datacenters&quot;: [
+    &quot;dc1&quot;
+  ],
+  &quot;EnforceIndex&quot;: false,
+  &quot;Failover&quot;: false,
+  &quot;ID&quot;: &quot;8ce4b408-8c64-41b9-04d7-baf451348e89&quot;,
+  &quot;JobModifyIndex&quot;: 471,
+  &quot;ModifyIndex&quot;: 471,
+  &quot;Name&quot;: &quot;test1-2&quot;,
+  &quot;Orders&quot;: [],
+  &quot;Region&quot;: &quot;global&quot;,
+  &quot;Status&quot;: &quot;running&quot;,
+  &quot;StatusDescription&quot;: &quot;&quot;,
+  &quot;Tasks&quot;: [
+    {
+      &quot;Config&quot;: {
+        &quot;ConnectionConfig&quot;: {
+          &quot;Host&quot;: &quot;172.100.9.3&quot;,
+          &quot;Port&quot;: &quot;3306&quot;,
+          &quot;User&quot;: &quot;lx1&quot;,
+          &quot;Password&quot;: &quot;111111&quot;
+        },
+        &quot;ChunkSize&quot;: &quot;2000&quot;,
+        &quot;ApproveHeterogeneous&quot;: true,
+        &quot;DropTableIfExists&quot;: false,
+        &quot;ReplChanBufferSize&quot;: &quot;600&quot;,
+        &quot;ReplicateDoDb&quot;: [
+          {
+            &quot;TableSchema&quot;: &quot;db1&quot;,
+            &quot;Tables&quot;: [
+              {
+                &quot;TableName&quot;: &quot;tb1&quot;
+              }
+            ]
+          }
+        ],
+        &quot;NatsAddr&quot;: &quot;127.0.0.1:8193&quot;,
+        &quot;TrafficAgainstLimits&quot;: 0,
+        &quot;Gtid&quot;: &quot;8868d98f-af5e-11e8-9aa9-0242ac110002:1-171&quot;,
+        &quot;SkipCreateDbTable&quot;: false,
+        &quot;ExpandSyntaxSupport&quot;: false
+      },
+      &quot;ConfigLock&quot;: {},
+      &quot;Constraints&quot;: null,
+      &quot;Driver&quot;: &quot;MySQL&quot;,
+      &quot;Leader&quot;: false,
+      &quot;NodeID&quot;: &quot;&quot;,
+      &quot;NodeName&quot;: &quot;dtle&quot;,
+      &quot;Type&quot;: &quot;Src&quot;
+    },
+    {
+      &quot;Config&quot;: {
+        &quot;Gtid&quot;: &quot;8868d98f-af5e-11e8-9aa9-0242ac110002:1-171&quot;,
+        &quot;SkipCreateDbTable&quot;: false,
+        &quot;DropTableIfExists&quot;: false,
+        &quot;ExpandSyntaxSupport&quot;: false,
+        &quot;ReplChanBufferSize&quot;: &quot;600&quot;,
+        &quot;ApproveHeterogeneous&quot;: true,
+        &quot;ConnectionConfig&quot;: {
+          &quot;Host&quot;: &quot;172.100.9.6&quot;,
+          &quot;Port&quot;: &quot;3306&quot;,
+          &quot;User&quot;: &quot;test1&quot;,
+          &quot;Password&quot;: &quot;111111&quot;
+        },
+        &quot;NatsAddr&quot;: &quot;127.0.0.1:8193&quot;
+      },
+      &quot;ConfigLock&quot;: {},
+      &quot;Constraints&quot;: null,
+      &quot;Driver&quot;: &quot;MySQL&quot;,
+      &quot;Leader&quot;: true,
+      &quot;NodeID&quot;: &quot;&quot;,
+      &quot;NodeName&quot;: &quot;dtle&quot;,
+      &quot;Type&quot;: &quot;Dest&quot;
+    }
+  ],
+  &quot;Type&quot;: &quot;synchronous&quot;
+}
+</code></pre><h2 id="&#x83B7;&#x53D6;-&#x670D;&#x52A1;&#x7AEF;&#x96C6;&#x7FA4;-&#x7684;leader&#x8282;&#x70B9;&#x4FE1;&#x606F;">&#x83B7;&#x53D6; &#x670D;&#x52A1;&#x7AEF;&#x96C6;&#x7FA4; &#x7684;leader&#x8282;&#x70B9;&#x4FE1;&#x606F;</h2>
+<p>API: <code>GET /v1/leader</code></p>
+<p>&#x6837;&#x4F8B;: </p>
+<pre><code>&gt; curl -XGET &quot;172.17.5.6:8190/v1/leader&quot;
+&lt; &quot;172.17.5.6:8191&quot;
+</code></pre><h2 id="&#x5217;&#x51FA;-&#x670D;&#x52A1;&#x7AEF;&#x96C6;&#x7FA4;-&#x7684;&#x8282;&#x70B9;">&#x5217;&#x51FA; &#x670D;&#x52A1;&#x7AEF;&#x96C6;&#x7FA4; &#x7684;&#x8282;&#x70B9;</h2>
+<p>API: <code>GET /v1/members</code></p>
+<p>&#x6837;&#x4F8B;: </p>
+<pre><code>&gt; curl -XGET &quot;172.17.5.6:8190/v1/members&quot; | jq
+&lt; {
+  &quot;Members&quot;: [
+    {
+      &quot;Addr&quot;: &quot;172.17.5.6&quot;,
+      &quot;DelegateCur&quot;: 4,
+      &quot;DelegateMax&quot;: 5,
+      &quot;DelegateMin&quot;: 2,
+      &quot;Name&quot;: &quot;udp-6.global&quot;,
+      &quot;Port&quot;: 8192,
+      &quot;ProtocolCur&quot;: 2,
+      &quot;ProtocolMax&quot;: 5,
+      &quot;ProtocolMin&quot;: 1,
+      &quot;Status&quot;: &quot;alive&quot;,
+      &quot;Tags&quot;: {
+        &quot;port&quot;: &quot;8191&quot;,
+        &quot;bootstrap&quot;: &quot;1&quot;,
+        &quot;role&quot;: &quot;server&quot;,
+        &quot;region&quot;: &quot;global&quot;,
+        &quot;dc&quot;: &quot;dc1&quot;,
+        &quot;build&quot;: &quot;9.9.9.9&quot;
+      }
+    }
+  ],
+  &quot;ServerDC&quot;: &quot;dc1&quot;,
+  &quot;ServerName&quot;: &quot;udp-6&quot;,
+  &quot;ServerRegion&quot;: &quot;global&quot;
+}
+</code></pre><h2 id="&#x5217;&#x51FA;&#x6240;&#x6709;&#x8282;&#x70B9;">&#x5217;&#x51FA;&#x6240;&#x6709;&#x8282;&#x70B9;</h2>
+<p>API: <code>GET /v1/nodes</code></p>
+<p>&#x6837;&#x4F8B;: </p>
+<pre><code>&gt; curl -XGET &quot;172.17.5.6:8190/v1/nodes&quot; | jq
+&lt; [
+  {
+    &quot;CreateIndex&quot;: 4,
+    &quot;Datacenter&quot;: &quot;dc1&quot;,
+    &quot;HTTPAddr&quot;: &quot;172.17.5.6:8190&quot;,
+    &quot;ID&quot;: &quot;8f05de6f-34ef-5989-9a20-c9f8bc9817b0&quot;,
+    &quot;ModifyIndex&quot;: 43,
+    &quot;Name&quot;: &quot;udp-6&quot;,
+    &quot;Status&quot;: &quot;ready&quot;,
+    &quot;StatusDescription&quot;: &quot;&quot;
+  }
+]
+</code></pre><h2 id="&#x5217;&#x51FA;&#x67D0;&#x4F5C;&#x4E1A;&#x7684;&#x6240;&#x6709;&#x4EFB;&#x52A1;&#x6267;&#x884C;">&#x5217;&#x51FA;&#x67D0;&#x4F5C;&#x4E1A;&#x7684;&#x6240;&#x6709;&#x4EFB;&#x52A1;&#x6267;&#x884C;</h2>
+<p>API: <code>GET /job/&lt;jobId&gt;/allocations</code></p>
+<p>&#x6837;&#x4F8B;: </p>
+<pre><code>&gt; curl -XGET &quot;172.17.5.6:8190/v1/job/8ce4b408-8c64-41b9-04d7-baf451348e89/allocations&quot; | jq
+&lt; [
+  {
+    &quot;ClientDescription&quot;: &quot;&quot;,
+    &quot;ClientStatus&quot;: &quot;running&quot;,
+    &quot;CreateIndex&quot;: 61,
+    &quot;CreateTime&quot;: 1538993511593515300,
+    &quot;DesiredDescription&quot;: &quot;&quot;,
+    &quot;DesiredStatus&quot;: &quot;run&quot;,
+    &quot;EvalID&quot;: &quot;f67f2020-a326-6d12-2239-6da8f9dd3e4e&quot;,
+    &quot;ID&quot;: &quot;33a7a1bb-8eb4-11a2-bd2c-0c7e0457dfc2&quot;,
+    &quot;JobID&quot;: &quot;8ce4b408-8c64-41b9-04d7-baf451348e89&quot;,
+    &quot;ModifyIndex&quot;: 63,
+    &quot;Name&quot;: &quot;test1-2.Src&quot;,
+    &quot;NodeID&quot;: &quot;b32743aa-5c69-0853-239c-a69237e97c45&quot;,
+    &quot;Task&quot;: &quot;Src&quot;,
+    &quot;TaskStates&quot;: {
+      &quot;Src&quot;: {
+        &quot;Events&quot;: [
+          {
+            &quot;DiskLimit&quot;: 0,
+            &quot;DriverError&quot;: &quot;&quot;,
+            &quot;DriverMessage&quot;: &quot;&quot;,
+            &quot;ExitCode&quot;: 0,
+            &quot;FailedSibling&quot;: &quot;&quot;,
+            &quot;FailsTask&quot;: false,
+            &quot;KillError&quot;: &quot;&quot;,
+            &quot;KillReason&quot;: &quot;&quot;,
+            &quot;KillTimeout&quot;: 0,
+            &quot;Message&quot;: &quot;&quot;,
+            &quot;RestartReason&quot;: &quot;&quot;,
+            &quot;SetupError&quot;: &quot;&quot;,
+            &quot;StartDelay&quot;: 0,
+            &quot;TaskSignal&quot;: &quot;&quot;,
+            &quot;TaskSignalReason&quot;: &quot;&quot;,
+            &quot;Time&quot;: &quot;2018-10-08T10:11:51.603015093Z&quot;,
+            &quot;Type&quot;: &quot;Received&quot;
+          },
+          {
+            &quot;DiskLimit&quot;: 0,
+            &quot;DriverError&quot;: &quot;&quot;,
+            &quot;DriverMessage&quot;: &quot;&quot;,
+            &quot;ExitCode&quot;: 0,
+            &quot;FailedSibling&quot;: &quot;&quot;,
+            &quot;FailsTask&quot;: false,
+            &quot;KillError&quot;: &quot;&quot;,
+            &quot;KillReason&quot;: &quot;&quot;,
+            &quot;KillTimeout&quot;: 0,
+            &quot;Message&quot;: &quot;&quot;,
+            &quot;RestartReason&quot;: &quot;&quot;,
+            &quot;SetupError&quot;: &quot;&quot;,
+            &quot;StartDelay&quot;: 0,
+            &quot;TaskSignal&quot;: &quot;&quot;,
+            &quot;TaskSignalReason&quot;: &quot;&quot;,
+            &quot;Time&quot;: &quot;2018-10-08T10:11:51.603322601Z&quot;,
+            &quot;Type&quot;: &quot;Started&quot;
+          }
+        ],
+        &quot;Failed&quot;: false,
+        &quot;FinishedAt&quot;: null,
+        &quot;StartedAt&quot;: &quot;2018-10-08T10:11:51.603998869Z&quot;,
+        &quot;State&quot;: &quot;running&quot;
+      }
+    }
+  },
+  {
+    &quot;ClientDescription&quot;: &quot;&quot;,
+    &quot;ClientStatus&quot;: &quot;running&quot;,
+    &quot;CreateIndex&quot;: 61,
+    &quot;CreateTime&quot;: 1538993511593515300,
+    &quot;DesiredDescription&quot;: &quot;&quot;,
+    &quot;DesiredStatus&quot;: &quot;run&quot;,
+    &quot;EvalID&quot;: &quot;f67f2020-a326-6d12-2239-6da8f9dd3e4e&quot;,
+    &quot;ID&quot;: &quot;83a46402-2c98-ffa1-b953-1cc038d91a7c&quot;,
+    &quot;JobID&quot;: &quot;8ce4b408-8c64-41b9-04d7-baf451348e89&quot;,
+    &quot;ModifyIndex&quot;: 63,
+    &quot;Name&quot;: &quot;test1-2.Dest&quot;,
+    &quot;NodeID&quot;: &quot;b32743aa-5c69-0853-239c-a69237e97c45&quot;,
+    &quot;Task&quot;: &quot;Dest&quot;,
+    &quot;TaskStates&quot;: {
+      &quot;Dest&quot;: {
+        &quot;Events&quot;: [
+          {
+            &quot;DiskLimit&quot;: 0,
+            &quot;DriverError&quot;: &quot;&quot;,
+            &quot;DriverMessage&quot;: &quot;&quot;,
+            &quot;ExitCode&quot;: 0,
+            &quot;FailedSibling&quot;: &quot;&quot;,
+            &quot;FailsTask&quot;: false,
+            &quot;KillError&quot;: &quot;&quot;,
+            &quot;KillReason&quot;: &quot;&quot;,
+            &quot;KillTimeout&quot;: 0,
+            &quot;Message&quot;: &quot;&quot;,
+            &quot;RestartReason&quot;: &quot;&quot;,
+            &quot;SetupError&quot;: &quot;&quot;,
+            &quot;StartDelay&quot;: 0,
+            &quot;TaskSignal&quot;: &quot;&quot;,
+            &quot;TaskSignalReason&quot;: &quot;&quot;,
+            &quot;Time&quot;: &quot;2018-10-08T10:11:51.603156346Z&quot;,
+            &quot;Type&quot;: &quot;Received&quot;
+          },
+          {
+            &quot;DiskLimit&quot;: 0,
+            &quot;DriverError&quot;: &quot;&quot;,
+            &quot;DriverMessage&quot;: &quot;&quot;,
+            &quot;ExitCode&quot;: 0,
+            &quot;FailedSibling&quot;: &quot;&quot;,
+            &quot;FailsTask&quot;: false,
+            &quot;KillError&quot;: &quot;&quot;,
+            &quot;KillReason&quot;: &quot;&quot;,
+            &quot;KillTimeout&quot;: 0,
+            &quot;Message&quot;: &quot;&quot;,
+            &quot;RestartReason&quot;: &quot;&quot;,
+            &quot;SetupError&quot;: &quot;&quot;,
+            &quot;StartDelay&quot;: 0,
+            &quot;TaskSignal&quot;: &quot;&quot;,
+            &quot;TaskSignalReason&quot;: &quot;&quot;,
+            &quot;Time&quot;: &quot;2018-10-08T10:11:51.603388746Z&quot;,
+            &quot;Type&quot;: &quot;Started&quot;
+          }
+        ],
+        &quot;Failed&quot;: false,
+        &quot;FinishedAt&quot;: null,
+        &quot;StartedAt&quot;: &quot;2018-10-08T10:11:51.603690587Z&quot;,
+        &quot;State&quot;: &quot;running&quot;
+      }
+    }
+  }
+]
+</code></pre><h2 id="&#x67E5;&#x770B;&#x67D0;&#x4E2A;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7684;&#x72B6;&#x6001;">&#x67E5;&#x770B;&#x67D0;&#x4E2A;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7684;&#x72B6;&#x6001;</h2>
+<p>API: <code>GET /agent/allocation/&lt;allocId&gt;/stats</code></p>
+<p>&#x6837;&#x4F8B;: </p>
+<pre><code>&gt; curl -XGET &quot;172.17.5.6:8190/v1/agent/allocation/33a7a1bb-8eb4-11a2-bd2c-0c7e0457dfc2/stats&quot; | jq
+&lt; {
+  &quot;Tasks&quot;: {
+    &quot;Src&quot;: {
+      &quot;Backlog&quot;: &quot;0/600&quot;,
+      &quot;BufferStat&quot;: {
+        &quot;ApplierGroupTxQueueSize&quot;: 0,
+        &quot;ApplierTxQueueSize&quot;: 0,
+        &quot;ExtractorTxQueueSize&quot;: 0,
+        &quot;SendBySizeFull&quot;: 0,
+        &quot;SendByTimeout&quot;: 0
+      },
+      &quot;CurrentCoordinates&quot;: {
+        &quot;ExecutedGtidSet&quot;: &quot;&quot;,
+        &quot;File&quot;: &quot;1.000002&quot;,
+        &quot;GtidSet&quot;: &quot;8868d98f-af5e-11e8-9aa9-0242ac110002:171&quot;,
+        &quot;Position&quot;: 44918,
+        &quot;ReadMasterLogPos&quot;: 0,
+        &quot;RelayMasterLogFile&quot;: &quot;&quot;,
+        &quot;RetrievedGtidSet&quot;: &quot;&quot;
+      },
+      &quot;DelayCount&quot;: null,
+      &quot;ETA&quot;: &quot;0s&quot;,
+      &quot;ExecMasterRowCount&quot;: 14,
+      &quot;ExecMasterTxCount&quot;: 111939,
+      &quot;MsgStat&quot;: {
+        &quot;InBytes&quot;: 0,
+        &quot;InMsgs&quot;: 4,
+        &quot;OutBytes&quot;: 3413,
+        &quot;OutMsgs&quot;: 4,
+        &quot;Reconnects&quot;: 0
+      },
+      &quot;ProgressPct&quot;: &quot;100.0&quot;,
+      &quot;ReadMasterRowCount&quot;: 14,
+      &quot;ReadMasterTxCount&quot;: 111939,
+      &quot;Stage&quot;: &quot;Master has sent all binlog to slave; waiting for more updates&quot;,
+      &quot;TableStats&quot;: null,
+      &quot;ThroughputStat&quot;: null,
+      &quot;Timestamp&quot;: 1539004705449136600
+    }
+  }
+}
+</code></pre><h2 id="&#x521B;&#x5EFA;&#x66F4;&#x65B0;-&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;">&#x521B;&#x5EFA;/&#x66F4;&#x65B0; &#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;</h2>
+<p>API: <code>POST /v1/jobs</code></p>
+<p>&#x6837;&#x4F8B;: <strong>job1.json&#x7684;&#x5185;&#x5BB9;&#x8BF4;&#x660E;&#x53C2;&#x770B;<a href="4.1_configuration.md">&#x4F5C;&#x4E1A;(job)&#x914D;&#x7F6E;</a></strong></p>
+<pre><code>&gt; curl -H &quot;Accept:application/json&quot; -XPOST &quot;172.17.5.6:8190/v1/jobs&quot; -d @job1.json
+</code></pre><h2 id="&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;">&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;</h2>
+<p>API: <code>POST /v1/job/{ID}</code></p>
+<p>&#x6837;&#x4F8B;: </p>
+<pre><code>&gt; curl -H &quot;Accept:application/json&quot; -XDELETE &quot;172.17.5.6:8190/v1/job/8ce4b408-8c64-41b9-04d7-baf451348e89&quot;
+</code></pre><h2 id="&#x6682;&#x505C;&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;">&#x6682;&#x505C;&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;</h2>
+<p>API: <code>POST /v1/job/{ID}/pause</code></p>
+<p>&#x6837;&#x4F8B;: </p>
+<pre><code>&gt; curl -H &quot;Accept:application/json&quot; -XPOST &quot;172.17.5.6:8190/v1/job/8ce4b408-8c64-41b9-04d7-baf451348e89/pause&quot;
+</code></pre><h2 id="&#x7EE7;&#x7EED;&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;">&#x7EE7;&#x7EED;&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;</h2>
+<p>API: <code>POST /v1/job/{ID}/resume</code></p>
+<p>&#x6837;&#x4F8B;: </p>
+<pre><code>&gt; curl -H &quot;Accept:application/json&quot; -XPOST &quot;172.17.5.6:8190/v1/job/8ce4b408-8c64-41b9-04d7-baf451348e89/resume&quot;
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="4.3_job_configuration.html" class="navigation navigation-prev " aria-label="Previous page: 4.3.作业(job)配置">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4.5_mysql_user_privileges.html" class="navigation navigation-next " aria-label="Next page: 4.5.MySQL 用户权限说明">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.4.HTTP API说明","level":"1.6.5","depth":2,"next":{"title":"4.5.MySQL 用户权限说明","level":"1.6.6","depth":2,"path":"4/4.5_mysql_user_privileges.md","ref":"4/4.5_mysql_user_privileges.md","articles":[]},"previous":{"title":"4.3.作业(job)配置","level":"1.6.4","depth":2,"path":"4/4.3_job_configuration.md","ref":"4/4.3_job_configuration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"4/4.4_http_api.md","mtime":"2018-10-23T03:37:28.925Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-23T03:41:42.775Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
