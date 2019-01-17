@@ -371,6 +371,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.7" data-path="../3/3.6_DDL.html">
+            
+                <a href="../3/3.6_DDL.html">
+            
+                    
+                    3.6.DDL支持度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../3/3.7_DCL.html">
+            
+                <a href="../3/3.7_DCL.html">
+            
+                    
+                    3.7.DCL支持度
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -602,8 +628,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x4F5C;&#x4E1A;job&#x914D;&#x7F6E;">&#x4F5C;&#x4E1A;(job)&#x914D;&#x7F6E;</h1>
-<p>&#x4F5C;&#x4E1A;&#x914D;&#x7F6E;&#x4E00;&#x822C;&#x91C7;&#x7528;json&#x6587;&#x4EF6;, &#x6709;&#x5982;&#x4E0B;&#x5B57;&#x6BB5;:</p>
+                                <!-- -*- truncate-lines: t -*- -->
+<h1 id="&#x4F5C;&#x4E1A;job&#x914D;&#x7F6E;">&#x4F5C;&#x4E1A;(job)&#x914D;&#x7F6E;</h1>
+<p>&#x4F5C;&#x4E1A;&#x914D;&#x7F6E;&#x4E00;&#x822C;&#x91C7;&#x7528; json &#x6587;&#x4EF6;, &#x6709;&#x5982;&#x4E0B;&#x5B57;&#x6BB5;:</p>
 <table>
 <thead>
 <tr>
@@ -643,7 +670,7 @@
 <tr>
 <td>Tasks</td>
 <td>&#x662F;</td>
-<td>Array</td>
+<td>[Object]</td>
 <td>-</td>
 <td>-</td>
 <td>&#x4F5C;&#x4E1A;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x96C6;&#x5408;. &#x5143;&#x7D20;&#x7C7B;&#x578B;&#x4E3A;Task</td>
@@ -681,7 +708,30 @@
 <td>&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x8282;&#x70B9;&#x7684;&#x8282;&#x70B9;&#x540D; (&#x53EF;&#x901A;&#x8FC7; <code>GET /nodes</code> &#x83B7;&#x53D6;). &#x82E5;&#x4E0D;&#x6307;&#x5B9A;&#x5219;&#x968F;&#x673A;&#x9009;&#x53D6;</td>
 </tr>
 <tr>
-<td>Task.Config.<br>Gtid</td>
+<td>Task.Config</td>
+<td>&#x662F;</td>
+<td>Object</td>
+<td></td>
+<td></td>
+<td>&#x89C1;&#x4E0B;&#x65B9;&#x8BF4;&#x660E;</td>
+</tr>
+</tbody>
+</table>
+<p>Task.Config &#x6709;&#x5982;&#x4E0B;&#x5B57;&#x6BB5;:</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x5FC5;&#x586B;?</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x6E90;&#x7AEF;/&#x76EE;&#x6807;&#x7AEF; &#x53EF;&#x914D;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gtid</td>
 <td>&#x5426;</td>
 <td>String</td>
 <td>&#x6E90;&#x7AEF;</td>
@@ -689,7 +739,23 @@
 <td>MySQL&#x7684;GTID&#x70B9;&#x4F4D;, &#x53EF;&#x53D6;&#x503C;: <br> 1. &#x9ED8;&#x8BA4;&#x4E3A;&#x7A7A;, &#x5219;&#x4E3A; &lt;&#x5168;&#x91CF;+&#x589E;&#x91CF;&gt; &#x590D;&#x5236;&#x4EFB;&#x52A1; <br> 2. &#x6B63;&#x786E;&#x7684;GTID, &#x5219;&#x4ECE;&#x6307;&#x5B9A;&#x7684;GTID&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x5F00;&#x59CB;&#x589E;&#x91CF;&#x590D;&#x5236; <br> 3. &#x82E5;&#x914D;&#x7F6E;&#x4E0D;&#x5B58;&#x5728;&#x7684;GTID, &#x4E14;SID&#x662F;&#x6E90;&#x7AEF;MySQL, &#x5219;&#x62A5;&#x9519; <br> 4. &#x82E5;&#x914D;&#x7F6E;&#x4E0D;&#x5B58;&#x5728;&#x7684;GTID, &#x4E14;SID&#x4E0D;&#x662F;&#x6E90;&#x7AEF;MySQL, &#x5219;&#x589E;&#x91CF;&#x4ECE;&#x6E90;&#x7AEF;&#x590D;&#x5236;&#x6240;&#x6709;&#x4E8B;&#x52A1;</td>
 </tr>
 <tr>
-<td>Task.Config.<br>DropTableIfExists</td>
+<td>ReplicateDoDb</td>
+<td>&#x5426;</td>
+<td>[Object]</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>-</td>
+<td>&#x5982;&#x4E3A;&#x7A7A;<code>[]</code>, &#x5219;&#x590D;&#x5236;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F8B;. &#x53EF;&#x586B;&#x5199;&#x591A;&#x5143;&#x7D20;. &#x5143;&#x7D20;&#x5185;&#x5BB9;&#x89C1;&#x4E0B;&#x65B9;&#x8BF4;&#x660E;</td>
+</tr>
+<tr>
+<td>ConnectionConfig</td>
+<td>&#x662F;</td>
+<td>Object</td>
+<td>&#x4E24;&#x7AEF;</td>
+<td>-</td>
+<td>&#x6570;&#x636E;&#x6E90;&#x4FE1;&#x606F;, &#x89C1;&#x4E0B;&#x65B9; ConnectionConfig &#x8BF4;&#x660E;</td>
+</tr>
+<tr>
+<td>DropTableIfExists</td>
 <td>&#x5426;</td>
 <td>Bool</td>
 <td>&#x6E90;&#x7AEF;</td>
@@ -697,15 +763,15 @@
 <td>&#x5168;&#x91CF;&#x590D;&#x5236;&#x65F6;, &#x5728;&#x76EE;&#x6807;&#x7AEF;&#x5220;&#x9664;&#x53C2;&#x4E0E;&#x590D;&#x5236;&#x7684;&#x8868;, &#x4E4B;&#x540E;&#x7531;dtle&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x8868;&#x7ED3;&#x6784; (&#x76F8;&#x5173;&#x53C2;&#x6570;: <code>SkipCreateDbTable</code>). &#x5982;&#x679C;&#x5F00;&#x542F;&#x6B64;&#x9009;&#x9879;, &#x76EE;&#x6807;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x9700;&#x8981;&#x6709;&#x76F8;&#x5E94;&#x8868;&#x7684;<code>DROP</code>&#x6743;&#x9650;.</td>
 </tr>
 <tr>
-<td>[Obsoleted] Task.Config.<br>ApproveHeterogeneous</td>
-<td>&#x5426;</td>
+<td><s>ApproveHeterogeneous</s></td>
+<td>&#x5DF2;&#x5E9F;&#x9664;</td>
 <td>Bool</td>
 <td>&#x6E90;&#x7AEF;</td>
 <td>true</td>
-<td>dtle&#x76EE;&#x524D;&#x4EC5;&#x652F;&#x6301;&#x8F6C;&#x5316;SQL&#x56DE;&#x653E;, &#x4E0D;&#x652F;&#x6301;binlog&#x76F4;&#x63A5;&#x56DE;&#x653E;. &#x6B64;&#x9009;&#x9879;&#x5E9F;&#x9664;.</td>
+<td>dtle&#x76EE;&#x524D;&#x4EC5;&#x652F;&#x6301;&#x8F6C;&#x5316;SQL&#x56DE;&#x653E;, &#x4E0D;&#x652F;&#x6301;binlog&#x76F4;&#x63A5;&#x56DE;&#x653E;.</td>
 </tr>
 <tr>
-<td>Task.Config.<br>SkipCreateDbTable</td>
+<td>SkipCreateDbTable</td>
 <td>&#x5426;</td>
 <td>Bool</td>
 <td>&#x6E90;&#x7AEF;</td>
@@ -713,15 +779,15 @@
 <td>&#x4E0D;&#x4E3A;&#x76EE;&#x6807;&#x5E93;&#x521B;&#x5EFA;&#x590D;&#x5236;&#x5E93;&#x548C;&#x590D;&#x5236;&#x8868;. &#x5982;&#x679C;&#x5173;&#x95ED;&#x6B64;&#x9009;&#x9879;, &#x76EE;&#x6807;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x9700;&#x8981;&#x6709;&#x76F8;&#x5E94;&#x8868;&#x7684;<code>CREATE</code>&#x6743;&#x9650;.</td>
 </tr>
 <tr>
-<td>Task.Config.<br>ParallelWorkers</td>
+<td>ParallelWorkers</td>
 <td>&#x5426;</td>
 <td>Int</td>
 <td>&#x76EE;&#x6807;&#x7AEF;</td>
 <td>1</td>
-<td>&#x56DE;&#x653E;&#x7AEF;&#x7684;&#x5E76;&#x53D1;&#x6570;. &#x5F53;&#x503C;&#x5927;&#x4E8E;1, &#x4E14;&#x6E90;&#x7AEF;MySQL&#x652F;&#x6301; <a href="https://dev.mysql.com/doc/refman/5.7/en/replication-options-slave.html#sysvar_slave_parallel_workers" target="_blank">MTS</a>&#x65F6;, &#x76EE;&#x6807;&#x7AEF;&#x4F1A;&#x8FDB;&#x884C;&#x5E76;&#x884C;&#x56DE;&#x653E;</td>
+<td>&#x56DE;&#x653E;&#x7AEF;&#x7684;&#x5E76;&#x53D1;&#x6570;. &#x5F53;&#x503C;&#x5927;&#x4E8E;1, &#x4E14;&#x6E90;&#x7AEF;MySQL&#x652F;&#x6301; <a href="https://dev.mysql.com/doc/refman/5.7/en/replication-options-slave.html#sysvar_slave_parallel_workers" target="_blank">MTS</a> &#x65F6;, &#x76EE;&#x6807;&#x7AEF;&#x4F1A;&#x8FDB;&#x884C;&#x5E76;&#x884C;&#x56DE;&#x653E;</td>
 </tr>
 <tr>
-<td>Task.Config.<br>ReplChanBufferSize</td>
+<td>ReplChanBufferSize</td>
 <td>&#x5426;</td>
 <td>Int</td>
 <td>&#x6E90;&#x7AEF;</td>
@@ -729,7 +795,7 @@
 <td>&#x590D;&#x5236;&#x4EFB;&#x52A1;&#x7F13;&#x5B58;&#x7684;&#x5927;&#x5C0F;, &#x5355;&#x4F4D;&#x4E3A;&#x4E8B;&#x52A1;&#x6570;</td>
 </tr>
 <tr>
-<td>Task.Config.<br>ChunkSize</td>
+<td>ChunkSize</td>
 <td>&#x5426;</td>
 <td>Int</td>
 <td>&#x6E90;&#x7AEF;</td>
@@ -737,7 +803,7 @@
 <td>&#x5168;&#x91CF;&#x590D;&#x5236;&#x65F6;, &#x6BCF;&#x6B21;&#x8BFB;&#x53D6;-&#x4F20;&#x8F93;-&#x5199;&#x5165;&#x7684;&#x884C;&#x6570;</td>
 </tr>
 <tr>
-<td>Task.Config.<br>ExpandSyntaxSupport</td>
+<td>ExpandSyntaxSupport</td>
 <td>&#x5426;</td>
 <td>Bool</td>
 <td>&#x6E90;&#x7AEF;</td>
@@ -745,7 +811,7 @@
 <td>&#x652F;&#x6301;&#x590D;&#x5236; &#x7528;&#x6237;&#x6743;&#x9650;/&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;DDL/&#x51FD;&#x6570;DDL</td>
 </tr>
 <tr>
-<td>Task.Config.<br>MsgBytesLimit</td>
+<td>MsgBytesLimit</td>
 <td>&#x5426;</td>
 <td>Int</td>
 <td>&#x6E90;&#x7AEF;</td>
@@ -753,7 +819,7 @@
 <td>&#x5355;&#x4E2A;&#x6D88;&#x606F;&#x5927;&#x5C0F;&#x9650;&#x5236;&#xFF0C;&#x5355;&#x4F4D;&#x662F;&#x5B57;&#x8282;</td>
 </tr>
 <tr>
-<td>Task.Config.<br>MsgsLimit</td>
+<td>MsgsLimit</td>
 <td>&#x5426;</td>
 <td>Int</td>
 <td>&#x6E90;&#x7AEF;</td>
@@ -761,7 +827,7 @@
 <td>&#x6D88;&#x606F;&#x6570;&#x91CF;&#x9650;&#x5236;</td>
 </tr>
 <tr>
-<td>Task.Config.<br>BytesLimit</td>
+<td>BytesLimit</td>
 <td>&#x5426;</td>
 <td>Int</td>
 <td>&#x6E90;&#x7AEF;</td>
@@ -769,87 +835,7 @@
 <td>&#x6D88;&#x606F;&#x5927;&#x5C0F;&#x9650;&#x5236;</td>
 </tr>
 <tr>
-<td>Task.Config.<br>ReplicateDoDb</td>
-<td>&#x5426;</td>
-<td>Array</td>
-<td>&#x6E90;&#x7AEF;</td>
-<td>-</td>
-<td>&#x5982;&#x4E3A;&#x7A7A;, &#x5219;&#x590D;&#x5236;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F8B;. &#x53EF;&#x586B;&#x5199;&#x591A;&#x503C;.</td>
-</tr>
-<tr>
-<td>Task.Config.<br>ReplicateDoDb.TableSchema</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>&#x6E90;&#x7AEF;</td>
-<td>-</td>
-<td>&#x6570;&#x636E;&#x5E93;&#x540D;</td>
-</tr>
-<tr>
-<td>Task.Config.<br>ReplicateDoDb.Tables</td>
-<td>&#x5426;</td>
-<td>Array</td>
-<td>&#x6E90;&#x7AEF;</td>
-<td>-</td>
-<td>&#x53EF;&#x914D;&#x7F6E;&#x591A;&#x5F20;&#x8868;, &#x7C7B;&#x578B;&#x4E3A;Table. &#x82E5;&#x4E0D;&#x914D;&#x7F6E;, &#x5219;&#x590D;&#x5236;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x8868;</td>
-</tr>
-<tr>
-<td>Task.Config.<br>ReplicateDoDb.Table.TableName</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>&#x6E90;&#x7AEF;</td>
-<td>-</td>
-<td>&#x8868;&#x540D;</td>
-</tr>
-<tr>
-<td>Task.Config.<br>ReplicateDoDb.Table.Where</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>&#x6E90;&#x7AEF;</td>
-<td>-</td>
-<td>&#x53EA;&#x590D;&#x5236;&#x6EE1;&#x8DB3;&#x8BE5;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;&#x884C;. &#x8BED;&#x6CD5;&#x4E3A;SQL&#x8868;&#x8FBE;&#x5F0F;, &#x8FD4;&#x56DE;&#x503C;&#x5E94;&#x4E3A;&#x5E03;&#x5C14;&#x503C;. &#x53EF;&#x4EE5;&#x5F15;&#x7528;&#x8868;&#x4E2D;&#x7684;&#x5217;&#x540D;.</td>
-</tr>
-<tr>
-<td>Task.Config.<br>ConnectionConfig.Host</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td>&#x4E24;&#x7AEF;</td>
-<td>-</td>
-<td>&#x6570;&#x636E;&#x6E90;&#x5730;&#x5740;</td>
-</tr>
-<tr>
-<td>Task.Config.<br>ConnectionConfig.Port</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td>&#x4E24;&#x7AEF;</td>
-<td>-</td>
-<td>&#x6570;&#x636E;&#x6E90;&#x7AEF;&#x53E3;</td>
-</tr>
-<tr>
-<td>Task.Config.<br>ConnectionConfig.User</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td>&#x4E24;&#x7AEF;</td>
-<td>-</td>
-<td>&#x6570;&#x636E;&#x6E90;&#x7528;&#x6237;&#x540D;</td>
-</tr>
-<tr>
-<td>Task.Config.<br>ConnectionConfig.Password</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td>&#x4E24;&#x7AEF;</td>
-<td>-</td>
-<td>&#x6570;&#x636E;&#x6E90;&#x5BC6;&#x7801;</td>
-</tr>
-<tr>
-<td>Task.Config.<br>ConnectionConfig.Charset</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>&#x4E24;&#x7AEF;</td>
-<td>&quot;utf8&quot;</td>
-<td>&#x6570;&#x636E;&#x6E90;&#x7684;&#x5B57;&#x7B26;&#x96C6;</td>
-</tr>
-<tr>
-<td>Task.Config.<br>GroupMaxSize</td>
+<td>GroupMaxSize</td>
 <td>&#x5426;</td>
 <td>int</td>
 <td>&#x6E90;&#x7AEF;</td>
@@ -857,12 +843,122 @@
 <td>&#x6E90;&#x7AEF;&#x53D1;&#x9001;&#x6570;&#x636E;&#x65F6;, &#x7B49;&#x5F85;&#x6570;&#x636E;&#x5305;&#x8FBE;&#x5230;&#x4E00;&#x5B9A;&#x5927;&#x5C0F;(<code>GroupMaxSize</code>&#x5B57;&#x8282;)&#x540E;&#x53D1;&#x9001;&#x8BE5;&#x5305;. &#x5355;&#x4F4D;&#x4E3A;&#x5B57;&#x8282;. &#x9ED8;&#x8BA4;&#x503C;1&#x8868;&#x793A;&#x5373;&#x523B;&#x53D1;&#x9001;&#x6570;&#x636E;</td>
 </tr>
 <tr>
-<td>Task.Config.<br>GroupTimeout</td>
+<td>GroupTimeout</td>
 <td>&#x5426;</td>
 <td>int</td>
 <td>&#x6E90;&#x7AEF;</td>
 <td>100</td>
 <td>&#x6E90;&#x7AEF;&#x53D1;&#x9001;&#x6570;&#x636E;&#x65F6;, &#x7B49;&#x5F85;&#x6570;&#x636E;&#x5305;&#x8FBE;&#x5230;&#x8D85;&#x65F6;&#x65F6;&#x95F4;(<code>GroupTimeout</code>&#x6BEB;&#x79D2;)&#x53D1;&#x9001;&#x8BE5;&#x5305;. &#x5355;&#x4F4D;&#x4E3A;&#x6BEB;&#x79D2;.</td>
+</tr>
+<tr>
+<td>SqlFilter</td>
+<td>&#x5426;</td>
+<td>[String]</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>[]</td>
+<td>&#x662F;&#x5426;&#x8DF3;&#x8FC7;&#x4E00;&#x4E9B;&#x4E8B;&#x4EF6;, &#x5982;<code>[&quot;NoDML&quot;, &quot;NoDMLDelete&quot;, &quot;NoDMLInsert&quot;, &quot;NoDMLUpdate&quot;, &quot;NoDDL&quot;]</code> (&#x4EE5;&#x4E0A;&#x4E3A;&#x6240;&#x6709;&#x7684;filter)</td>
+</tr>
+</tbody>
+</table>
+<p>Task.Config.ReplicateDoDb &#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x6709;&#x5982;&#x4E0B;&#x5B57;&#x6BB5;:</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x5FC5;&#x586B;?</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x6E90;&#x7AEF;/&#x76EE;&#x6807;&#x7AEF; &#x53EF;&#x914D;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TableSchema</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>-</td>
+<td>&#x6570;&#x636E;&#x5E93;&#x540D;</td>
+</tr>
+<tr>
+<td>Tables</td>
+<td>&#x5426;</td>
+<td>[Object]</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>-</td>
+<td>&#x53EF;&#x914D;&#x7F6E;&#x591A;&#x5F20;&#x8868;, &#x7C7B;&#x578B;&#x4E3A;Table. &#x82E5;&#x4E0D;&#x914D;&#x7F6E;, &#x5219;&#x590D;&#x5236;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x8868;</td>
+</tr>
+<tr>
+<td>Table.TableName</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>-</td>
+<td>&#x8868;&#x540D;</td>
+</tr>
+<tr>
+<td>Table.Where</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>-</td>
+<td>&#x53EA;&#x590D;&#x5236;&#x6EE1;&#x8DB3;&#x8BE5;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;&#x884C;. &#x8BED;&#x6CD5;&#x4E3A;SQL&#x8868;&#x8FBE;&#x5F0F;, &#x8FD4;&#x56DE;&#x503C;&#x5E94;&#x4E3A;&#x5E03;&#x5C14;&#x503C;. &#x53EF;&#x4EE5;&#x5F15;&#x7528;&#x8868;&#x4E2D;&#x7684;&#x5217;&#x540D;.</td>
+</tr>
+</tbody>
+</table>
+<p>Task.Config.ConnectionConfig &#x6709;&#x5982;&#x4E0B;&#x5B57;&#x6BB5;:</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x5FC5;&#x586B;?</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x6E90;&#x7AEF;/&#x76EE;&#x6807;&#x7AEF; &#x53EF;&#x914D;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Host</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&#x4E24;&#x7AEF;</td>
+<td>-</td>
+<td>&#x6570;&#x636E;&#x6E90;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>Port</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&#x4E24;&#x7AEF;</td>
+<td>-</td>
+<td>&#x6570;&#x636E;&#x6E90;&#x7AEF;&#x53E3;</td>
+</tr>
+<tr>
+<td>User</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&#x4E24;&#x7AEF;</td>
+<td>-</td>
+<td>&#x6570;&#x636E;&#x6E90;&#x7528;&#x6237;&#x540D;</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&#x4E24;&#x7AEF;</td>
+<td>-</td>
+<td>&#x6570;&#x636E;&#x6E90;&#x5BC6;&#x7801;</td>
+</tr>
+<tr>
+<td>Charset</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&#x4E24;&#x7AEF;</td>
+<td>&quot;utf8&quot;</td>
+<td>&#x6570;&#x636E;&#x6E90;&#x7684;&#x5B57;&#x7B26;&#x96C6;</td>
 </tr>
 </tbody>
 </table>
@@ -909,7 +1005,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.3.作业(job)配置","level":"1.6.4","depth":2,"next":{"title":"4.4.HTTP API说明","level":"1.6.5","depth":2,"path":"4/4.4_http_api.md","ref":"4/4.4_http_api.md","articles":[]},"previous":{"title":"4.2.命令说明","level":"1.6.3","depth":2,"path":"4/4.2_command.md","ref":"4/4.2_command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.3_job_configuration.md","mtime":"2018-11-16T06:30:19.549Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-16T06:32:15.117Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.3.作业(job)配置","level":"1.6.4","depth":2,"next":{"title":"4.4.HTTP API说明","level":"1.6.5","depth":2,"path":"4/4.4_http_api.md","ref":"4/4.4_http_api.md","articles":[]},"previous":{"title":"4.2.命令说明","level":"1.6.3","depth":2,"path":"4/4.2_command.md","ref":"4/4.2_command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.3_job_configuration.md","mtime":"2019-01-17T10:43:52.723Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-17T10:44:03.287Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
