@@ -701,14 +701,14 @@
 <td>rpc</td>
 <td>8191</td>
 <td>-</td>
-<td>&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x901A;&#x4FE1;&#x7AEF;&#x53E3;</td>
+<td>manager&#x4E0E;agent&#x7684;&#x901A;&#x4FE1;&#x7AEF;&#x53E3;</td>
 </tr>
 <tr>
 <td>&#x7AEF;&#x53E3;&#x53C2;&#x6570; (ports)</td>
 <td>serf</td>
 <td>8192</td>
 <td>-</td>
-<td>&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x901A;&#x4FE1;&#x7AEF;&#x53E3;</td>
+<td>manager&#x4E0E;manager&#x7684;&#x901A;&#x4FE1;&#x7AEF;&#x53E3;</td>
 </tr>
 <tr>
 <td>&#x7AEF;&#x53E3;&#x53C2;&#x6570; (ports)</td>
@@ -718,60 +718,60 @@
 <td>&#x6570;&#x636E;&#x4F20;&#x8F93;&#x7684;&#x7AEF;&#x53E3;</td>
 </tr>
 <tr>
-<td>&#x670D;&#x52A1;&#x7AEF;&#x53C2;&#x6570; (manager)</td>
+<td>manager&#x53C2;&#x6570;</td>
 <td>enabled</td>
 <td>true</td>
 <td>true/false</td>
-<td>&#x672C;&#x8282;&#x70B9;&#x662F;&#x5426;&#x4F5C;&#x4E3A;&#x670D;&#x52A1;&#x7AEF;</td>
+<td>&#x672C;&#x8282;&#x70B9;&#x662F;&#x5426;&#x4F5C;&#x4E3A;manager</td>
 </tr>
 <tr>
-<td>&#x670D;&#x52A1;&#x7AEF;&#x53C2;&#x6570; (manager)</td>
+<td>manager&#x53C2;&#x6570;</td>
 <td>join</td>
 <td>[&quot;127.0.0.1&quot;]</td>
 <td>&#x53EF;&#x914D;&#x7F6E;&#x591A;&#x503C;&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;<code>[ &quot;ip1&quot;, &quot;ip2&quot;, &quot;ip3&quot;, ... ]</code></td>
-<td>&#x5F53;&#x8282;&#x70B9;&#x4F5C;&#x4E3A;&#x670D;&#x52A1;&#x7AEF;&#x65F6;, &#x542F;&#x52A8;&#x65F6;&#x52A0;&#x5165;&#x7684;&#x96C6;&#x7FA4;&#x5730;&#x5740;</td>
+<td>&#x5F53;&#x8282;&#x70B9;&#x4F5C;&#x4E3A;manager&#x65F6;, &#x542F;&#x52A8;&#x65F6;&#x52A0;&#x5165;&#x7684;&#x96C6;&#x7FA4;&#x5730;&#x5740;</td>
 </tr>
 <tr>
-<td>&#x670D;&#x52A1;&#x7AEF;&#x53C2;&#x6570; (manager)</td>
+<td>manager&#x53C2;&#x6570;</td>
 <td>bootstrap_expect</td>
 <td>1</td>
 <td>1/3/5</td>
-<td>&#x670D;&#x52A1;&#x7AEF;&#x8282;&#x70B9;&#x96C6;&#x7FA4;&#x7684;&#x9884;&#x671F;&#x6570;&#x91CF;. &#x96C6;&#x7FA4;&#x542F;&#x52A8;&#x65F6;, &#x5728;&#x8FBE;&#x6210;&#x9884;&#x671F;&#x6570;&#x91CF;&#x524D;, &#x670D;&#x52A1;&#x7AEF;&#x5BF9;&#x5916;&#x4E0D;&#x63D0;&#x4F9B;&#x670D;&#x52A1;</td>
+<td>manager&#x8282;&#x70B9;&#x96C6;&#x7FA4;&#x7684;&#x9884;&#x671F;&#x6570;&#x91CF;. &#x96C6;&#x7FA4;&#x542F;&#x52A8;&#x65F6;, &#x5728;&#x8FBE;&#x6210;&#x9884;&#x671F;&#x6570;&#x91CF;&#x524D;, manager&#x5BF9;&#x5916;&#x4E0D;&#x63D0;&#x4F9B;&#x670D;&#x52A1;</td>
 </tr>
 <tr>
-<td>&#x670D;&#x52A1;&#x7AEF;&#x53C2;&#x6570; (manager)</td>
+<td>manager&#x53C2;&#x6570;</td>
 <td>heartbeat_grace</td>
 <td>&quot;30s&quot;</td>
 <td>&#x65F6;&#x95F4;&#x63CF;&#x8FF0;&#x5B57;&#x7B26;&#x4E32;</td>
 <td>&#x5FC3;&#x8DF3;&#x68C0;&#x67E5;&#x7684;&#x5BB9;&#x5FCD;&#x65F6;&#x95F4;, &#x65F6;&#x95F4;&#x5185;&#x82E5;&#x5FC3;&#x8DF3;&#x68C0;&#x67E5;&#x5747;&#x5931;&#x8D25;, &#x5219;&#x5224;&#x5B9A;&#x8282;&#x70B9;&#x4E3A;&#x5F02;&#x5E38;&#x72B6;&#x6001;, &#x5C06;&#x8FDB;&#x884C;&#x4EFB;&#x52A1;&#x5207;&#x6362;</td>
 </tr>
 <tr>
-<td>&#x670D;&#x52A1;&#x7AEF;&#x53C2;&#x6570; (manager)</td>
+<td>manager&#x53C2;&#x6570;</td>
 <td>retry_max</td>
 <td>3</td>
 <td>-</td>
-<td>&#x8282;&#x70B9;&#x542F;&#x52A8;&#x65F6;, &#x52A0;&#x5165;&#x670D;&#x52A1;&#x7AEF;&#x96C6;&#x7FA4;&#x7684;&#x91CD;&#x8BD5;&#x6B21;&#x6570;</td>
+<td>&#x8282;&#x70B9;&#x542F;&#x52A8;&#x65F6;, &#x52A0;&#x5165;manager&#x96C6;&#x7FA4;&#x7684;&#x91CD;&#x8BD5;&#x6B21;&#x6570;</td>
 </tr>
 <tr>
-<td>&#x670D;&#x52A1;&#x7AEF;&#x53C2;&#x6570; (manager)</td>
+<td>manager&#x53C2;&#x6570;</td>
 <td>retry_interval</td>
 <td>&quot;15s&quot;</td>
 <td>&#x65F6;&#x95F4;&#x63CF;&#x8FF0;&#x5B57;&#x7B26;&#x4E32;</td>
-<td>&#x8282;&#x70B9;&#x542F;&#x52A8;&#x65F6;, &#x52A0;&#x5165;&#x670D;&#x52A1;&#x7AEF;&#x96C6;&#x7FA4;&#x7684;&#x91CD;&#x8BD5;&#x95F4;&#x9694;</td>
+<td>&#x8282;&#x70B9;&#x542F;&#x52A8;&#x65F6;, &#x52A0;&#x5165;manager&#x96C6;&#x7FA4;&#x7684;&#x91CD;&#x8BD5;&#x95F4;&#x9694;</td>
 </tr>
 <tr>
-<td>&#x5BA2;&#x6237;&#x7AEF;&#x53C2;&#x6570; (agent)</td>
+<td>agent&#x53C2;&#x6570;</td>
 <td>enabled</td>
 <td>true</td>
 <td>true/false</td>
-<td>&#x672C;&#x8282;&#x70B9;&#x662F;&#x5426;&#x4F5C;&#x4E3A;&#x5BA2;&#x6237;&#x7AEF;</td>
+<td>&#x672C;&#x8282;&#x70B9;&#x662F;&#x5426;&#x4F5C;&#x4E3A;agent</td>
 </tr>
 <tr>
-<td>&#x5BA2;&#x6237;&#x7AEF;&#x53C2;&#x6570; (agent)</td>
+<td>agent&#x53C2;&#x6570;</td>
 <td>managers</td>
 <td>[&quot;127.0.0.1:8191&quot;]</td>
 <td>&#x53EF;&#x914D;&#x7F6E;&#x591A;&#x503C;&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;<code>[ &quot;ip1&quot;, &quot;ip2&quot;, &quot;ip3&quot;, ... ]</code></td>
-<td>&#x5F53;&#x8282;&#x70B9;&#x4F5C;&#x4E3A;&#x5BA2;&#x6237;&#x7AEF;&#x65F6;, &#x542F;&#x52A8;&#x65F6;&#x52A0;&#x5165;&#x7684;&#x670D;&#x52A1;&#x7AEF;&#x96C6;&#x7FA4;&#x7684;&#x5730;&#x5740;</td>
+<td>&#x5F53;&#x8282;&#x70B9;&#x4F5C;&#x4E3A;agent&#x65F6;, &#x542F;&#x52A8;&#x65F6;&#x52A0;&#x5165;&#x7684;manager&#x96C6;&#x7FA4;&#x7684;&#x5730;&#x5740;</td>
 </tr>
 <tr>
 <td>&#x7F51;&#x7EDC;&#x7ED1;&#x5B9A;&#x5730;&#x5740; (addresses)</td>
@@ -785,14 +785,14 @@
 <td>rpc</td>
 <td>&quot;0.0.0.0&quot;</td>
 <td>-</td>
-<td>&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x901A;&#x4FE1;&#x7684;&#x7ED1;&#x5B9A;&#x5730;&#x5740;</td>
+<td>manager&#x4E0E;agent&#x7684;&#x901A;&#x4FE1;&#x7684;&#x7ED1;&#x5B9A;&#x5730;&#x5740;</td>
 </tr>
 <tr>
 <td>&#x7F51;&#x7EDC;&#x7ED1;&#x5B9A;&#x5730;&#x5740; (addresses)</td>
 <td>serf</td>
 <td>&quot;0.0.0.0&quot;</td>
 <td>-</td>
-<td>&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x901A;&#x4FE1;&#x7684;&#x7ED1;&#x5B9A;&#x5730;&#x5740;</td>
+<td>manager&#x4E0E;manager&#x7684;&#x901A;&#x4FE1;&#x7684;&#x7ED1;&#x5B9A;&#x5730;&#x5740;</td>
 </tr>
 <tr>
 <td>&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x5730;&#x5740; (advertise)</td>
@@ -806,14 +806,14 @@
 <td>rpc</td>
 <td>&quot;0.0.0.0&quot;</td>
 <td>-</td>
-<td>&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x901A;&#x4FE1;&#x7684;&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x5730;&#x5740;, &#x53EF;&#x7528;&#x4E8E;&#x914D;&#x7F6E;NAT</td>
+<td>manager&#x4E0E;agent&#x7684;&#x901A;&#x4FE1;&#x7684;&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x5730;&#x5740;, &#x53EF;&#x7528;&#x4E8E;&#x914D;&#x7F6E;NAT</td>
 </tr>
 <tr>
 <td>&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x5730;&#x5740; (advertise)</td>
 <td>serf</td>
 <td>&quot;0.0.0.0&quot;</td>
 <td>-</td>
-<td>&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x901A;&#x4FE1;&#x7684;&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x5730;&#x5740;, &#x53EF;&#x7528;&#x4E8E;&#x914D;&#x7F6E;NAT</td>
+<td>manager&#x4E0E;manager&#x7684;&#x901A;&#x4FE1;&#x7684;&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x5730;&#x5740;, &#x53EF;&#x7528;&#x4E8E;&#x914D;&#x7F6E;NAT</td>
 </tr>
 <tr>
 <td>&#x7F51;&#x7EDC;&#x914D;&#x7F6E; (network)</td>
@@ -888,7 +888,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.1.节点配置","level":"1.6.2","depth":2,"next":{"title":"4.2.命令说明","level":"1.6.3","depth":2,"path":"4/4.2_command.md","ref":"4/4.2_command.md","articles":[]},"previous":{"title":"4.0.安装步骤","level":"1.6.1","depth":2,"path":"4/4.0_installation.md","ref":"4/4.0_installation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.1_node_configuration.md","mtime":"2019-01-17T10:09:13.931Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-26T08:29:49.368Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.1.节点配置","level":"1.6.2","depth":2,"next":{"title":"4.2.命令说明","level":"1.6.3","depth":2,"path":"4/4.2_command.md","ref":"4/4.2_command.md","articles":[]},"previous":{"title":"4.0.安装步骤","level":"1.6.1","depth":2,"path":"4/4.0_installation.md","ref":"4/4.0_installation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.1_node_configuration.md","mtime":"2019-06-26T08:57:08.280Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-26T08:57:25.031Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
