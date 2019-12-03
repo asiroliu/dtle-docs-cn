@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>3.4.监控项说明 · dtle manual</title>
+        <title>3.9.Binlog Relay (中继) · dtle manual</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="3.5_deployment.html" />
     
-    
-    <link rel="prev" href="3.3_impact_on_dest.html" />
+    <link rel="prev" href="3.8_dtle_mapping.html" />
     
 
     </head>
@@ -345,7 +343,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.5" data-path="3.4_metrics.html">
+        <li class="chapter " data-level="1.5.5" data-path="3.4_metrics.html">
             
                 <a href="3.4_metrics.html">
             
@@ -410,7 +408,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.10" data-path="3.9_binlog_relay.html">
+        <li class="chapter active" data-level="1.5.10" data-path="3.9_binlog_relay.html">
             
                 <a href="3.9_binlog_relay.html">
             
@@ -639,7 +637,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >3.4.监控项说明</a>
+        <a href=".." >3.9.Binlog Relay (中继)</a>
     </h1>
 </div>
 
@@ -654,195 +652,28 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x76D1;&#x63A7;&#x9879;&#x8BF4;&#x660E;">&#x76D1;&#x63A7;&#x9879;&#x8BF4;&#x660E;</h1>
-<p>&#x9996;&#x5148;&#x5728;<a href="../4/4.1_node_configuration.html">dtle.conf</a>&#x4E2D;&#x914D;&#x7F6E;&#x76D1;&#x63A7;.</p>
-<p>&#x67E5;&#x770B;&#x65B9;&#x6CD5;: &#x8BBF;&#x95EE;URL&#x5982; <a href="http://127.0.0.1:8190/metrics" target="_blank">http://127.0.0.1:8190/metrics</a> . &#x53EF;&#x4EE5;&#x96C6;&#x6210;&#x8FDB;Prometheus&#x7B49;&#x76D1;&#x63A7;&#x5E73;&#x53F0;.</p>
-<table>
-<thead>
-<tr>
-<th>&#x7C7B;&#x522B;</th>
-<th>&#x76D1;&#x63A7;&#x9879;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&#x7F51;&#x7EDC;&#x6D41;&#x91CF;&#x72B6;&#x6001;</td>
-<td>-</td>
-</tr>
-<tr>
-<td>-</td>
-<td>network.in_msgs</td>
-</tr>
-<tr>
-<td>-</td>
-<td>network.out_msgs</td>
-</tr>
-<tr>
-<td>-</td>
-<td>network.in_bytes</td>
-</tr>
-<tr>
-<td>-</td>
-<td>network.out_bytes</td>
-</tr>
-<tr>
-<td>&#x7F13;&#x5B58;/&#x961F;&#x5217;&#x72B6;&#x6001;</td>
-<td>-</td>
-</tr>
-<tr>
-<td>-</td>
-<td>buffer.src_queue_size</td>
-</tr>
-<tr>
-<td>-</td>
-<td>buffer.dest_group_queue_size</td>
-</tr>
-<tr>
-<td>-</td>
-<td>buffer.dest_queue_size</td>
-</tr>
-<tr>
-<td>-</td>
-<td>buffer.send_by_timeout</td>
-</tr>
-<tr>
-<td>-</td>
-<td>buffer.send_by_size_full</td>
-</tr>
-<tr>
-<td>&#x8868;&#x7EDF;&#x8BA1;</td>
-<td>-</td>
-</tr>
-<tr>
-<td>-</td>
-<td>table.insert</td>
-</tr>
-<tr>
-<td>-</td>
-<td>table.update</td>
-</tr>
-<tr>
-<td>-</td>
-<td>table.delete</td>
-</tr>
-<tr>
-<td>&#x5EF6;&#x8FDF;&#x7EDF;&#x8BA1;</td>
-<td>-</td>
-</tr>
-<tr>
-<td>-</td>
-<td>delay.num</td>
-</tr>
-<tr>
-<td>-</td>
-<td>delay.time</td>
-</tr>
-<tr>
-<td>&#x541E;&#x5410;&#x7EDF;&#x8BA1;</td>
-<td>-</td>
-</tr>
-<tr>
-<td>-</td>
-<td>throughput.num</td>
-</tr>
-<tr>
-<td>-</td>
-<td>throughput.time</td>
-</tr>
-<tr>
-<td>Nomad client &#x76D1;&#x63A7;&#x9879; <a href="https://www.nomadproject.io/docs/agent/telemetry.html" target="_blank">&#x53C2;&#x8003;</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td>-</td>
-<td>client.allocations.migrating.{nodeID}</td>
-</tr>
-<tr>
-<td>-</td>
-<td>client.allocations.blocked.{nodeID}</td>
-</tr>
-<tr>
-<td>-</td>
-<td>client.allocations.pending.{nodeID}</td>
-</tr>
-<tr>
-<td>-</td>
-<td>client.allocations.running.{nodeID}</td>
-</tr>
-<tr>
-<td>-</td>
-<td>client.allocations.terminal.{nodeID}</td>
-</tr>
-<tr>
-<td>Nomad server &#x76D1;&#x63A7;&#x9879; <a href="https://www.nomadproject.io/docs/agent/telemetry.html" target="_blank">&#x53C2;&#x8003;</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td>-</td>
-<td>server.blocked_evals.total_blocked</td>
-</tr>
-<tr>
-<td>-</td>
-<td>server.blocked_evals.total_escaped</td>
-</tr>
-<tr>
-<td>-</td>
-<td>server.broker.total_ready</td>
-</tr>
-<tr>
-<td>-</td>
-<td>server.broker.total_unacked</td>
-</tr>
-<tr>
-<td>-</td>
-<td>server.broker.total_blocked</td>
-</tr>
-<tr>
-<td>-</td>
-<td>server.broker.total_waiting</td>
-</tr>
-<tr>
-<td>-</td>
-<td>server.broker.{sched}.ready</td>
-</tr>
-<tr>
-<td>-</td>
-<td>server.broker.{sched}.unacked</td>
-</tr>
-<tr>
-<td>-</td>
-<td>server.heartbeat.active</td>
-</tr>
-<tr>
-<td>-</td>
-<td>server.plan.queue_depth</td>
-</tr>
-<tr>
-<td>-</td>
-<td>server.rpc.accept_conn</td>
-</tr>
-<tr>
-<td>-</td>
-<td>server.rpc.raft_handoff</td>
-</tr>
-<tr>
-<td>-</td>
-<td>server.rpc.request_error</td>
-</tr>
-<tr>
-<td>-</td>
-<td>server.rpc.request</td>
-</tr>
-<tr>
-<td>-</td>
-<td>server.rpc.cross-region.{region}</td>
-</tr>
-<tr>
-<td>-</td>
-<td>server.rpc.query</td>
-</tr>
-</tbody>
-</table>
+                                <h1 id="binlog-relay-&#x4E2D;&#x7EE7;">Binlog Relay (&#x4E2D;&#x7EE7;)</h1>
+<h2 id="&#x80CC;&#x666F;">&#x80CC;&#x666F;</h2>
+<ul>
+<li>&#x67D0;&#x4E9B;MySQL&#x90E8;&#x7F72;&#x4F1A;&#x5B9A;&#x671F;&#x6E05;&#x9664;binlog</li>
+<li>dtle&#x589E;&#x91CF;&#x590D;&#x5236;&#x4F9D;&#x8D56;binlog&#xFF0C;&#x5982;&#x679C;binlog&#x88AB;&#x6E05;&#x9664;&#x5219;&#x590D;&#x5236;&#x4F1A;&#x51FA;&#x9519;<ul>
+<li>dtle&#x5168;&#x91CF;&#x6807;&#x8BB0;&#x589E;&#x91CF;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E;, &#x82E5;&#x5168;&#x91CF;&#x8017;&#x65F6;&#x8F83;&#x957F;, &#x5F00;&#x59CB;&#x589E;&#x91CF;&#x65F6;binlog&#x6781;&#x6709;&#x53EF;&#x80FD;&#x88AB;&#x6E05;&#x9664;</li>
+</ul>
+</li>
+<li>&#x9700;&#x8981;&#x5728;&#x5F00;&#x59CB;&#x5168;&#x91CF;&#x65F6;&#x5C06;MySQL binlog&#x6682;&#x5B58;&#x5230;dtle&#x672C;&#x5730;</li>
+</ul>
+<h2 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h2>
+<p>&#x5728;job.json&#x6E90;&#x7AEF;&#x4EFB;&#x52A1;&#x914D;&#x7F6E;&#x4E2D;&#x5C06;<code>BinlogRelay</code>&#x8BBE;&#x4E3A;<code>true</code></p>
+<pre><code class="lang-json">    <span class="hljs-string">&quot;Type&quot;</span>: <span class="hljs-string">&quot;Src&quot;</span>,
+    <span class="hljs-string">&quot;Config&quot;</span>: {
+        <span class="hljs-string">&quot;BinlogRelay&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;Gtid&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+</code></pre>
+<p>&#x82E5;&#x8981;&#x5728;&#x589E;&#x91CF;job&#xFF08;&#x5373;&#x6307;&#x5B9A;Gtid&#xFF09;&#x4E2D;&#x4F7F;&#x7528;BinlogRelay&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x53E6;&#x5916;&#x6307;&#x5B9A; <code>BinlogFile</code>&#x3001;<code>BinlogPos</code> (&#x89C1; <code>show master status</code>).</p>
+<p>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x8BE6;&#x89C1;<a href="../4/4.3_job_configuration.html">&#x4F5C;&#x4E1A;&#x914D;&#x7F6E;</a>.</p>
+<h2 id="&#x5F71;&#x54CD;">&#x5F71;&#x54CD;</h2>
+<p>binlog&#x50A8;&#x5B58;&#x4F4D;&#x7F6E;&#x4E3A; <code>dtle_agent_data_dir/job_uuid/mysql_server_uuid</code>&#x3002;&#x4E00;&#x822C;&#x60C5;&#x51B5;job&#x88AB;&#x5220;&#x9664;&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x6E05;&#x9664;
+binlog&#x76EE;&#x5F55;&#x3002;&#x82E5;&#x672A;&#x6E05;&#x9664;&#x5219;&#x9700;&#x624B;&#x52A8;&#x6E05;&#x9664;&#x3002;</p>
 
                                 
                                 </section>
@@ -870,14 +701,10 @@
 
             
                 
-                <a href="3.3_impact_on_dest.html" class="navigation navigation-prev " aria-label="Previous page: 3.3.对目标端数据库的影响">
+                <a href="3.8_dtle_mapping.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 3.8.dtle mapping支持">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="3.5_deployment.html" class="navigation navigation-next " aria-label="Next page: 3.5.部署结构">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -886,7 +713,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.4.监控项说明","level":"1.5.5","depth":2,"next":{"title":"3.5.部署结构","level":"1.5.6","depth":2,"path":"3/3.5_deployment.md","ref":"3/3.5_deployment.md","articles":[]},"previous":{"title":"3.3.对目标端数据库的影响","level":"1.5.4","depth":2,"path":"3/3.3_impact_on_dest.md","ref":"3/3.3_impact_on_dest.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"3/3.4_metrics.md","mtime":"2019-12-03T08:01:01.566Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-03T08:06:58.867Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.9.Binlog Relay (中继)","level":"1.5.10","depth":2,"next":{"title":"4.安装/配置说明","level":"1.6","depth":1,"ref":"","articles":[{"title":"4.0.安装步骤","level":"1.6.1","depth":2,"path":"4/4.0_installation.md","ref":"4/4.0_installation.md","articles":[]},{"title":"4.1.节点配置","level":"1.6.2","depth":2,"path":"4/4.1_node_configuration.md","ref":"4/4.1_node_configuration.md","articles":[]},{"title":"4.2.命令说明","level":"1.6.3","depth":2,"path":"4/4.2_command.md","ref":"4/4.2_command.md","articles":[]},{"title":"4.3.作业(job)配置","level":"1.6.4","depth":2,"path":"4/4.3_job_configuration.md","ref":"4/4.3_job_configuration.md","articles":[]},{"title":"4.4.HTTP API说明","level":"1.6.5","depth":2,"path":"4/4.4_http_api.md","ref":"4/4.4_http_api.md","articles":[]},{"title":"4.5.MySQL 用户权限说明","level":"1.6.6","depth":2,"path":"4/4.5_mysql_user_privileges.md","ref":"4/4.5_mysql_user_privileges.md","articles":[]}]},"previous":{"title":"3.8.dtle mapping支持","level":"1.5.9","depth":2,"path":"3/3.8_dtle_mapping.md","ref":"3/3.8_dtle_mapping.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"3/3.9_binlog_relay.md","mtime":"2019-12-03T08:02:33.356Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-03T08:06:58.867Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
