@@ -207,6 +207,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="2.0.1_interface.html">
+            
+                <a href="2.0.1_interface.html">
+            
+                    
+                    2.0.1.HTTP API、nomad 命令行工具 和 Web界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.4.2" data-path="2.1_mysql_replication_n_1.html">
@@ -267,6 +286,19 @@
             
                     
                     2.5.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="2.6_multi_node.html">
+            
+                <a href="2.6_multi_node.html">
+            
+                    
+                    2.6.多nomad server部署
             
                 </a>
             
@@ -423,6 +455,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.11" data-path="../3/3.10_consul.html">
+            
+                <a href="../3/3.10_consul.html">
+            
+                    
+                    3.10.consul 上的 job 数据管理
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -494,7 +539,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="../4/4.4_http_api.html">
+        <li class="chapter " data-level="1.6.5" data-path="../4/4.3.1_tuning.html">
+            
+                <a href="../4/4.3.1_tuning.html">
+            
+                    
+                    4.3.1.性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../4/4.4_http_api.html">
             
                 <a href="../4/4.4_http_api.html">
             
@@ -507,12 +565,38 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.6" data-path="../4/4.5_mysql_user_privileges.html">
+        <li class="chapter " data-level="1.6.7" data-path="../4/4.4.1_http_api_oldv2.html">
+            
+                <a href="../4/4.4.1_http_api_oldv2.html">
+            
+                    
+                    4.4.1.旧版（2.x）HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../4/4.5_mysql_user_privileges.html">
             
                 <a href="../4/4.5_mysql_user_privileges.html">
             
                     
                     4.5.MySQL 用户权限说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../4/4.6_dtle_2to3.html">
+            
+                <a href="../4/4.6_dtle_2to3.html">
+            
+                    
+                    4.6.dtle 2升级到3
             
                 </a>
             
@@ -697,91 +781,68 @@ mysql&gt; show grants for &apos;actiontech&apos;@&apos;%&apos;;
 <p>&#x793A;&#x4F8B;&#x4E3B;&#x673A;IP&#x4E3A;<code>192.168.0.17</code>, &#x89C4;&#x683C;&#x662F;1c4g40g</p>
 <h2 id="&#x5B89;&#x88C5;&#x5E76;&#x914D;&#x7F6E;dtle">&#x5B89;&#x88C5;&#x5E76;&#x914D;&#x7F6E;dtle</h2>
 <p>&#x5B89;&#x88C5;dtle:</p>
-<pre><code>rpm -ivh --prefix /opt/dtle dtle.rpm
-</code></pre><p>&#x914D;&#x7F6E;/etc/dtle/dtle.conf:</p>
-<pre><code># Setup data dir
-data_dir = &quot;/opt/dtle/data&quot;
-log_file = &quot;/opt/dtle/var/log/dtle/dtle.log&quot;
-log_level = &quot;INFO&quot;
+<pre><code>rpm -ivh dtle-xxx.rpm
+</code></pre><h3 id="&#x914D;&#x7F6E;-etcdtlenomadhcl">&#x914D;&#x7F6E; <code>/etc/dtle/nomad.hcl</code>:</h3>
+<pre><code># &#x7701;&#x7565;&#x672A;&#x4FEE;&#x6539;&#x914D;&#x7F6E;
 bind_addr = &quot;192.168.0.17&quot;
 
-# Modify our port to avoid a collision with server
-ports {
-    http = 8190
-}
-
-
-# Enable the manager
-manager {
-    enabled = true
-
-    # Self-elect, should be 3 or 5 for production,
-    # Addresses to attempt to join when the server starts.
-    join = [ &quot;192.168.0.17&quot; ]
-}
-
-
-# Enable the agent
-agent {
-    enabled = true
-    managers = [&quot;192.168.0.17:8191&quot;]
-}
-
-
-addresses {
-  http = &quot;192.168.0.17&quot;
-  rpc = &quot;192.168.0.17&quot;
-  serf = &quot;192.168.0.17&quot;
-}
 advertise {
   http = &quot;192.168.0.17&quot;
   rpc = &quot;192.168.0.17&quot;
   serf = &quot;192.168.0.17&quot;
 }
 </code></pre><p>&#x542F;&#x52A8;dtle: </p>
-<pre><code>systemctl start dtle
+<pre><code>systemctl start dtle-consul dtle-nomad
 </code></pre><h2 id="&#x589E;&#x52A0;&#x590D;&#x5236;&#x4EFB;&#x52A1;">&#x589E;&#x52A0;&#x590D;&#x5236;&#x4EFB;&#x52A1;</h2>
 <p>&#x590D;&#x5236;&#x914D;&#x7F6E;&#x6587;&#x4EF6; job.json &#x5185;&#x5BB9;&#x5982;&#x4E0B;:</p>
 <pre><code>{
-    &quot;Name&quot;:&quot;ali-jd-demo&quot;,
-    &quot;Tasks&quot;:[
-        {
-            &quot;Type&quot;:&quot;Src&quot;,
-            &quot;Config&quot;:{
-                &quot;Gtid&quot;:&quot;&quot;,
-                &quot;ReplicateDoDb&quot;:[
-                    {
-                        &quot;TableSchema&quot;:&quot;actiontech&quot;,
-                        &quot;Tables&quot;:[]
-                    }
-                ],
-                &quot;ConnectionConfig&quot;:{
-                    &quot;Host&quot;:&quot;rm-xxxx.mysql.rds.aliyuncs.com&quot;,
-                    &quot;Port&quot;:&quot;3306&quot;,
-                    &quot;User&quot;:&quot;root&quot;,
-                    &quot;Password&quot;:&quot;Acti0ntech&quot;
-                }
+  &quot;Job&quot;: {
+    &quot;ID&quot;:&quot;ali-jd-demo&quot;,
+    &quot;Datacenters&quot;: [&quot;dc1&quot;],
+    &quot;TaskGroups&quot;: [{
+        &quot;Name&quot;: &quot;src&quot;,
+        &quot;Tasks&quot;: [{
+          &quot;Name&quot;: &quot;src&quot;,
+          &quot;Driver&quot;: &quot;dtle&quot;,
+          &quot;Config&quot;: {
+            &quot;Gtid&quot;:&quot;&quot;,
+            &quot;ReplicateDoDb&quot;: [{
+              &quot;TableSchema&quot;: &quot;actiontech&quot;,
+              &quot;Tables&quot;: []
+            }],
+            &quot;ConnectionConfig&quot;: {
+              &quot;Host&quot;:&quot;rm-xxxx.mysql.rds.aliyuncs.com&quot;,
+              &quot;Port&quot;:&quot;3306&quot;,
+              &quot;User&quot;:&quot;root&quot;,
+              &quot;Password&quot;:&quot;Acti0ntech&quot;
             }
-        },
-        {
-            &quot;Type&quot;:&quot;Dest&quot;,
-            &quot;Config&quot;:{
-                &quot;ConnectionConfig&quot;:{
-                    &quot;Host&quot;:&quot;mysql-cn-east-2-yyyy.public.jcloud.com&quot;,
-                    &quot;Port&quot;:&quot;3306&quot;,
-                    &quot;User&quot;:&quot;actiontech&quot;,
-                    &quot;Password&quot;:&quot;Acti0ntech&quot;
-                }
+          }
+        }]
+      }, {
+        &quot;Name&quot;: &quot;dest&quot;,
+        &quot;Tasks&quot;: [{
+          &quot;Name&quot;: &quot;dest&quot;,
+          &quot;Driver&quot;: &quot;dtle&quot;,
+          &quot;Config&quot;: {
+            &quot;ConnectionConfig&quot;: {
+              &quot;Host&quot;:&quot;mysql-cn-east-2-yyyy.public.jcloud.com&quot;,
+              &quot;Port&quot;:&quot;3306&quot;,
+              &quot;User&quot;:&quot;actiontech&quot;,
+              &quot;Password&quot;:&quot;Acti0ntech&quot;
             }
-        }
-    ]
+          }
+        }]
+    }]
+  }
 }
 </code></pre><p>&#x5411;dtle&#x53D1;&#x5E03;&#x4EFB;&#x52A1;: </p>
-<pre><code>curl -H &quot;Accept:application/json&quot; -XPOST &quot;192.168.0.17:8190/v1/jobs&quot; -d @job.json
+<pre><code>curl -XPOST &quot;192.168.0.17:4646/v1/jobs&quot; -d @job.json
 </code></pre><p>&#x68C0;&#x67E5;&#x4EFB;&#x52A1;&#x8FD0;&#x884C;&#x72B6;&#x6001;: </p>
-<pre><code>curl -XGET &quot;192.168.0.17:8190/v1/jobs&quot; -s | jq &apos;.[] | .ID, .Status&apos;
+<pre><code>curl -XGET &quot;192.168.0.17:4646/v1/job/ali-jd-demo&quot; -s | jq &apos;.Status&apos;
 </code></pre><h2 id="&#x5176;&#x4ED6;">&#x5176;&#x4ED6;</h2>
 <p>&#x5982;&#x8981;&#x4F7F;&#x7528;&#x94FE;&#x8DEF;&#x538B;&#x7F29;&#x7B49;&#x529F;&#x80FD;, &#x53EF;&#x53C2;&#x7167;<a href="2.3_dc_to_dc.md">MySQL&#x7684;&#x8DE8;&#x6570;&#x636E;&#x4E2D;&#x5FC3;&#x7684;&#x53CC;&#x5411;&#x590D;&#x5236;</a></p>
+<p>consul &#x9ED8;&#x8BA4;&#x53EA;&#x80FD;&#x4ECE;&#x4ECE;&#x672C;&#x673A;&#x67E5;&#x8BE2;&#x3002;&#x82E5;&#x8981;&#x4ECE;&#x5916;&#x90E8;&#x8BBF;&#x95EE;KV&#xFF0C;&#x8BF7;&#x66F4;&#x6539;/etc/dtle/consul.hcl&#x4E2D;&#x7684; <code>client_addr</code> &#x3002;
+&#x5E76;&#x76F8;&#x5E94;&#x914D;&#x7F6E;nomad.hcl&#x3002;</p>
 
                                 
                                 </section>
@@ -825,7 +886,7 @@ advertise {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.4.阿里云到京东云的MySQL复制","level":"1.4.5","depth":2,"next":{"title":"2.5.MySQL到Kafka的数据变更通知","level":"1.4.6","depth":2,"path":"2/2.5_mysql_kafka.md","ref":"2/2.5_mysql_kafka.md","articles":[]},"previous":{"title":"2.3.MySQL的跨数据中心的双向复制","level":"1.4.4","depth":2,"path":"2/2.3_dc_to_dc_bidirectional.md","ref":"2/2.3_dc_to_dc_bidirectional.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"2/2.4_ali_to_jd.md","mtime":"2019-01-17T10:09:13.919Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-04T08:26:25.549Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.4.阿里云到京东云的MySQL复制","level":"1.4.5","depth":2,"next":{"title":"2.5.MySQL到Kafka的数据变更通知","level":"1.4.6","depth":2,"path":"2/2.5_mysql_kafka.md","ref":"2/2.5_mysql_kafka.md","articles":[]},"previous":{"title":"2.3.MySQL的跨数据中心的双向复制","level":"1.4.4","depth":2,"path":"2/2.3_dc_to_dc_bidirectional.md","ref":"2/2.3_dc_to_dc_bidirectional.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"2/2.4_ali_to_jd.md","mtime":"2020-09-07T06:05:52.001Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-07T06:08:25.058Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

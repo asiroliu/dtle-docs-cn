@@ -207,6 +207,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../2/2.0.1_interface.html">
+            
+                <a href="../2/2.0.1_interface.html">
+            
+                    
+                    2.0.1.HTTP API、nomad 命令行工具 和 Web界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.4.2" data-path="../2/2.1_mysql_replication_n_1.html">
@@ -267,6 +286,19 @@
             
                     
                     2.5.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../2/2.6_multi_node.html">
+            
+                <a href="../2/2.6_multi_node.html">
+            
+                    
+                    2.6.多nomad server部署
             
                 </a>
             
@@ -423,6 +455,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.11" data-path="3.10_consul.html">
+            
+                <a href="3.10_consul.html">
+            
+                    
+                    3.10.consul 上的 job 数据管理
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -494,7 +539,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="../4/4.4_http_api.html">
+        <li class="chapter " data-level="1.6.5" data-path="../4/4.3.1_tuning.html">
+            
+                <a href="../4/4.3.1_tuning.html">
+            
+                    
+                    4.3.1.性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../4/4.4_http_api.html">
             
                 <a href="../4/4.4_http_api.html">
             
@@ -507,12 +565,38 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.6" data-path="../4/4.5_mysql_user_privileges.html">
+        <li class="chapter " data-level="1.6.7" data-path="../4/4.4.1_http_api_oldv2.html">
+            
+                <a href="../4/4.4.1_http_api_oldv2.html">
+            
+                    
+                    4.4.1.旧版（2.x）HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../4/4.5_mysql_user_privileges.html">
             
                 <a href="../4/4.5_mysql_user_privileges.html">
             
                     
                     4.5.MySQL 用户权限说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../4/4.6_dtle_2to3.html">
+            
+                <a href="../4/4.6_dtle_2to3.html">
+            
+                    
+                    4.6.dtle 2升级到3
             
                 </a>
             
@@ -655,7 +739,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x7AEF;&#x53E3;&#x4F7F;&#x7528;&#x8BF4;&#x660E;">&#x7AEF;&#x53E3;&#x4F7F;&#x7528;&#x8BF4;&#x660E;</h1>
-<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;, dtle&#x7684;&#x4F20;&#x8F93;/&#x901A;&#x4FE1;&#x4F1A;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x7AEF;&#x53E3;: </p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;, nomad &#x548C; consul&#x7684;&#x4F20;&#x8F93;/&#x901A;&#x4FE1;&#x4F1A;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x7AEF;&#x53E3;: </p>
 <table>
 <thead>
 <tr>
@@ -666,15 +750,23 @@
 <tbody>
 <tr>
 <td>8190</td>
-<td>HTTP &#x670D;&#x52A1;&#x7684;&#x7AEF;&#x53E3;&#x53F7;</td>
+<td>dtle 2.x HTTP API&#x517C;&#x5BB9;&#x5C42;&#x7684;&#x7AEF;&#x53E3;</td>
 </tr>
 <tr>
-<td>8191</td>
-<td>&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x901A;&#x4FE1;&#x7AEF;&#x53E3;</td>
+<td>8500</td>
+<td>consul HTTP &#x7AEF;&#x53E3;</td>
 </tr>
 <tr>
-<td>8192</td>
-<td>&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x901A;&#x4FE1;&#x7AEF;&#x53E3;</td>
+<td>4646</td>
+<td>nomad HTTP &#x7AEF;&#x53E3;</td>
+</tr>
+<tr>
+<td>4647</td>
+<td>nomad RPC &#x7AEF;&#x53E3;</td>
+</tr>
+<tr>
+<td>4648</td>
+<td>nomad serf&#x7AEF;&#x53E3;</td>
 </tr>
 <tr>
 <td>8193</td>
@@ -727,7 +819,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.2.端口使用说明","level":"1.5.3","depth":2,"next":{"title":"3.3.对目标端数据库的影响","level":"1.5.4","depth":2,"path":"3/3.3_impact_on_dest.md","ref":"3/3.3_impact_on_dest.md","articles":[]},"previous":{"title":"3.1.使用限制","level":"1.5.2","depth":2,"path":"3/3.1_limitation.md","ref":"3/3.1_limitation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"3/3.2_ports.md","mtime":"2019-12-03T08:07:26.851Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-04T08:26:25.549Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.2.端口使用说明","level":"1.5.3","depth":2,"next":{"title":"3.3.对目标端数据库的影响","level":"1.5.4","depth":2,"path":"3/3.3_impact_on_dest.md","ref":"3/3.3_impact_on_dest.md","articles":[]},"previous":{"title":"3.1.使用限制","level":"1.5.2","depth":2,"path":"3/3.1_limitation.md","ref":"3/3.1_limitation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"3/3.2_ports.md","mtime":"2020-09-07T06:05:52.005Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-07T06:08:25.058Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

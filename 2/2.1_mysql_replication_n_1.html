@@ -56,7 +56,7 @@
     <link rel="next" href="2.2_mysql_replication_1_n.html" />
     
     
-    <link rel="prev" href="2.0_mysql_replication_1_1.html" />
+    <link rel="prev" href="2.0.1_interface.html" />
     
 
     </head>
@@ -207,6 +207,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="2.0.1_interface.html">
+            
+                <a href="2.0.1_interface.html">
+            
+                    
+                    2.0.1.HTTP API、nomad 命令行工具 和 Web界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter active" data-level="1.4.2" data-path="2.1_mysql_replication_n_1.html">
@@ -267,6 +286,19 @@
             
                     
                     2.5.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="2.6_multi_node.html">
+            
+                <a href="2.6_multi_node.html">
+            
+                    
+                    2.6.多nomad server部署
             
                 </a>
             
@@ -423,6 +455,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.11" data-path="../3/3.10_consul.html">
+            
+                <a href="../3/3.10_consul.html">
+            
+                    
+                    3.10.consul 上的 job 数据管理
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -494,7 +539,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="../4/4.4_http_api.html">
+        <li class="chapter " data-level="1.6.5" data-path="../4/4.3.1_tuning.html">
+            
+                <a href="../4/4.3.1_tuning.html">
+            
+                    
+                    4.3.1.性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../4/4.4_http_api.html">
             
                 <a href="../4/4.4_http_api.html">
             
@@ -507,12 +565,38 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.6" data-path="../4/4.5_mysql_user_privileges.html">
+        <li class="chapter " data-level="1.6.7" data-path="../4/4.4.1_http_api_oldv2.html">
+            
+                <a href="../4/4.4.1_http_api_oldv2.html">
+            
+                    
+                    4.4.1.旧版（2.x）HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../4/4.5_mysql_user_privileges.html">
             
                 <a href="../4/4.5_mysql_user_privileges.html">
             
                     
                     4.5.MySQL 用户权限说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../4/4.6_dtle_2to3.html">
+            
+                <a href="../4/4.6_dtle_2to3.html">
+            
+                    
+                    4.6.dtle 2升级到3
             
                 </a>
             
@@ -701,61 +785,55 @@ docker run --name mysql-dst -e MYSQL_ROOT_PASSWORD=pass -p 33063:3306 --network=
 <pre><code>&gt; mysql -h 127.0.0.1 -P 33063 -uroot -ppass -e &quot;CREATE DATABASE demo; CREATE TABLE demo.demo_tbl(a int primary key)&quot;
 &lt; ...
 </code></pre><h2 id="&#x521B;&#x5EFA;-dtle">&#x521B;&#x5EFA; dtle</h2>
-<pre><code>docker run --name dtle -p 8190:8190 --network=dtle-net -d actiontech/dtle
+<pre><code>docker run --name dtle-consul -p 8500:8500 --network=dtle-net -d consul:latest
+docker run --name dtle -p 4646:4646 --network=dtle-net -d actiontech/dtle
 </code></pre><p>&#x68C0;&#x67E5;&#x662F;&#x5426;&#x6B63;&#x5E38;: </p>
-<pre><code>&gt; curl -XGET &quot;127.0.0.1:8190/v1/nodes&quot; -s | jq
-&lt; [
-  {
-    &quot;CreateIndex&quot;: 4,
-    &quot;Datacenter&quot;: &quot;dc1&quot;,
-    &quot;HTTPAddr&quot;: &quot;0.0.0.0:8190&quot;,
-    &quot;ID&quot;: &quot;f7051e01-b323-5056-de5d-4958949a7bc2&quot;,
-    &quot;ModifyIndex&quot;: 99,
-    &quot;Name&quot;: &quot;7539b7887eb2&quot;,
-    &quot;Status&quot;: &quot;ready&quot;,
-    &quot;StatusDescription&quot;: &quot;&quot;
-  }
-]
+<pre><code>&gt; curl -XGET &quot;127.0.0.1:4646/v1/nodes&quot; -s | jq
+&lt; [{...}]
 </code></pre><h2 id="&#x51C6;&#x5907;&#x4F5C;&#x4E1A;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;">&#x51C6;&#x5907;&#x4F5C;&#x4E1A;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;</h2>
 <h3 id="src1&#x5230;dst&#x7684;&#x590D;&#x5236;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;">src1&#x5230;dst&#x7684;&#x590D;&#x5236;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;</h3>
 <p>&#x51C6;&#x5907;src1_dst.json, &#x5185;&#x5BB9;&#x5982;&#x4E0B;: </p>
 <pre><code>{
-    &quot;Name&quot;:&quot;dtle-demo-src1-dst&quot;,
-    &quot;Tasks&quot;:[
-        {
-            &quot;Type&quot;:&quot;Src&quot;,
-            &quot;Config&quot;:{
-                &quot;Gtid&quot;:&quot;f6def853-cbaa-11e8-8aeb-0242ac120003:1-7&quot;,
-                &quot;ReplicateDoDb&quot;:[
-                    {
-                        &quot;TableSchema&quot;:&quot;demo&quot;,
-                        &quot;Tables&quot;:[
-                            {
-                                &quot;TableName&quot;:&quot;demo_tbl&quot;
-                            }
-                        ]
-                    }
-                ],
-                &quot;ConnectionConfig&quot;:{
-                    &quot;Host&quot;:&quot;mysql-src1&quot;,
-                    &quot;Port&quot;:&quot;3306&quot;,
-                    &quot;User&quot;:&quot;root&quot;,
-                    &quot;Password&quot;:&quot;pass&quot;
-                }
+  &quot;Job&quot;: {
+    &quot;ID&quot;: &quot;dtle-demo-src1-dst&quot;,
+    &quot;Datacenters&quot;: [&quot;dc1&quot;],
+    &quot;TaskGroups&quot;: [{
+        &quot;Name&quot;: &quot;src&quot;,
+        &quot;Tasks&quot;: [{
+          &quot;Name&quot;: &quot;src&quot;,
+          &quot;Driver&quot;: &quot;dtle&quot;,
+          &quot;Config&quot;: {
+            &quot;Gtid&quot;: &quot;f6def853-cbaa-11e8-8aeb-0242ac120003:1-7&quot;,
+            &quot;ReplicateDoDb&quot;: [{
+              &quot;TableSchema&quot;: &quot;demo&quot;,
+              &quot;Tables&quot;: [{
+                &quot;TableName&quot;: &quot;demo_tbl&quot;
+              }]
+            }],
+            &quot;ConnectionConfig&quot;: {
+              &quot;Host&quot;: &quot;mysql-src1&quot;,
+              &quot;Port&quot;: 3306,
+              &quot;User&quot;: &quot;root&quot;,
+              &quot;Password&quot;: &quot;pass&quot;
             }
-        },
-        {
-            &quot;Type&quot;:&quot;Dest&quot;,
-            &quot;Config&quot;:{
-                &quot;ConnectionConfig&quot;:{
-                    &quot;Host&quot;:&quot;mysql-dst&quot;,
-                    &quot;Port&quot;:&quot;3306&quot;,
-                    &quot;User&quot;:&quot;root&quot;,
-                    &quot;Password&quot;:&quot;pass&quot;
-                }
+          }
+        }]
+      }, {
+        &quot;Name&quot;: &quot;dest&quot;,
+        &quot;Tasks&quot;: [{
+          &quot;Name&quot;: &quot;dest&quot;,
+          &quot;Driver&quot;: &quot;dtle&quot;,
+          &quot;Config&quot;: {
+            &quot;ConnectionConfig&quot;: {
+              &quot;Host&quot;: &quot;mysql-dst&quot;,
+              &quot;Port&quot;: 3306,
+              &quot;User&quot;: &quot;root&quot;,
+              &quot;Password&quot;: &quot;pass&quot;
             }
-        }
-    ]
+          }
+        }]
+    }]
+  }
 }
 </code></pre><p>&#x5176;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;: </p>
 <ul>
@@ -766,42 +844,46 @@ docker run --name mysql-dst -e MYSQL_ROOT_PASSWORD=pass -p 33063:3306 --network=
 <h3 id="src2&#x5230;dst&#x7684;&#x590D;&#x5236;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;">src2&#x5230;dst&#x7684;&#x590D;&#x5236;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;</h3>
 <p>&#x51C6;&#x5907;src2_dst.json, &#x5185;&#x5BB9;&#x5982;&#x4E0B;: </p>
 <pre><code>{
-    &quot;Name&quot;:&quot;dtle-demo-src2-dst&quot;,
-    &quot;Tasks&quot;:[
-        {
-            &quot;Type&quot;:&quot;Src&quot;,
-            &quot;Config&quot;:{
-                &quot;Gtid&quot;:&quot;f74aacb5-cbaa-11e8-bdd1-0242ac120004:1-7&quot;,
-                &quot;ReplicateDoDb&quot;:[
-                    {
-                        &quot;TableSchema&quot;:&quot;demo&quot;,
-                        &quot;Tables&quot;:[
-                            {
-                                &quot;TableName&quot;:&quot;demo_tbl&quot;
-                            }
-                        ]
-                    }
-                ],
-                &quot;ConnectionConfig&quot;:{
-                    &quot;Host&quot;:&quot;mysql-src2&quot;,
-                    &quot;Port&quot;:&quot;3306&quot;,
-                    &quot;User&quot;:&quot;root&quot;,
-                    &quot;Password&quot;:&quot;pass&quot;
-                }
+  &quot;Job&quot;: {
+    &quot;ID&quot;: &quot;dtle-demo-src2-dst&quot;,
+    &quot;Datacenters&quot;: [&quot;dc1&quot;],
+    &quot;TaskGroups&quot;: [{
+        &quot;Name&quot;: &quot;src&quot;,
+        &quot;Tasks&quot;: [{
+          &quot;Name&quot;: &quot;src&quot;,
+          &quot;Driver&quot;: &quot;dtle&quot;,
+          &quot;Config&quot;: {
+            &quot;Gtid&quot;: &quot;f74aacb5-cbaa-11e8-bdd1-0242ac120004:1-7&quot;,
+            &quot;ReplicateDoDb&quot;: [{
+              &quot;TableSchema&quot;: &quot;demo&quot;,
+              &quot;Tables&quot;: [{
+                &quot;TableName&quot;: &quot;demo_tbl&quot;
+              }]
+            }],
+            &quot;ConnectionConfig&quot;: {
+              &quot;Host&quot;: &quot;mysql-src2&quot;,
+              &quot;Port&quot;: 3306,
+              &quot;User&quot;: &quot;root&quot;,
+              &quot;Password&quot;: &quot;pass&quot;
             }
-        },
-        {
-            &quot;Type&quot;:&quot;Dest&quot;,
-            &quot;Config&quot;:{
-                &quot;ConnectionConfig&quot;:{
-                    &quot;Host&quot;:&quot;mysql-dst&quot;,
-                    &quot;Port&quot;:&quot;3306&quot;,
-                    &quot;User&quot;:&quot;root&quot;,
-                    &quot;Password&quot;:&quot;pass&quot;
-                }
+          }
+        }]
+      }, {
+        &quot;Name&quot;: &quot;dest&quot;,
+        &quot;Tasks&quot;: [{
+          &quot;Name&quot;: &quot;dest&quot;,
+          &quot;Driver&quot;: &quot;dtle&quot;,
+          &quot;Config&quot;: {
+            &quot;ConnectionConfig&quot;: {
+              &quot;Host&quot;: &quot;mysql-dst&quot;,
+              &quot;Port&quot;: 3306,
+              &quot;User&quot;: &quot;root&quot;,
+              &quot;Password&quot;: &quot;pass&quot;
             }
-        }
-    ]
+          }
+        }]
+    }]
+  }
 }
 </code></pre><p>&#x5176;&#x4E2D;&#x4E0E;<code>src1_dst.json</code>&#x4E0D;&#x540C;&#x7684;&#x662F;: </p>
 <ul>
@@ -809,26 +891,16 @@ docker run --name mysql-dst -e MYSQL_ROOT_PASSWORD=pass -p 33063:3306 --network=
 <li>GTID&#x70B9;&#x4F4D;&#x4E3A; &#x51C6;&#x5907;&#x6570;&#x636E;&#x9636;&#x6BB5; &#x63D2;&#x5165;&#x6570;&#x636E;&#x4E4B;&#x524D;&#x7684;src2&#x4E0A;&#x7684;GTID&#x70B9;&#x4F4D;</li>
 </ul>
 <h2 id="&#x521B;&#x5EFA;&#x590D;&#x5236;&#x4EFB;&#x52A1;">&#x521B;&#x5EFA;&#x590D;&#x5236;&#x4EFB;&#x52A1;</h2>
-<pre><code>&gt; curl -H &quot;Accept:application/json&quot; -XPOST &quot;http://127.0.0.1:8190/v1/jobs&quot; -d @src1_dst.json -s | jq
-&lt; {
-  &quot;Index&quot;: 328,
-  &quot;KnownLeader&quot;: false,
-  &quot;LastContact&quot;: 0,
-  &quot;Success&quot;: true
-}
+<pre><code>&gt; curl -XPOST &quot;http://127.0.0.1:4646/v1/jobs&quot; -d @src1_dst.json -s | jq
+&lt; {...}
 
-&gt; curl -H &quot;Accept:application/json&quot; -XPOST &quot;http://127.0.0.1:8190/v1/jobs&quot; -d @src2_dst.json -s | jq
-&lt; {
-  &quot;Index&quot;: 341,
-  &quot;KnownLeader&quot;: false,
-  &quot;LastContact&quot;: 0,
-  &quot;Success&quot;: true
-}
+&gt; curl -XPOST &quot;http://127.0.0.1:4646/v1/jobs&quot; -d @src2_dst.json -s | jq
+&lt; {...}
 </code></pre><p>&#x67E5;&#x770B;&#x4F5C;&#x4E1A;ID&#x548C;&#x72B6;&#x6001;:</p>
-<pre><code>&gt; curl -XGET &quot;127.0.0.1:8190/v1/jobs&quot; -s | jq &apos;.[] | .ID, .Status&apos;
-&lt; &quot;484c0099-c45c-397b-6c76-13e4c5efe7a1&quot;
+<pre><code>&gt; curl -XGET &quot;127.0.0.1:4646/v1/jobs&quot; -s | jq &apos;.[] | .ID, .Status&apos;
+&lt; &quot;dtle-demo-src1-dst&quot;
 &quot;running&quot;
-&quot;cab19f6a-fe44-497c-e03d-0bf3755163a7&quot;
+&quot;dtle-demo-src2-dst&quot;
 &quot;running&quot;
 </code></pre><h2 id="&#x6D4B;&#x8BD5;">&#x6D4B;&#x8BD5;</h2>
 <p>&#x5728;src1&#x548C;src2&#x4E2D;&#x5206;&#x522B;&#x63D2;&#x5165;&#x6570;&#x636E;, &#x67E5;&#x770B;dst&#x4E2D;&#x7684;&#x6570;&#x636E;, &#x9A8C;&#x8BC1;&#x5168;&#x91CF;&#x548C;&#x589E;&#x91CF;&#x7684;&#x6570;&#x636E;&#x5747;&#x5B58;&#x5728;</p>
@@ -879,7 +951,7 @@ docker run --name mysql-dst -e MYSQL_ROOT_PASSWORD=pass -p 33063:3306 --network=
 
             
                 
-                <a href="2.0_mysql_replication_1_1.html" class="navigation navigation-prev " aria-label="Previous page: 2.0.MySQL的单向复制">
+                <a href="2.0.1_interface.html" class="navigation navigation-prev " aria-label="Previous page: 2.0.1.HTTP API、nomad 命令行工具 和 Web界面">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -895,7 +967,7 @@ docker run --name mysql-dst -e MYSQL_ROOT_PASSWORD=pass -p 33063:3306 --network=
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.1.MySQL的聚合复制","level":"1.4.2","depth":2,"next":{"title":"2.2.MySQL的数据分散","level":"1.4.3","depth":2,"path":"2/2.2_mysql_replication_1_n.md","ref":"2/2.2_mysql_replication_1_n.md","articles":[]},"previous":{"title":"2.0.MySQL的单向复制","level":"1.4.1","depth":2,"path":"2/2.0_mysql_replication_1_1.md","ref":"2/2.0_mysql_replication_1_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"2/2.1_mysql_replication_n_1.md","mtime":"2019-01-17T10:09:13.919Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-04T08:26:25.549Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.1.MySQL的聚合复制","level":"1.4.2","depth":2,"next":{"title":"2.2.MySQL的数据分散","level":"1.4.3","depth":2,"path":"2/2.2_mysql_replication_1_n.md","ref":"2/2.2_mysql_replication_1_n.md","articles":[]},"previous":{"title":"2.0.1.HTTP API、nomad 命令行工具 和 Web界面","level":"1.4.1.1","depth":3,"path":"2/2.0.1_interface.md","ref":"2/2.0.1_interface.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"2/2.1_mysql_replication_n_1.md","mtime":"2020-09-07T06:05:52.001Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-07T06:08:25.058Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
