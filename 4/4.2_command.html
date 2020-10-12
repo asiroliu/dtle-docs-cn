@@ -752,94 +752,46 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x547D;&#x4EE4;&#x8BF4;&#x660E;">&#x547D;&#x4EE4;&#x8BF4;&#x660E;</h1>
-<h2 id="dtle-server"><code>dtle server</code></h2>
-<p>&#x683C;&#x5F0F;: <code>dtle server [options]</code></p>
-<p>&#x4F5C;&#x7528;: &#x542F;&#x52A8;dtle&#x8282;&#x70B9;.</p>
-<p>&#x53C2;&#x6570;&#x8BF4;&#x660E;: </p>
-<table>
-<thead>
-<tr>
-<th>&#x53C2;&#x6570;&#x540D;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-config=<path></path></td>
-<td>&#x53EF;&#x6307;&#x5B9A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;, &#x6216;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;</td>
-</tr>
-</tbody>
-</table>
-<h2 id="dtle-job-status"><code>dtle job-status</code></h2>
-<p>&#x683C;&#x5F0F;: <code>dtle job-status [options] &lt;job-id&gt;</code></p>
-<p>&#x4F5C;&#x7528;: &#x67E5;&#x770B;&#x4F5C;&#x4E1A;&#x72B6;&#x6001;. &#x4E0D;&#x6307;&#x5B9A;<code>job-id</code>&#x65F6;, &#x5C06;&#x5217;&#x51FA;&#x6240;&#x6709;&#x4F5C;&#x4E1A;</p>
-<p>&#x53C2;&#x6570;&#x8BF4;&#x660E;: </p>
-<table>
-<thead>
-<tr>
-<th>&#x53C2;&#x6570;&#x540D;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-address=<addr></addr></td>
-<td>&#x6307;&#x5B9A; &#x670D;&#x52A1;&#x7AEF; &#x5730;&#x5740;</td>
-</tr>
-<tr>
-<td>-all-allocs</td>
-<td>&#x5217;&#x51FA;&#x4F5C;&#x4E1A;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6267;&#x884C;&#x4EFB;&#x52A1;</td>
-</tr>
-</tbody>
-</table>
-<h2 id="dtle-members"><code>dtle members</code></h2>
-<p>&#x683C;&#x5F0F;: <code>dtle members [options]</code></p>
-<p>&#x4F5C;&#x7528;: &#x67E5;&#x770B;&#x670D;&#x52A1;&#x7AEF;&#x96C6;&#x7FA4;&#x7684;&#x8282;&#x70B9;&#x72B6;&#x6001;</p>
-<p>&#x53C2;&#x6570;&#x8BF4;&#x660E;: </p>
-<table>
-<thead>
-<tr>
-<th>&#x53C2;&#x6570;&#x540D;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-address=<addr></addr></td>
-<td>&#x6307;&#x5B9A; &#x670D;&#x52A1;&#x7AEF; &#x5730;&#x5740;</td>
-</tr>
-<tr>
-<td>-detailed</td>
-<td>&#x5217;&#x51FA;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;</td>
-</tr>
-</tbody>
-</table>
-<h2 id="dtle-node-status"><code>dtle node-status</code></h2>
-<p>&#x683C;&#x5F0F;: <code>dtle node-status [options] &lt;node-id&gt;</code></p>
-<p>&#x4F5C;&#x7528;: &#x67E5;&#x770B;&#x8282;&#x70B9;&#x72B6;&#x6001;. &#x4E0D;&#x6307;&#x5B9A;<code>node-id</code>&#x65F6;, &#x5C06;&#x5217;&#x51FA;&#x6240;&#x6709;&#x8282;&#x70B9;</p>
-<p>&#x53C2;&#x6570;&#x8BF4;&#x660E;: </p>
-<table>
-<thead>
-<tr>
-<th>&#x53C2;&#x6570;&#x540D;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-address=<addr></addr></td>
-<td>&#x6307;&#x5B9A; &#x670D;&#x52A1;&#x7AEF; &#x5730;&#x5740;</td>
-</tr>
-<tr>
-<td>-allocs</td>
-<td>&#x5217;&#x51FA;&#x8282;&#x70B9;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6267;&#x884C;&#x4EFB;&#x52A1;</td>
-</tr>
-</tbody>
-</table>
-<h2 id="dtle-version"><code>dtle version</code></h2>
-<p>&#x683C;&#x5F0F;: <code>dtle version</code></p>
-<p>&#x4F5C;&#x7528;: &#x67E5;&#x770B;dtle&#x7684;&#x7248;&#x672C;, &#x4E0E;<code>dtle --version</code>&#x4F5C;&#x7528;&#x76F8;&#x540C;</p>
+<p>dtle&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x4EC5;&#x4F5C;&#x4E3A;nomad&#x63D2;&#x4EF6;&#x4F7F;&#x7528;&#x3002;&#x5404;&#x9879;&#x529F;&#x80FD;&#x901A;&#x8FC7;<code>nomad</code>&#x4E8C;&#x8FDB;&#x5236;&#x6267;&#x884C;&#x3002;</p>
+<h2 id="&#x542F;&#x52A8;nomad&#x8282;&#x70B9;">&#x542F;&#x52A8;nomad&#x8282;&#x70B9;</h2>
+<pre><code>nomad agent -config=/path/to/nomad.hcl
+</code></pre><h2 id="&#x96C6;&#x7FA4;&#x76F8;&#x5173;">&#x96C6;&#x7FA4;&#x76F8;&#x5173;</h2>
+<pre><code># &#x67E5;&#x770B;&#x7BA1;&#x7406;&#xFF08;server&#xFF09;&#x8282;&#x70B9;
+nomad server members
+nomad server members -address=http://127.0.0.1:4646
 
+# &#x67E5;&#x770B;&#x6267;&#x884C;&#xFF08;client&#xFF09;&#x8282;&#x70B9;&#xFF0C;&#x5373;&#x8FD0;&#x884C;dtle&#x63D2;&#x4EF6;&#x7684;&#x8282;&#x70B9;
+nomad node status
+nomad node status -address=http://127.0.0.1:4646
+
+# &#x67E5;&#x770B;&#x67D0;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x72B6;&#x6001;
+nomad node status &lt;node ID&gt;
+</code></pre><p>&#x6B64;&#x65F6;nomad&#x547D;&#x4EE4;&#x4F5C;&#x4E3A;HTTP&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;nomad agent, &#x5982;&#x679C;agent&#x4E0D;&#x5728;&#x9ED8;&#x8BA4;&#x5730;&#x5740;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x6307;&#x5B9A; <code>-address=...</code>, &#x4E0B;&#x540C;&#x3002;</p>
+<h2 id="job&#x76F8;&#x5173;">job&#x76F8;&#x5173;</h2>
+<pre><code># &#x589E;&#x52A0;
+nomad job run job.hcl
+nomad job run -address=&quot;http://127.0.0.1:4646&quot; job.hcl
+
+# &#x5220;&#x9664;
+nomad job stop -purged &lt;job name&gt;
+
+# &#x67E5;&#x770B;&#x6240;&#x6709;
+nomad job status
+
+# &#x67E5;&#x770B;&#x67D0;&#x4E2A;
+nomad job status &lt;job name&gt;
+nomad job status -address=http://127.0.0.1:4646 &lt;job name&gt;
+</code></pre><h2 id="&#x67E5;&#x770B;&#x7248;&#x672C;">&#x67E5;&#x770B;&#x7248;&#x672C;</h2>
+<p>&#x67E5;&#x770B;nomad&#x672C;&#x4F53;&#x7248;&#x672C;</p>
+<pre><code>nomad version
+</code></pre><p>&#x67E5;&#x770B;&#x67D0;&#x4E00;&#x8282;&#x70B9;&#x7684;dtle&#x63D2;&#x4EF6;&#x7248;&#x672C;</p>
+<pre><code>nomad node status -verbose &lt;node ID&gt; | grep dtle
+</code></pre><p>&#x8F93;&#x51FA;</p>
+<pre><code>dtle         true      true     Healthy   2020-10-09T14:05:00+08:00
+driver.dtle               = 1
+driver.dtle.full_version  = 9.9.9.9-binlog-provider-7d5a0766
+driver.dtle.version       = 9.9.9.9
+</code></pre>
                                 
                                 </section>
                             
@@ -882,7 +834,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.2.命令说明","level":"1.6.3","depth":2,"next":{"title":"4.3.作业(job)配置","level":"1.6.4","depth":2,"path":"4/4.3_job_configuration.md","ref":"4/4.3_job_configuration.md","articles":[]},"previous":{"title":"4.1.节点配置","level":"1.6.2","depth":2,"path":"4/4.1_node_configuration.md","ref":"4/4.1_node_configuration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.2_command.md","mtime":"2019-01-17T10:09:13.931Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-27T10:14:07.883Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.2.命令说明","level":"1.6.3","depth":2,"next":{"title":"4.3.作业(job)配置","level":"1.6.4","depth":2,"path":"4/4.3_job_configuration.md","ref":"4/4.3_job_configuration.md","articles":[]},"previous":{"title":"4.1.节点配置","level":"1.6.2","depth":2,"path":"4/4.1_node_configuration.md","ref":"4/4.1_node_configuration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.2_command.md","mtime":"2020-10-12T06:59:35.616Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-12T07:03:26.811Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

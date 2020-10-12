@@ -1107,12 +1107,37 @@ task &#x4E2D;&#x6307;&#x5B9A; driver = &quot;dtle&quot;, &#x5728;config&#x6BB5;&
 <li><a href="https://www.nomadproject.io/docs/job-specification/affinity" target="_blank">https://www.nomadproject.io/docs/job-specification/affinity</a></li>
 <li><a href="https://www.nomadproject.io/docs/runtime/interpolation#interpreted_node_vars" target="_blank">https://www.nomadproject.io/docs/runtime/interpolation#interpreted_node_vars</a></li>
 </ul>
-<h2 id="restart">restart</h2>
-<p>group&#x6216;task&#x7EA7;&#x53C2;&#x6570; </p>
-<ul>
-<li><a href="https://www.nomadproject.io/docs/job-specification/restart" target="_blank">https://www.nomadproject.io/docs/job-specification/restart</a> </li>
+<h3 id="restart--reschedule">restart &amp; reschedule</h3>
+<p>nomad job &#x9ED8;&#x8BA4;&#x6709;&#x5982;&#x4E0B; <a href="https://www.nomadproject.io/docs/job-specification/restart" target="_blank">restart</a> &#x548C; <a href="https://www.nomadproject.io/docs/job-specification/reschedule" target="_blank">reschedule</a> &#x914D;&#x7F6E;</p>
+<pre><code>restart { # group or task level
+  interval = &quot;30m&quot;
+  attempts = 2
+  delay    = &quot;15s&quot;
+  mode     = &quot;fail&quot;
+}
+reschedule { # job or group level
+ delay          = &quot;30s&quot;
+ delay_function = &quot;exponential&quot;
+ max_delay      = &quot;1h&quot;
+ unlimited      = true
+}
+</code></pre><ul>
+<li>&#x5F53;task&#x62A5;&#x9519;&#x65F6;&#xFF0C;&#x4F1A;&#x6839;&#x636E;restart&#x914D;&#x7F6E;&#xFF0C;30&#x5206;&#x949F;&#x5185;&#x5728;&#x540C;&#x4E00;&#x8282;&#x70B9;&#x4E0A;&#x91CD;&#x542F;&#x6700;&#x591A;&#x4E24;&#x6B21;</li>
+<li>2&#x6B21;&#x91CD;&#x542F;&#x5747;&#x5931;&#x8D25;&#x540E;&#xFF0C;&#x4F1A;&#x6839;&#x636E;reschedule&#x914D;&#x7F6E;&#xFF0C;&#x5728;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x4E0A;&#x6267;&#x884C;</li>
 </ul>
-
+<p>&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x65E0;&#x9650;reschedule&#x5E26;&#x6765;&#x7684;&#x95EE;&#x9898;&#xFF0C;dtle&#x5B89;&#x88C5;&#x5305;&#x63D0;&#x4F9B;&#x7684;&#x6837;&#x4F8B;job&#x914D;&#x7F6E;&#x4E2D;(<code>&lt;prefix&gt;/usr/share/dtle/scripts/example.job.*</code>)&#xFF0C;&#x9650;&#x5236;reschedule&#x4E3A;&#x6BCF;&#x534A;&#x5C0F;&#x65F6;1&#x6B21;:</p>
+<pre><code>reschedule {
+  attempts = 1
+  interval = &quot;30m&quot;
+  unlimited = false
+}
+# &#x6216;json&#x683C;&#x5F0F;
+&quot;Reschedule&quot;: {
+  &quot;Attempts&quot;: 1,
+  &quot;Interval&quot;: 1800000000000,
+  &quot;Unlimited&quot;: false
+}
+</code></pre>
                                 
                                 </section>
                             
@@ -1155,7 +1180,7 @@ task &#x4E2D;&#x6307;&#x5B9A; driver = &quot;dtle&quot;, &#x5728;config&#x6BB5;&
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.3.作业(job)配置","level":"1.6.4","depth":2,"next":{"title":"4.3.1.性能调优","level":"1.6.5","depth":2,"path":"4/4.3.1_tuning.md","ref":"4/4.3.1_tuning.md","articles":[]},"previous":{"title":"4.2.命令说明","level":"1.6.3","depth":2,"path":"4/4.2_command.md","ref":"4/4.2_command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.3_job_configuration.md","mtime":"2020-09-27T10:13:22.697Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-27T10:14:07.883Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.3.作业(job)配置","level":"1.6.4","depth":2,"next":{"title":"4.3.1.性能调优","level":"1.6.5","depth":2,"path":"4/4.3.1_tuning.md","ref":"4/4.3.1_tuning.md","articles":[]},"previous":{"title":"4.2.命令说明","level":"1.6.3","depth":2,"path":"4/4.2_command.md","ref":"4/4.2_command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.3_job_configuration.md","mtime":"2020-10-12T06:59:35.616Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-12T07:03:26.811Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
