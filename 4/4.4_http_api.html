@@ -776,9 +776,16 @@
 </code></pre><h3 id="&#x67E5;&#x770B;&#x67D0;&#x4E2A;allocation&#x7684;&#x6267;&#x884C;&#x72B6;&#x6001;">&#x67E5;&#x770B;&#x67D0;&#x4E2A;allocation&#x7684;&#x6267;&#x884C;&#x72B6;&#x6001;</h3>
 <pre><code>curl -XGET &quot;127.0.0.1:4646/v1/allocation/&lt;alloc_id&gt;&quot; | jq
 </code></pre><h3 id="&#x533A;&#x522B;&#x4EFB;&#x52A1;&#x5904;&#x4E8E;&#x5168;&#x91CF;&#x8FD8;&#x662F;&#x589E;&#x91CF;&#x72B6;&#x6001;">&#x533A;&#x522B;&#x4EFB;&#x52A1;&#x5904;&#x4E8E;&#x5168;&#x91CF;&#x8FD8;&#x662F;&#x589E;&#x91CF;&#x72B6;&#x6001;</h3>
-<pre><code># &#x5F53;&#x7ED3;&#x679C;&#x4E2D;&#x53EA;&#x51FA;&#x73B0;FULLCOPY&#x65F6;&#xFF0C;&#x4EFB;&#x52A1;&#x72B6;&#x6001;&#x4E3A;&#x5168;&#x91CF;&#xFF0C;&#x5F53;&#x7ED3;&#x679C;&#x51FA;&#x73B0;INCRCOPY&#x65F6;&#xFF0C;&#x4EFB;&#x52A1;&#x5904;&#x4E8E;&#x589E;&#x91CF;
-curl -XGET &quot;127.0.0.1:4646/v1/job/jobId/allocations&quot; | jq .[].TaskStates.Dest.Events[].DriverMessage
-</code></pre><h3 id="&#x505C;&#x6B62;&#xFF08;&#x5220;&#x9664;&#xFF09;job">&#x505C;&#x6B62;&#xFF08;&#x5220;&#x9664;&#xFF09;job</h3>
+<pre><code>curl -XGET &quot;127.0.0.1:4646/v1/job/&lt;jobId&gt;/allocations&quot; | jq | grep job_stage
+</code></pre><pre><code>            &quot;DisplayMessage&quot;: &quot;job_stage_full&quot;,
+            &quot;DriverMessage&quot;: &quot;job_stage_full&quot;,
+            &quot;DisplayMessage&quot;: &quot;job_stage_incr&quot;,
+            &quot;DriverMessage&quot;: &quot;job_stage_incr&quot;,
+</code></pre><ul>
+<li>&#x5F53;&#x7ED3;&#x679C;&#x4E2D; <strong>&#x53EA;</strong> &#x51FA;&#x73B0; job_stage_full &#x65F6;&#xFF0C;&#x4EFB;&#x52A1;&#x5904;&#x4E8E;&#x5168;&#x91CF;&#x9636;&#x6BB5;</li>
+<li>&#x5F53;&#x7ED3;&#x679C;&#x51FA;&#x73B0; job_stage_incr &#x65F6;&#xFF0C;&#x4EFB;&#x52A1;&#x5904;&#x4E8E;&#x589E;&#x91CF;&#x9636;&#x6BB5;</li>
+</ul>
+<h3 id="&#x505C;&#x6B62;&#xFF08;&#x5220;&#x9664;&#xFF09;job">&#x505C;&#x6B62;&#xFF08;&#x5220;&#x9664;&#xFF09;job</h3>
 <pre><code>curl -XDELETE 127.0.0.1:4646/v1/job/my-job
 # DELETE&#x540E;job&#x4FE1;&#x606F;&#x4ECD;&#x4F1A;&#x5728;nomad&#x4E0A;&#x4FDD;&#x7559;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x4F9B;&#x67E5;&#x8BE2;&#xFF0C;&#x76F4;&#x5230;nomad&#x81EA;&#x52A8;&#x56DE;&#x6536;&#xFF08;gc&#xFF09;
 # &#x6307;&#x5B9A;purge&#x53EF;&#x7ACB;&#x523B;&#x5220;&#x9664;
@@ -865,7 +872,7 @@ curl -XDELETE 127.0.0.1:4646/v1/job/my-job?purge=true
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.4.HTTP API说明","level":"1.6.6","depth":2,"next":{"title":"4.4.1.旧版（2.x）HTTP API说明","level":"1.6.7","depth":2,"path":"4/4.4.1_http_api_oldv2.md","ref":"4/4.4.1_http_api_oldv2.md","articles":[]},"previous":{"title":"4.3.1.性能调优","level":"1.6.5","depth":2,"path":"4/4.3.1_tuning.md","ref":"4/4.3.1_tuning.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.4_http_api.md","mtime":"2020-10-20T03:40:54.131Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-20T04:55:13.078Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.4.HTTP API说明","level":"1.6.6","depth":2,"next":{"title":"4.4.1.旧版（2.x）HTTP API说明","level":"1.6.7","depth":2,"path":"4/4.4.1_http_api_oldv2.md","ref":"4/4.4.1_http_api_oldv2.md","articles":[]},"previous":{"title":"4.3.1.性能调优","level":"1.6.5","depth":2,"path":"4/4.3.1_tuning.md","ref":"4/4.3.1_tuning.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.4_http_api.md","mtime":"2020-10-22T09:47:55.291Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-22T09:48:06.660Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
