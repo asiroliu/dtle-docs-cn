@@ -4,11 +4,11 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2.5.MySQL到Kafka的数据变更通知 · dts manual</title>
+        <title>2.5.MySQL到Kafka的数据变更通知 · dtle manual</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        <meta name="author" content="甜橙金融">
+        <meta name="author" content="ActionTech">
         
         
     
@@ -52,6 +52,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
+    
+    <link rel="next" href="2.6_multi_node.html" />
     
     
     <link rel="prev" href="2.4_ali_to_jd.html" />
@@ -205,6 +207,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="2.0.1_interface.html">
+            
+                <a href="2.0.1_interface.html">
+            
+                    
+                    2.0.1.HTTP API、nomad 命令行工具 和 Web界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.4.2" data-path="2.1_mysql_replication_n_1.html">
@@ -265,6 +286,19 @@
             
                     
                     2.5.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="2.6_multi_node.html">
+            
+                <a href="2.6_multi_node.html">
+            
+                    
+                    2.6.多nomad server部署
             
                 </a>
             
@@ -335,7 +369,7 @@
                 <a href="../3/3.3_impact_on_dest.html">
             
                     
-                    3.3.对目标端数据库的影响
+                    3.3.对目标端数据库的影响(gtid_executed表)
             
                 </a>
             
@@ -395,12 +429,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.9" data-path="../3/3.8_dts_mapping.html">
+        <li class="chapter " data-level="1.5.9" data-path="../3/3.8_dtle_mapping.html">
             
-                <a href="../3/3.8_dts_mapping.html">
+                <a href="../3/3.8_dtle_mapping.html">
             
                     
-                    3.8.dts mapping支持
+                    3.8.dtle mapping支持
             
                 </a>
             
@@ -414,6 +448,32 @@
             
                     
                     3.9.Binlog Relay (中继)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../3/3.10_consul.html">
+            
+                <a href="../3/3.10_consul.html">
+            
+                    
+                    3.10.consul 上的 job 数据管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../3/3.11_delay.html">
+            
+                <a href="../3/3.11_delay.html">
+            
+                    
+                    3.11.延迟监控
             
                 </a>
             
@@ -492,7 +552,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="../4/4.4_http_api.html">
+        <li class="chapter " data-level="1.6.5" data-path="../4/4.3.1_tuning.html">
+            
+                <a href="../4/4.3.1_tuning.html">
+            
+                    
+                    4.3.1.性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../4/4.4_http_api.html">
             
                 <a href="../4/4.4_http_api.html">
             
@@ -505,12 +578,38 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.6" data-path="../4/4.5_mysql_user_privileges.html">
+        <li class="chapter " data-level="1.6.7" data-path="../4/4.4.1_http_api_oldv2.html">
+            
+                <a href="../4/4.4.1_http_api_oldv2.html">
+            
+                    
+                    4.4.1.旧版（2.x）HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../4/4.5_mysql_user_privileges.html">
             
                 <a href="../4/4.5_mysql_user_privileges.html">
             
                     
                     4.5.MySQL 用户权限说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../4/4.6_dtle_2to3.html">
+            
+                <a href="../4/4.6_dtle_2to3.html">
+            
+                    
+                    4.6.dtle 2升级到3
             
                 </a>
             
@@ -655,9 +754,9 @@
                                 <h1 id="mysql&#x5230;kafka&#x7684;&#x6570;&#x636E;&#x53D8;&#x66F4;&#x901A;&#x77E5;">MySQL&#x5230;Kafka&#x7684;&#x6570;&#x636E;&#x53D8;&#x66F4;&#x901A;&#x77E5;</h1>
 <p>&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;&#x4EE5;docker&#x5BB9;&#x5668;&#x7684;&#x65B9;&#x5F0F;&#x5FEB;&#x901F;&#x6F14;&#x793A;&#x5982;&#x4F55;&#x642D;&#x5EFA;MySQL&#x7684;&#x5355;&#x5411;&#x590D;&#x5236;&#x73AF;&#x5883;.</p>
 <h2 id="&#x521B;&#x5EFA;&#x7F51;&#x7EDC;">&#x521B;&#x5EFA;&#x7F51;&#x7EDC;</h2>
-<pre><code>docker network create dts-net
+<pre><code>docker network create dtle-net
 </code></pre><h2 id="&#x521B;&#x5EFA;&#x6E90;&#x7AEF;-mysql">&#x521B;&#x5EFA;&#x6E90;&#x7AEF; MySQL</h2>
-<pre><code>docker run --name mysql-src -e MYSQL_ROOT_PASSWORD=pass -p 33061:3306 --network=dts-net -d mysql:5.7 --gtid-mode=ON --enforce-gtid-consistency=1 --log-bin=bin --server-id=1
+<pre><code>docker run --name mysql-src -e MYSQL_ROOT_PASSWORD=pass -p 33061:3306 --network=dtle-net -d mysql:5.7 --gtid-mode=ON --enforce-gtid-consistency=1 --log-bin=bin --server-id=1
 </code></pre><p>&#x68C0;&#x67E5;&#x662F;&#x5426;&#x8054;&#x901A;: </p>
 <pre><code>&gt; mysql -h 127.0.0.1 -P 33061 -uroot -ppass -e &quot;select @@version\G&quot;
 &lt; *************************** 1. row ***************************
@@ -665,69 +764,64 @@
 </code></pre><h2 id="&#x521B;&#x5EFA;&#x6E90;&#x7AEF;&#x8868;&#x7ED3;&#x6784;">&#x521B;&#x5EFA;&#x6E90;&#x7AEF;&#x8868;&#x7ED3;&#x6784;</h2>
 <pre><code>&gt; mysql -h 127.0.0.1 -P 33061 -uroot -ppass -e &quot;CREATE DATABASE demo; CREATE TABLE demo.demo_tbl(a int primary key)&quot;
 </code></pre><h2 id="&#x521B;&#x5EFA;&#x76EE;&#x6807;&#x7AEF;-kafka">&#x521B;&#x5EFA;&#x76EE;&#x6807;&#x7AEF; Kafka</h2>
-<pre><code>docker run --name kafka-zookeeper -p 2181:2181 -e ALLOW_ANONYMOUS_LOGIN=yes --network=dts-net -d bitnami/zookeeper
-docker run --name kafka-dst -p 9092:9092 -e KAFKA_ZOOKEEPER_CONNECT=kafka-zookeeper:2181 -e ALLOW_PLAINTEXT_LISTENER=yes --network=dts-net -d bitnami/kafka
+<pre><code>docker run --name kafka-zookeeper -p 2181:2181 -e ALLOW_ANONYMOUS_LOGIN=yes --network=dtle-net -d bitnami/zookeeper
+docker run --name kafka-dst -p 9092:9092 -e KAFKA_ZOOKEEPER_CONNECT=kafka-zookeeper:2181 -e ALLOW_PLAINTEXT_LISTENER=yes --network=dtle-net -d bitnami/kafka
 </code></pre><p>&#x68C0;&#x67E5;&#x662F;&#x5426;&#x8054;&#x901A;: </p>
 <pre><code>&gt; docker run -it --rm \
-    --network dts-net \
+    --network dtle-net \
     -e KAFKA_ZOOKEEPER_CONNECT=kafka-zookeeper:2181 \
     bitnami/kafka:latest kafka-topics.sh --list  --zookeeper kafka-zookeeper:2181
 &lt; Welcome to the Bitnami kafka container
 Subscribe to project updates by watching https://github.com/bitnami/bitnami-docker-kafka
 Submit issues and feature requests at https://github.com/bitnami/bitnami-docker-kafka/issues
-</code></pre><h2 id="&#x521B;&#x5EFA;-dts">&#x521B;&#x5EFA; dts</h2>
-<pre><code>docker run --name dts -p 8190:8190 --network=dts-net -d docker-registry/dts
+</code></pre><h2 id="&#x521B;&#x5EFA;-dtle">&#x521B;&#x5EFA; dtle</h2>
+<pre><code>docker run --name dtle-consul -p 8500:8500 --network=dtle-net -d consul:latest
+docker run --name dtle -p 4646:4646 --network=dtle-net -d actiontech/dtle
 </code></pre><p>&#x68C0;&#x67E5;&#x662F;&#x5426;&#x6B63;&#x5E38;: </p>
-<pre><code>&gt; curl -XGET &quot;127.0.0.1:8190/v1/nodes&quot; -s | jq
-&lt; [
-  {
-    &quot;CreateIndex&quot;: 4,
-    &quot;Datacenter&quot;: &quot;dc1&quot;,
-    &quot;HTTPAddr&quot;: &quot;0.0.0.0:8190&quot;,
-    &quot;ID&quot;: &quot;f7051e01-b323-5056-de5d-4958949a7bc2&quot;,
-    &quot;ModifyIndex&quot;: 99,
-    &quot;Name&quot;: &quot;7539b7887eb2&quot;,
-    &quot;Status&quot;: &quot;ready&quot;,
-    &quot;StatusDescription&quot;: &quot;&quot;
-  }
-]
+<pre><code>&gt; curl -XGET &quot;127.0.0.1:4646/v1/nodes&quot; -s | jq
+&lt; [{...}]
 </code></pre><h2 id="&#x51C6;&#x5907;&#x4F5C;&#x4E1A;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;">&#x51C6;&#x5907;&#x4F5C;&#x4E1A;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;</h2>
 <p>&#x51C6;&#x5907;&#x6587;&#x4EF6;job.json, &#x5185;&#x5BB9;&#x5982;&#x4E0B;: </p>
 <pre><code>{
-    &quot;Name&quot;:&quot;dts-demo&quot;,
-    &quot;Tasks&quot;:[
-        {
-            &quot;Type&quot;:&quot;Src&quot;,
-            &quot;Config&quot;:{
-                &quot;Gtid&quot;:&quot;&quot;,
-                &quot;ReplicateDoDb&quot;:[
-                    {
-                        &quot;TableSchema&quot;:&quot;demo&quot;,
-                        &quot;Tables&quot;:[
-                            {
-                                &quot;TableName&quot;:&quot;demo_tbl&quot;
-                            }
-                        ]
-                    }
-                ],
-                &quot;ConnectionConfig&quot;:{
-                    &quot;Host&quot;:&quot;mysql-src&quot;,
-                    &quot;Port&quot;:&quot;3306&quot;,
-                    &quot;User&quot;:&quot;root&quot;,
-                    &quot;Password&quot;:&quot;pass&quot;
-                }
+  &quot;Job&quot;: {
+    &quot;ID&quot;: &quot;dtle-demo&quot;,
+    &quot;Datacenters&quot;: [&quot;dc1&quot;],
+    &quot;TaskGroups&quot;: [{
+        &quot;Name&quot;: &quot;src&quot;,
+        &quot;Tasks&quot;: [{
+          &quot;Name&quot;: &quot;src&quot;,
+          &quot;Driver&quot;: &quot;dtle&quot;,
+          &quot;Config&quot;: {
+            &quot;Gtid&quot;: &quot;&quot;,
+            &quot;ReplicateDoDb&quot;: [{
+              &quot;TableSchema&quot;: &quot;demo&quot;,
+              &quot;Tables&quot;: [{
+                &quot;TableName&quot;: &quot;demo_tbl&quot;
+              }]
+            }],
+            &quot;ConnectionConfig&quot;: {
+              &quot;Host&quot;: &quot;mysql-src&quot;,
+              &quot;Port&quot;: 3306,
+              &quot;User&quot;: &quot;root&quot;,
+              &quot;Password&quot;: &quot;pass&quot;
             }
-        },
-        {
-            &quot;Type&quot;: &quot;Dest&quot;,
-            &quot;Driver&quot;: &quot;Kafka&quot;,
-            &quot;Config&quot;: {
-                &quot;Topic&quot;: &quot;demo-topic&quot;,
-                &quot;Brokers&quot;: [&quot;kafka-dst:9092&quot;],
-                &quot;Converter&quot;: &quot;json&quot;
-            }           
-        }
-    ]
+          }
+        }]
+      }, {
+        &quot;Name&quot;: &quot;dest&quot;,
+        &quot;Tasks&quot;: [{
+          &quot;Name&quot;: &quot;dest&quot;,
+          &quot;Driver&quot;: &quot;dtle&quot;,
+          &quot;Config&quot;: {
+            &quot;KafkaConfig&quot;: {
+              &quot;Topic&quot;: &quot;demo-topic&quot;,
+              &quot;Brokers&quot;: [&quot;kafka-dst:9092&quot;],
+              &quot;Converter&quot;: &quot;json&quot;
+            }
+          }
+        }]
+    }]
+  }
 }
 </code></pre><p>&#x5176;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;: </p>
 <ul>
@@ -737,18 +831,10 @@ Submit issues and feature requests at https://github.com/bitnami/bitnami-docker-
 <li>GTID&#x70B9;&#x4F4D;&#x4E3A;&#x7A7A;, &#x8868;&#x793A;&#x6B64;&#x590D;&#x5236;&#x662F; &#x5168;&#x91CF;+&#x589E;&#x91CF; &#x7684;&#x590D;&#x5236;. &#x5982;&#x53EA;&#x6D4B;&#x8BD5;&#x589E;&#x91CF;&#x590D;&#x5236;, &#x53EF;&#x6307;&#x5B9A;&#x5408;&#x6CD5;&#x7684;GTID</li>
 </ul>
 <h2 id="&#x521B;&#x5EFA;&#x590D;&#x5236;&#x4EFB;&#x52A1;">&#x521B;&#x5EFA;&#x590D;&#x5236;&#x4EFB;&#x52A1;</h2>
-<pre><code>&gt; curl -H &quot;Accept:application/json&quot; -XPOST &quot;http://127.0.0.1:8190/v1/jobs&quot; -d @job.json -s | jq
-&lt; {
-  &quot;Index&quot;: 25476,
-  &quot;KnownLeader&quot;: false,
-  &quot;LastContact&quot;: 0,
-  &quot;Success&quot;: true
-}
-</code></pre><p>&#x67E5;&#x770B;&#x4F5C;&#x4E1A;ID:</p>
-<pre><code>&gt; curl -XGET &quot;127.0.0.1:8190/v1/jobs&quot; -s | jq &apos;.[].ID&apos;
-&lt; &quot;eb2f440d-916b-0c30-30ca-72aef1868cc0&quot;
+<pre><code>&gt; curl -XPOST &quot;http://127.0.0.1:4646/v1/jobs&quot; -d @job.json -s | jq
+&lt; {...}
 </code></pre><p>&#x67E5;&#x770B;&#x4F5C;&#x4E1A;&#x72B6;&#x6001;:</p>
-<pre><code>&gt; curl -XGET &quot;127.0.0.1:8190/v1/job/eb2f440d-916b-0c30-30ca-72aef1868cc0&quot; -s | jq &apos;.Status&apos;
+<pre><code>&gt; curl -XGET &quot;127.0.0.1:4646/v1/job/dtle-demo&quot; -s | jq &apos;.Status&apos;
 &lt; &quot;running&quot;
 </code></pre><h2 id="&#x6D4B;&#x8BD5;">&#x6D4B;&#x8BD5;</h2>
 <p>&#x5728;&#x6E90;&#x7AEF;&#x5199;&#x5165;&#x6570;&#x636E;: </p>
@@ -756,7 +842,7 @@ Submit issues and feature requests at https://github.com/bitnami/bitnami-docker-
 ...
 </code></pre><p>&#x9A8C;&#x8BC1;&#x76F8;&#x5173;&#x7684;topic&#x5B58;&#x5728;:</p>
 <pre><code>&gt; docker run -it --rm \
-    --network dts-net \
+    --network dtle-net \
     -e KAFKA_ZOOKEEPER_CONNECT=kafka-zookeeper:2181 \
     bitnami/kafka:latest kafka-topics.sh --list  --zookeeper kafka-zookeeper:2181
 &lt; Welcome to the Bitnami kafka container
@@ -766,7 +852,7 @@ Submit issues and feature requests at https://github.com/bitnami/bitnami-docker-
 demo-topic.demo.demo_tbl
 </code></pre><p>&#x9A8C;&#x8BC1;&#x6570;&#x636E;:</p>
 <pre><code>&gt; docker run -it --rm \
-    --network dts-net \
+    --network dtle-net \
     -e KAFKA_ZOOKEEPER_CONNECT=kafka-zookeeper:2181 \
     bitnami/kafka:latest kafka-console-consumer.sh --bootstrap-server kafka-dst:9092 --topic demo-topic.demo.demo_tbl --from-beginning
 &lt; ...
@@ -800,10 +886,14 @@ demo-topic.demo.demo_tbl
 
             
                 
-                <a href="2.4_ali_to_jd.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 2.4.阿里云到京东云的MySQL复制">
+                <a href="2.4_ali_to_jd.html" class="navigation navigation-prev " aria-label="Previous page: 2.4.阿里云到京东云的MySQL复制">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="2.6_multi_node.html" class="navigation navigation-next " aria-label="Next page: 2.6.多nomad server部署">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -812,7 +902,7 @@ demo-topic.demo.demo_tbl
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.5.MySQL到Kafka的数据变更通知","level":"1.4.6","depth":2,"next":{"title":"3.功能说明","level":"1.5","depth":1,"ref":"","articles":[{"title":"3.0.功能/场景的映射列表","level":"1.5.1","depth":2,"path":"3/3.0_function_scenario_mapping.md","ref":"3/3.0_function_scenario_mapping.md","articles":[]},{"title":"3.1.使用限制","level":"1.5.2","depth":2,"path":"3/3.1_limitation.md","ref":"3/3.1_limitation.md","articles":[]},{"title":"3.2.端口使用说明","level":"1.5.3","depth":2,"path":"3/3.2_ports.md","ref":"3/3.2_ports.md","articles":[]},{"title":"3.3.对目标端数据库的影响","level":"1.5.4","depth":2,"path":"3/3.3_impact_on_dest.md","ref":"3/3.3_impact_on_dest.md","articles":[]},{"title":"3.4.监控项说明","level":"1.5.5","depth":2,"path":"3/3.4_metrics.md","ref":"3/3.4_metrics.md","articles":[]},{"title":"3.5.部署结构","level":"1.5.6","depth":2,"path":"3/3.5_deployment.md","ref":"3/3.5_deployment.md","articles":[]},{"title":"3.6.DDL支持度","level":"1.5.7","depth":2,"path":"3/3.6_DDL.md","ref":"3/3.6_DDL.md","articles":[]},{"title":"3.7.DCL支持度","level":"1.5.8","depth":2,"path":"3/3.7_DCL.md","ref":"3/3.7_DCL.md","articles":[]},{"title":"3.8.dts mapping支持","level":"1.5.9","depth":2,"path":"3/3.8_dts_mapping.md","ref":"3/3.8_dts_mapping.md","articles":[]},{"title":"3.9.Binlog Relay (中继)","level":"1.5.10","depth":2,"path":"3/3.9_binlog_relay.md","ref":"3/3.9_binlog_relay.md","articles":[]}]},"previous":{"title":"2.4.阿里云到京东云的MySQL复制","level":"1.4.5","depth":2,"path":"2/2.4_ali_to_jd.md","ref":"2/2.4_ali_to_jd.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"甜橙金融","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dts manual","gitbook":"*"},"file":{"path":"2/2.5_mysql_kafka.md","mtime":"2020-11-06T08:30:10.269Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-18T06:26:57.086Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.5.MySQL到Kafka的数据变更通知","level":"1.4.6","depth":2,"next":{"title":"2.6.多nomad server部署","level":"1.4.7","depth":2,"path":"2/2.6_multi_node.md","ref":"2/2.6_multi_node.md","articles":[]},"previous":{"title":"2.4.阿里云到京东云的MySQL复制","level":"1.4.5","depth":2,"path":"2/2.4_ali_to_jd.md","ref":"2/2.4_ali_to_jd.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"2/2.5_mysql_kafka.md","mtime":"2020-11-18T06:27:40.938Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-18T06:29:32.073Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

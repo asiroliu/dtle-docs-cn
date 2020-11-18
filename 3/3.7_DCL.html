@@ -4,11 +4,11 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>3.7.DCL支持度 · dts manual</title>
+        <title>3.7.DCL支持度 · dtle manual</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        <meta name="author" content="甜橙金融">
+        <meta name="author" content="ActionTech">
         
         
     
@@ -53,7 +53,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="3.8_dts_mapping.html" />
+    <link rel="next" href="3.8_dtle_mapping.html" />
     
     
     <link rel="prev" href="3.6_DDL.html" />
@@ -207,6 +207,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../2/2.0.1_interface.html">
+            
+                <a href="../2/2.0.1_interface.html">
+            
+                    
+                    2.0.1.HTTP API、nomad 命令行工具 和 Web界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.4.2" data-path="../2/2.1_mysql_replication_n_1.html">
@@ -267,6 +286,19 @@
             
                     
                     2.5.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../2/2.6_multi_node.html">
+            
+                <a href="../2/2.6_multi_node.html">
+            
+                    
+                    2.6.多nomad server部署
             
                 </a>
             
@@ -337,7 +369,7 @@
                 <a href="3.3_impact_on_dest.html">
             
                     
-                    3.3.对目标端数据库的影响
+                    3.3.对目标端数据库的影响(gtid_executed表)
             
                 </a>
             
@@ -397,12 +429,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.9" data-path="3.8_dts_mapping.html">
+        <li class="chapter " data-level="1.5.9" data-path="3.8_dtle_mapping.html">
             
-                <a href="3.8_dts_mapping.html">
+                <a href="3.8_dtle_mapping.html">
             
                     
-                    3.8.dts mapping支持
+                    3.8.dtle mapping支持
             
                 </a>
             
@@ -416,6 +448,32 @@
             
                     
                     3.9.Binlog Relay (中继)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="3.10_consul.html">
+            
+                <a href="3.10_consul.html">
+            
+                    
+                    3.10.consul 上的 job 数据管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="3.11_delay.html">
+            
+                <a href="3.11_delay.html">
+            
+                    
+                    3.11.延迟监控
             
                 </a>
             
@@ -494,7 +552,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="../4/4.4_http_api.html">
+        <li class="chapter " data-level="1.6.5" data-path="../4/4.3.1_tuning.html">
+            
+                <a href="../4/4.3.1_tuning.html">
+            
+                    
+                    4.3.1.性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../4/4.4_http_api.html">
             
                 <a href="../4/4.4_http_api.html">
             
@@ -507,12 +578,38 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.6" data-path="../4/4.5_mysql_user_privileges.html">
+        <li class="chapter " data-level="1.6.7" data-path="../4/4.4.1_http_api_oldv2.html">
+            
+                <a href="../4/4.4.1_http_api_oldv2.html">
+            
+                    
+                    4.4.1.旧版（2.x）HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../4/4.5_mysql_user_privileges.html">
             
                 <a href="../4/4.5_mysql_user_privileges.html">
             
                     
                     4.5.MySQL 用户权限说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../4/4.6_dtle_2to3.html">
+            
+                <a href="../4/4.6_dtle_2to3.html">
+            
+                    
+                    4.6.dtle 2升级到3
             
                 </a>
             
@@ -660,7 +757,7 @@
 <li>&#x521B;&#x5EFA;&#x5B9E;&#x4F8B;&#x7EA7;&#x522B;&#x8FC1;&#x79FB;</li>
 <li>&quot;ExpandSyntaxSupport&quot;: true</li>
 <li>&#x589E;&#x91CF;&#x90E8;&#x5206;DCL&#x7684;&#x64CD;&#x4F5C;&#x4F1A;&#x88AB;&#x652F;&#x6301;</li>
-<li>&#x5168;&#x91CF;&#x90E8;&#x5206;&#x662F;&#x5426;&#x9700;&#x8981;&#x652F;&#x6301;&#xFF1F;&#x5373;&#xFF0C;&#x521B;&#x5EFA;job&#x524D;,&#x6E90;&#x7AEF;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x7528;&#x6237;&#x662F;&#x5426;&#x9700;&#x8981;&#x88AB;&#x8FC1;&#x79FB;&#x81F3;&#x76EE;&#x6807;&#x7AEF;&#xFF1F;</li>
+<li>&#x5168;&#x91CF;&#x90E8;&#x5206;&#x662F;&#x5426;&#x9700;&#x8981;&#x652F;&#x6301;&#xFF1F;&#x5373;&#xFF0C;&#x521B;&#x5EFA;job&#x524D;,&#x6E90;&#x7AEF;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x7528;&#x6237;&#x662F;&#x5426;&#x9700;&#x8981;&#x88AB;&#x8FC1;&#x79FB;&#x81F3;&#x76EE;&#x6807;&#x7AEF;&#xFF1F;<a href="https://github.com/actiontech/dtle/issues/358" target="_blank">#358</a></li>
 <li>&#x82E5;&#x9700;&#x8981;&#x6267;&#x884C;grant&#x548C;revoke&#xFF0C;&#x5219; &#x56DE;&#x653E;&#x7528;&#x6237;&#x9700;&#x8981;&#x6709;&#x2018;grant option&#x2019;</li>
 </ul>
 <table>
@@ -758,7 +855,7 @@
                 </a>
                 
                 
-                <a href="3.8_dts_mapping.html" class="navigation navigation-next " aria-label="Next page: 3.8.dts mapping支持">
+                <a href="3.8_dtle_mapping.html" class="navigation navigation-next " aria-label="Next page: 3.8.dtle mapping支持">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -769,7 +866,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.7.DCL支持度","level":"1.5.8","depth":2,"next":{"title":"3.8.dts mapping支持","level":"1.5.9","depth":2,"path":"3/3.8_dts_mapping.md","ref":"3/3.8_dts_mapping.md","articles":[]},"previous":{"title":"3.6.DDL支持度","level":"1.5.7","depth":2,"path":"3/3.6_DDL.md","ref":"3/3.6_DDL.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"甜橙金融","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dts manual","gitbook":"*"},"file":{"path":"3/3.7_DCL.md","mtime":"2020-11-06T08:30:10.273Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-18T06:26:57.086Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.7.DCL支持度","level":"1.5.8","depth":2,"next":{"title":"3.8.dtle mapping支持","level":"1.5.9","depth":2,"path":"3/3.8_dtle_mapping.md","ref":"3/3.8_dtle_mapping.md","articles":[]},"previous":{"title":"3.6.DDL支持度","level":"1.5.7","depth":2,"path":"3/3.6_DDL.md","ref":"3/3.6_DDL.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"3/3.7_DCL.md","mtime":"2020-11-18T06:27:40.942Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-18T06:29:32.073Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

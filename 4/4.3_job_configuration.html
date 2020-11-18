@@ -4,11 +4,11 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>4.3.作业(job)配置 · dts manual</title>
+        <title>4.3.作业(job)配置 · dtle manual</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        <meta name="author" content="甜橙金融">
+        <meta name="author" content="ActionTech">
         
         
     
@@ -53,7 +53,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="4.4_http_api.html" />
+    <link rel="next" href="4.3.1_tuning.html" />
     
     
     <link rel="prev" href="4.2_command.html" />
@@ -207,6 +207,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../2/2.0.1_interface.html">
+            
+                <a href="../2/2.0.1_interface.html">
+            
+                    
+                    2.0.1.HTTP API、nomad 命令行工具 和 Web界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.4.2" data-path="../2/2.1_mysql_replication_n_1.html">
@@ -267,6 +286,19 @@
             
                     
                     2.5.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../2/2.6_multi_node.html">
+            
+                <a href="../2/2.6_multi_node.html">
+            
+                    
+                    2.6.多nomad server部署
             
                 </a>
             
@@ -337,7 +369,7 @@
                 <a href="../3/3.3_impact_on_dest.html">
             
                     
-                    3.3.对目标端数据库的影响
+                    3.3.对目标端数据库的影响(gtid_executed表)
             
                 </a>
             
@@ -397,12 +429,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.9" data-path="../3/3.8_dts_mapping.html">
+        <li class="chapter " data-level="1.5.9" data-path="../3/3.8_dtle_mapping.html">
             
-                <a href="../3/3.8_dts_mapping.html">
+                <a href="../3/3.8_dtle_mapping.html">
             
                     
-                    3.8.dts mapping支持
+                    3.8.dtle mapping支持
             
                 </a>
             
@@ -416,6 +448,32 @@
             
                     
                     3.9.Binlog Relay (中继)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../3/3.10_consul.html">
+            
+                <a href="../3/3.10_consul.html">
+            
+                    
+                    3.10.consul 上的 job 数据管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../3/3.11_delay.html">
+            
+                <a href="../3/3.11_delay.html">
+            
+                    
+                    3.11.延迟监控
             
                 </a>
             
@@ -494,7 +552,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="4.4_http_api.html">
+        <li class="chapter " data-level="1.6.5" data-path="4.3.1_tuning.html">
+            
+                <a href="4.3.1_tuning.html">
+            
+                    
+                    4.3.1.性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="4.4_http_api.html">
             
                 <a href="4.4_http_api.html">
             
@@ -507,12 +578,38 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.6" data-path="4.5_mysql_user_privileges.html">
+        <li class="chapter " data-level="1.6.7" data-path="4.4.1_http_api_oldv2.html">
+            
+                <a href="4.4.1_http_api_oldv2.html">
+            
+                    
+                    4.4.1.旧版（2.x）HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="4.5_mysql_user_privileges.html">
             
                 <a href="4.5_mysql_user_privileges.html">
             
                     
                     4.5.MySQL 用户权限说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="4.6_dtle_2to3.html">
+            
+                <a href="4.6_dtle_2to3.html">
+            
+                    
+                    4.6.dtle 2升级到3
             
                 </a>
             
@@ -656,94 +753,19 @@
                                 
                                 <!-- -*- truncate-lines: t -*- -->
 <h1 id="&#x4F5C;&#x4E1A;job&#x914D;&#x7F6E;">&#x4F5C;&#x4E1A;(job)&#x914D;&#x7F6E;</h1>
-<p>&#x4F5C;&#x4E1A;&#x914D;&#x7F6E;&#x4E00;&#x822C;&#x91C7;&#x7528; json &#x6587;&#x4EF6;, &#x6709;&#x5982;&#x4E0B;&#x5B57;&#x6BB5;:</p>
-<table>
-<thead>
-<tr>
-<th>&#x53C2;&#x6570;&#x540D;</th>
-<th>&#x5FC5;&#x586B;?</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x6E90;&#x7AEF;/&#x76EE;&#x6807;&#x7AEF; &#x53EF;&#x914D;</th>
-<th>&#x9ED8;&#x8BA4;&#x503C;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ID</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>-</td>
-<td>&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;UUID</td>
-<td>&#x4F5C;&#x4E1A;ID. &#x82E5;&#x4E0D;&#x6307;&#x5B9A;, &#x5219;&#x81EA;&#x52A8;&#x751F;&#x6210;UUID</td>
-</tr>
-<tr>
-<td>Name</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td>-</td>
-<td>-</td>
-<td>&#x4F5C;&#x4E1A;&#x540D;. &#x52A9;&#x8BB0;&#x7528;, &#x53EF;&#x91CD;&#x590D;.</td>
-</tr>
-<tr>
-<td>Failover</td>
-<td>&#x5426;</td>
-<td>Bool</td>
-<td>-</td>
-<td>false</td>
-<td>&#x662F;&#x5426;&#x5141;&#x8BB8;&#x6545;&#x969C;&#x65F6;&#x8FDB;&#x884C;&#x4F5C;&#x4E1A;&#x8F6C;&#x79FB;</td>
-</tr>
-<tr>
-<td>Tasks</td>
-<td>&#x662F;</td>
-<td>[Object]</td>
-<td>-</td>
-<td>-</td>
-<td>&#x4F5C;&#x4E1A;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x96C6;&#x5408;. &#x5143;&#x7D20;&#x7C7B;&#x578B;&#x4E3A;Task</td>
-</tr>
-<tr>
-<td>Task.Type</td>
-<td>&#x662F;</td>
-<td>String</td>
-<td>-</td>
-<td>-</td>
-<td>&#x4EFB;&#x52A1;&#x7684;&#x7C7B;&#x578B;. &#x53EF;&#x53D6;&#x503C;: Src (&#x4ECE;&#x6E90;&#x6570;&#x636E;&#x5E93;&#x62BD;&#x53D6;) / Dest (&#x5411;&#x76EE;&#x6807;&#x6570;&#x636E;&#x5E93;&#x56DE;&#x653E;)</td>
-</tr>
-<tr>
-<td>Task.Driver</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>-</td>
-<td>&quot;MySQL&quot;</td>
-<td>&#x6570;&#x636E;&#x5E93;&#x7684;&#x7C7B;&#x578B;</td>
-</tr>
-<tr>
-<td>Task.NodeId</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>-</td>
-<td>&#x968F;&#x673A;&#x9009;&#x53D6;&#x6267;&#x884C;&#x8282;&#x70B9;</td>
-<td>&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x8282;&#x70B9;&#x7684;&#x8282;&#x70B9;ID (&#x53EF;&#x901A;&#x8FC7; <code>GET /nodes</code> &#x83B7;&#x53D6;). &#x82E5;&#x4E0D;&#x6307;&#x5B9A;&#x5219;&#x968F;&#x673A;&#x9009;&#x53D6;</td>
-</tr>
-<tr>
-<td>Task.NodeName</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>-</td>
-<td>&#x968F;&#x673A;&#x9009;&#x53D6;&#x6267;&#x884C;&#x8282;&#x70B9;</td>
-<td>&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x8282;&#x70B9;&#x7684;&#x8282;&#x70B9;&#x540D; (&#x53EF;&#x901A;&#x8FC7; <code>GET /nodes</code> &#x83B7;&#x53D6;). &#x82E5;&#x4E0D;&#x6307;&#x5B9A;&#x5219;&#x968F;&#x673A;&#x9009;&#x53D6;</td>
-</tr>
-<tr>
-<td>Task.Config</td>
-<td>&#x662F;</td>
-<td>Object</td>
-<td></td>
-<td></td>
-<td>&#x89C1;&#x4E0B;&#x65B9;&#x8BF4;&#x660E;</td>
-</tr>
-</tbody>
-</table>
-<p>Task.Config &#x6709;&#x5982;&#x4E0B;&#x5B57;&#x6BB5;:</p>
+<p>&#x4F5C;&#x4E1A;&#x914D;&#x7F6E;&#x4E00;&#x822C;&#x91C7;&#x7528; json (HTTP API &#x63D0;&#x4EA4;)&#x6216; hcl (nomad &#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x63D0;&#x4EA4;)&#x6587;&#x4EF6;&#x3002;&#x6837;&#x4F8B;&#x914D;&#x7F6E;&#x5728; <code>/usr/share/dtle/scripts/</code> &#x4E2D;&#x3002;</p>
+<p>nomad job &#x7684;&#x5B8C;&#x6574;&#x914D;&#x7F6E;&#x53C2;&#x8003; <a href="https://www.nomadproject.io/docs/job-specification/" target="_blank">https://www.nomadproject.io/docs/job-specification/</a></p>
+<p>nomad job &#x6709;group/task&#x5C42;&#x7EA7;&#xFF0C;&#x4E00;&#x4E2A;group&#x4E2D;&#x7684;tasks&#x4F1A;&#x88AB;&#x653E;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x6267;&#x884C;&#x3002;dtle&#x8981;&#x6C42;src&#x548C;dest task&#x5206;&#x522B;&#x653E;&#x5728;src &#x548C; dest group. 
+task &#x4E2D;&#x6307;&#x5B9A; driver = &quot;dtle&quot;, &#x5728;config&#x6BB5;&#x843D;&#x4E2D;&#x586B;&#x5199;dtle&#x4E13;&#x6709;&#x914D;&#x7F6E;&#x3002;&#x5982;</p>
+<pre><code>  group &quot;src&quot; {
+    task &quot;src&quot; {
+      driver = &quot;dtle&quot;
+      config {
+        ...
+      }
+    }
+  }
+</code></pre><h2 id="dtle&#x4E13;&#x6709;&#x914D;&#x7F6E;&#x6709;&#x5982;&#x4E0B;&#x5B57;&#x6BB5;">dtle&#x4E13;&#x6709;&#x914D;&#x7F6E;&#x6709;&#x5982;&#x4E0B;&#x5B57;&#x6BB5;:</h2>
 <table>
 <thead>
 <tr>
@@ -769,7 +791,7 @@
 <td>&#x5426;</td>
 <td>String</td>
 <td>&#x6E90;&#x7AEF;</td>
-<td>&quot;&quot;</td>
+<td></td>
 <td>&#x589E;&#x91CF;&#x590D;&#x5236;&#x5F00;&#x59CB;&#x7684; GTID &#x70B9;&#x4F4D;. (&#x5C06;&#x81EA;&#x52A8;&#x6C42;&#x5DEE;&#x96C6;&#x83B7;&#x53D6;&#x4E0A;&#x8FF0; GTID &#x96C6;&#x5408;.) &#x9700;&#x8981;&#x4FDD;&#x6301; Gtid &#x4E3A;&#x7A7A;</td>
 </tr>
 <tr>
@@ -793,7 +815,7 @@
 <td>&#x5426;</td>
 <td>String</td>
 <td>&#x6E90;&#x7AEF;</td>
-<td>&quot;&quot;</td>
+<td></td>
 <td>&#x589E;&#x91CF;&#x4EFB;&#x52A1;&#x5F00;&#x59CB;&#x7684;Binlog&#x6587;&#x4EF6;(&#x5373;&#x6E90;&#x7AEF;mysql&#x4E0A; <code>show master status</code> &#x7684;&#x7ED3;&#x679C;).</td>
 </tr>
 <tr>
@@ -807,18 +829,26 @@
 <tr>
 <td>ReplicateDoDb</td>
 <td>&#x5426;</td>
-<td>[Object]</td>
+<td>Object&#x6570;&#x7EC4;</td>
 <td>&#x6E90;&#x7AEF;</td>
 <td>-</td>
 <td>&#x5982;&#x4E3A;&#x7A7A;<code>[]</code>, &#x5219;&#x590D;&#x5236;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F8B;. &#x53EF;&#x586B;&#x5199;&#x591A;&#x5143;&#x7D20;. &#x5143;&#x7D20;&#x5185;&#x5BB9;&#x89C1;&#x4E0B;&#x65B9;&#x8BF4;&#x660E;</td>
 </tr>
 <tr>
 <td>ConnectionConfig</td>
-<td>&#x662F;</td>
+<td>&#x5426;</td>
 <td>Object</td>
 <td>&#x4E24;&#x7AEF;</td>
 <td>-</td>
-<td>&#x6570;&#x636E;&#x6E90;&#x4FE1;&#x606F;, &#x89C1;&#x4E0B;&#x65B9; ConnectionConfig &#x8BF4;&#x660E;</td>
+<td>MySQL&#x6E90;/&#x76EE;&#x6807;&#x7AEF;&#x4FE1;&#x606F;, &#x89C1;&#x4E0B;&#x65B9; ConnectionConfig &#x8BF4;&#x660E;&#x3002;&#x548C;KafkaConfig&#x4E8C;&#x9009;&#x4E00;&#x586B;&#x5199;&#x3002;</td>
+</tr>
+<tr>
+<td>KafkaConfig</td>
+<td>&#x5426;</td>
+<td>Object</td>
+<td>&#x76EE;&#x6807;&#x7AEF;</td>
+<td>-</td>
+<td>Kafka&#x76EE;&#x6807;&#x7AEF;&#x4FE1;&#x606F;, &#x89C1;&#x4E0B;&#x65B9; KafkaConfig &#x8BF4;&#x660E;&#x3002;&#x548C;ConnectionConfig&#x4E8C;&#x9009;&#x4E00;&#x586B;&#x5199;&#x3002;</td>
 </tr>
 <tr>
 <td>DropTableIfExists</td>
@@ -826,15 +856,7 @@
 <td>Bool</td>
 <td>&#x6E90;&#x7AEF;</td>
 <td>false</td>
-<td>&#x5168;&#x91CF;&#x590D;&#x5236;&#x65F6;, &#x5728;&#x76EE;&#x6807;&#x7AEF;&#x5220;&#x9664;&#x53C2;&#x4E0E;&#x590D;&#x5236;&#x7684;&#x8868;, &#x4E4B;&#x540E;&#x7531;dts&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x8868;&#x7ED3;&#x6784; (&#x76F8;&#x5173;&#x53C2;&#x6570;: <code>SkipCreateDbTable</code>). &#x5982;&#x679C;&#x5F00;&#x542F;&#x6B64;&#x9009;&#x9879;, &#x76EE;&#x6807;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x9700;&#x8981;&#x6709;&#x76F8;&#x5E94;&#x8868;&#x7684;<code>DROP</code>&#x6743;&#x9650;.</td>
-</tr>
-<tr>
-<td><s>ApproveHeterogeneous</s></td>
-<td>&#x5DF2;&#x5E9F;&#x9664;</td>
-<td>Bool</td>
-<td>&#x6E90;&#x7AEF;</td>
-<td>true</td>
-<td>dts&#x76EE;&#x524D;&#x4EC5;&#x652F;&#x6301;&#x8F6C;&#x5316;SQL&#x56DE;&#x653E;, &#x4E0D;&#x652F;&#x6301;binlog&#x76F4;&#x63A5;&#x56DE;&#x653E;.</td>
+<td>&#x5168;&#x91CF;&#x590D;&#x5236;&#x65F6;, &#x5728;&#x76EE;&#x6807;&#x7AEF;&#x5220;&#x9664;&#x53C2;&#x4E0E;&#x590D;&#x5236;&#x7684;&#x8868;, &#x4E4B;&#x540E;&#x7531;dtle&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x8868;&#x7ED3;&#x6784; (&#x76F8;&#x5173;&#x53C2;&#x6570;: <code>SkipCreateDbTable</code>). &#x5982;&#x679C;&#x5F00;&#x542F;&#x6B64;&#x9009;&#x9879;, &#x76EE;&#x6807;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x9700;&#x8981;&#x6709;&#x76F8;&#x5E94;&#x8868;&#x7684;<code>DROP</code>&#x6743;&#x9650;.</td>
 </tr>
 <tr>
 <td>SkipCreateDbTable</td>
@@ -857,7 +879,7 @@
 <td>&#x5426;</td>
 <td>Int</td>
 <td>&#x6E90;&#x7AEF;</td>
-<td>600</td>
+<td>60</td>
 <td>&#x590D;&#x5236;&#x4EFB;&#x52A1;&#x7F13;&#x5B58;&#x7684;&#x5927;&#x5C0F;, &#x5355;&#x4F4D;&#x4E3A;&#x4E8B;&#x52A1;&#x6570;</td>
 </tr>
 <tr>
@@ -875,30 +897,6 @@
 <td>&#x6E90;&#x7AEF;</td>
 <td>false</td>
 <td>&#x652F;&#x6301;&#x590D;&#x5236; &#x7528;&#x6237;&#x6743;&#x9650;/&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;DDL/&#x51FD;&#x6570;DDL</td>
-</tr>
-<tr>
-<td>MsgBytesLimit</td>
-<td>&#x5426;</td>
-<td>Int</td>
-<td>&#x6E90;&#x7AEF;</td>
-<td>20480</td>
-<td>&#x5355;&#x4E2A;&#x6D88;&#x606F;&#x5927;&#x5C0F;&#x9650;&#x5236;&#xFF0C;&#x5355;&#x4F4D;&#x662F;&#x5B57;&#x8282;</td>
-</tr>
-<tr>
-<td>MsgsLimit</td>
-<td>&#x5426;</td>
-<td>Int</td>
-<td>&#x6E90;&#x7AEF;</td>
-<td>65536</td>
-<td>&#x6D88;&#x606F;&#x6570;&#x91CF;&#x9650;&#x5236;</td>
-</tr>
-<tr>
-<td>BytesLimit</td>
-<td>&#x5426;</td>
-<td>Int</td>
-<td>&#x6E90;&#x7AEF;</td>
-<td>67108864</td>
-<td>&#x6D88;&#x606F;&#x5927;&#x5C0F;&#x9650;&#x5236;</td>
 </tr>
 <tr>
 <td>GroupMaxSize</td>
@@ -919,14 +917,14 @@
 <tr>
 <td>SqlFilter</td>
 <td>&#x5426;</td>
-<td>[String]</td>
+<td>String&#x6570;&#x7EC4;</td>
 <td>&#x6E90;&#x7AEF;</td>
 <td>[]</td>
 <td>&#x662F;&#x5426;&#x8DF3;&#x8FC7;&#x4E00;&#x4E9B;&#x4E8B;&#x4EF6;, &#x5982;<code>[&quot;NoDML&quot;, &quot;NoDMLDelete&quot;, &quot;NoDMLInsert&quot;, &quot;NoDMLUpdate&quot;, &quot;NoDDL&quot;, &quot;NoDDLAlterTableAddColumn&quot;, &quot;NoDDLAlterTableDropColumn&quot;, &quot;NoDDLAlterTableModifyColumn&quot;, &quot;NoDDLAlterTableChangeColumn&quot;, &quot;NoDDLAlterTableAlterColumn&quot;]</code> (&#x4EE5;&#x4E0A;&#x4E3A;&#x6240;&#x6709;&#x7684;filter)</td>
 </tr>
 </tbody>
 </table>
-<p>Task.Config.ReplicateDoDb &#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x6709;&#x5982;&#x4E0B;&#x5B57;&#x6BB5;:</p>
+<p>ReplicateDoDb &#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x6709;&#x5982;&#x4E0B;&#x5B57;&#x6BB5;:</p>
 <table>
 <thead>
 <tr>
@@ -945,7 +943,7 @@
 <td>String</td>
 <td>&#x6E90;&#x7AEF;</td>
 <td>-</td>
-<td>&#x6570;&#x636E;&#x5E93;&#x540D;  </td>
+<td>&#x6570;&#x636E;&#x5E93;&#x540D;</td>
 </tr>
 <tr>
 <td>TableSchemaRegex</td>
@@ -953,7 +951,7 @@
 <td>String</td>
 <td>&#x6E90;&#x7AEF;</td>
 <td>-</td>
-<td>&#x6570;&#x636E;&#x5E93;&#x6620;&#x5C04;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x591A;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x91CD;&#x547D;&#x540D; </td>
+<td>&#x6570;&#x636E;&#x5E93;&#x6620;&#x5C04;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x591A;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x91CD;&#x547D;&#x540D;</td>
 </tr>
 <tr>
 <td>TableSchemaRename</td>
@@ -961,12 +959,12 @@
 <td>String</td>
 <td>&#x6E90;&#x7AEF;</td>
 <td>-</td>
-<td>&#x91CD;&#x547D;&#x540D;&#x540E;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#xFF0C;&#x5F53;&#x8FDB;&#x884C;&#x591A;&#x6570;&#x636E;&#x5E93;&#x91CD;&#x547D;&#x540D;&#x65F6;&#xFF0C;&#x652F;&#x6301;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528;demo&#x89C1; (3/3.8_dts_mapping.md)</td>
+<td>&#x91CD;&#x547D;&#x540D;&#x540E;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#xFF0C;&#x5F53;&#x8FDB;&#x884C;&#x591A;&#x6570;&#x636E;&#x5E93;&#x91CD;&#x547D;&#x540D;&#x65F6;&#xFF0C;&#x652F;&#x6301;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528;&#x89C1;<a href="../3/3.8_dtle_mapping.html">demo</a></td>
 </tr>
 <tr>
 <td>Tables</td>
 <td>&#x5426;</td>
-<td>[Object]</td>
+<td>Object&#x6570;&#x7EC4;</td>
 <td>&#x6E90;&#x7AEF;</td>
 <td>-</td>
 <td>&#x53EF;&#x914D;&#x7F6E;&#x591A;&#x5F20;&#x8868;, &#x7C7B;&#x578B;&#x4E3A;Table. &#x82E5;&#x4E0D;&#x914D;&#x7F6E;, &#x5219;&#x590D;&#x5236;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x8868;</td>
@@ -988,7 +986,7 @@
 <td>&#x53EA;&#x590D;&#x5236;&#x6EE1;&#x8DB3;&#x8BE5;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;&#x884C;. &#x8BED;&#x6CD5;&#x4E3A;SQL&#x8868;&#x8FBE;&#x5F0F;, &#x8FD4;&#x56DE;&#x503C;&#x5E94;&#x4E3A;&#x5E03;&#x5C14;&#x503C;. &#x53EF;&#x4EE5;&#x5F15;&#x7528;&#x8868;&#x4E2D;&#x7684;&#x5217;&#x540D;.</td>
 </tr>
 <tr>
-<td>Tables.TablesRegex</td>
+<td>Table.TableRegex</td>
 <td>&#x5426;</td>
 <td>String</td>
 <td>&#x6E90;&#x7AEF;</td>
@@ -1001,18 +999,26 @@
 <td>String</td>
 <td>&#x6E90;&#x7AEF;</td>
 <td>-</td>
-<td>&#x91CD;&#x547D;&#x540D;&#x540E;&#x7684;&#x8868;&#x540D;&#xFF0C;&#x5F53;&#x8FDB;&#x884C;&#x591A;&#x8868;&#x91CD;&#x547D;&#x540D;&#x65F6;&#xFF0C;&#x652F;&#x6301;&#x652F;&#x6301;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#xFF0C;demo&#x89C1;(3/3.8_dts_mapping.md)</td>
+<td>&#x91CD;&#x547D;&#x540D;&#x540E;&#x7684;&#x8868;&#x540D;&#xFF0C;&#x5F53;&#x8FDB;&#x884C;&#x591A;&#x8868;&#x91CD;&#x547D;&#x540D;&#x65F6;&#xFF0C;&#x652F;&#x6301;&#x652F;&#x6301;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#xFF0C;&#x89C1;<a href="../3/3.8_dtle_mapping.html">demo</a></td>
+</tr>
+<tr>
+<td>Table.ColumnMapFrom</td>
+<td>&#x5426;</td>
+<td>String&#x6570;&#x7EC4;</td>
+<td>&#x6E90;&#x7AEF;</td>
+<td>-</td>
+<td>&#x5217;&#x6620;&#x5C04;&#xFF08;&#x6682;&#x4E0D;&#x652F;&#x6301;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF09;&#x3002;&#x89C1;<a href="../3/3.8_dtle_mapping.html">demo</a></td>
 </tr>
 </tbody>
 </table>
-<p>Task.Config.ConnectionConfig &#x6709;&#x5982;&#x4E0B;&#x5B57;&#x6BB5;:</p>
+<p>&#x6CE8;&#xFF1A;hcl&#x683C;&#x5F0F;&#x4E2D;<code>${SOME_TEXT}</code>&#x4F1A;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x53D8;&#x91CF;&#x5F15;&#x7528;&#x3002;&#x6B63;&#x5219;&#x66FF;&#x6362;&#x4E2D;&#x8F93;&#x5165;&#x6B64;&#x7C7B;&#x6587;&#x5B57;&#x65F6;&#xFF0C;&#x5219;&#x9700;&#x4F7F;&#x7528;&#x53CC;$&#x7B26;&#x53F7;&#xFF1A;<code>$${SOME_TEXT}</code>&#x3002;</p>
+<p>ConnectionConfig &#x6709;&#x5982;&#x4E0B;&#x5B57;&#x6BB5;:</p>
 <table>
 <thead>
 <tr>
 <th>&#x53C2;&#x6570;&#x540D;</th>
 <th>&#x5FC5;&#x586B;?</th>
 <th>&#x7C7B;&#x578B;</th>
-<th>&#x6E90;&#x7AEF;/&#x76EE;&#x6807;&#x7AEF; &#x53EF;&#x914D;</th>
 <th>&#x9ED8;&#x8BA4;&#x503C;</th>
 <th>&#x8BF4;&#x660E;</th>
 </tr>
@@ -1022,7 +1028,6 @@
 <td>Host</td>
 <td>&#x662F;</td>
 <td>String</td>
-<td>&#x4E24;&#x7AEF;</td>
 <td>-</td>
 <td>&#x6570;&#x636E;&#x6E90;&#x5730;&#x5740;</td>
 </tr>
@@ -1030,7 +1035,6 @@
 <td>Port</td>
 <td>&#x662F;</td>
 <td>String</td>
-<td>&#x4E24;&#x7AEF;</td>
 <td>-</td>
 <td>&#x6570;&#x636E;&#x6E90;&#x7AEF;&#x53E3;</td>
 </tr>
@@ -1038,7 +1042,6 @@
 <td>User</td>
 <td>&#x662F;</td>
 <td>String</td>
-<td>&#x4E24;&#x7AEF;</td>
 <td>-</td>
 <td>&#x6570;&#x636E;&#x6E90;&#x7528;&#x6237;&#x540D;</td>
 </tr>
@@ -1046,7 +1049,6 @@
 <td>Password</td>
 <td>&#x662F;</td>
 <td>String</td>
-<td>&#x4E24;&#x7AEF;</td>
 <td>-</td>
 <td>&#x6570;&#x636E;&#x6E90;&#x5BC6;&#x7801;</td>
 </tr>
@@ -1054,13 +1056,109 @@
 <td>Charset</td>
 <td>&#x5426;</td>
 <td>String</td>
-<td>&#x4E24;&#x7AEF;</td>
-<td>&quot;utf8&quot;</td>
+<td>utf8mb4</td>
 <td>&#x6570;&#x636E;&#x6E90;&#x7684;&#x5B57;&#x7B26;&#x96C6;</td>
 </tr>
 </tbody>
 </table>
-
+<p>KafkaConfig &#x6709;&#x5982;&#x4E0B;&#x5B57;&#x6BB5;:</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x5FC5;&#x586B;?</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Topic</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>-</td>
+<td>Kafka Topic</td>
+</tr>
+<tr>
+<td>Brokers</td>
+<td>&#x662F;</td>
+<td>String&#x6570;&#x7EC4;</td>
+<td>-</td>
+<td>Kafka Brokers, &#x5982; <code>[&quot;127.0.0.1:9192&quot;, &quot;...&quot;]</code></td>
+</tr>
+<tr>
+<td>Converter</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>json</td>
+<td>Kafka Converter&#x3002;&#x76EE;&#x524D;&#x4EC5;&#x652F;&#x6301;json</td>
+</tr>
+<tr>
+<td>TimeZone</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>UTC</td>
+<td>&#x63A7;&#x5236;&#x65F6;&#x533A;&#x8F6C;&#x6362;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nomad-job-&#x5E38;&#x7528;&#x901A;&#x7528;&#x914D;&#x7F6E;">nomad job &#x5E38;&#x7528;&#x901A;&#x7528;&#x914D;&#x7F6E;</h2>
+<h3 id="affinity">affinity</h3>
+<p>job&#x3001;group &#x6216; task &#x7EA7;&#x914D;&#x7F6E;&#x3002;&#x914D;&#x7F6E;&#x540E;&#x8BE5;job/group/task&#x4F1A;&#x4F18;&#x5148;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x8282;&#x70B9;&#x4E0A;&#x6267;&#x884C;</p>
+<pre><code>affinity {
+  attribute = &quot;${node.unique.name}&quot;
+  value = &quot;nomad3&quot;
+}
+</code></pre><p>&#x5B8C;&#x6574;&#x53C2;&#x8003;</p>
+<ul>
+<li><a href="https://www.nomadproject.io/docs/job-specification/affinity" target="_blank">https://www.nomadproject.io/docs/job-specification/affinity</a></li>
+<li><a href="https://www.nomadproject.io/docs/runtime/interpolation#interpreted_node_vars" target="_blank">https://www.nomadproject.io/docs/runtime/interpolation#interpreted_node_vars</a></li>
+</ul>
+<h3 id="resources">resources</h3>
+<p>task&#x7EA7;&#x914D;&#x7F6E;&#xFF0C;src/dest task&#x9700;&#x5404;&#x81EA;&#x91CD;&#x590D;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>cpu=100</code>&#xFF0C;<code>memory=300</code>&#x3002;
+&#x4EE5;&#x9ED8;&#x8BA4;&#x503C;&#x5EFA;&#x7ACB;&#x5927;&#x91CF;&#x8F7B;&#x91CF;&#x7EA7;&#x4EFB;&#x52A1;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x8D44;&#x6E90;&#x4E0D;&#x591F;&#x800C;pending&#xFF0C;&#x53EF;&#x9002;&#x5F53;&#x8C03;&#x5C0F;&#x3002;</p>
+<p>&#x4EFB;&#x52A1;&#x7684;&#x5185;&#x5B58;&#x6D88;&#x8017;&#x548C;&#x6BCF;&#x884C;&#x5927;&#x5C0F;&#x3001;&#x4E8B;&#x7269;&#x5927;&#x5C0F;&#x3001;&#x961F;&#x5217;&#x957F;&#x5EA6;&#x6709;&#x5173;&#x3002;&#x6CE8;&#x610F;&#x771F;&#x5B9E;&#x8D44;&#x6E90;&#x6D88;&#x8017;&#xFF0C;&#x907F;&#x514D;OOM&#x3002;</p>
+<pre><code>task &quot;src&quot; {
+  resources {
+    cpu    = 100 # MHz
+    memory = 300 # MB
+  }
+}
+</code></pre><h3 id="restart--reschedule">restart &amp; reschedule</h3>
+<p>nomad job &#x9ED8;&#x8BA4;&#x6709;&#x5982;&#x4E0B; <a href="https://www.nomadproject.io/docs/job-specification/restart" target="_blank">restart</a> &#x548C; <a href="https://www.nomadproject.io/docs/job-specification/reschedule" target="_blank">reschedule</a> &#x914D;&#x7F6E;</p>
+<pre><code>restart { # group or task level
+  interval = &quot;30m&quot;
+  attempts = 2
+  delay    = &quot;15s&quot;
+  mode     = &quot;fail&quot;
+}
+reschedule { # job or group level
+ delay          = &quot;30s&quot;
+ delay_function = &quot;exponential&quot;
+ max_delay      = &quot;1h&quot;
+ unlimited      = true
+}
+</code></pre><ul>
+<li>&#x5F53;task&#x62A5;&#x9519;&#x65F6;&#xFF0C;&#x4F1A;&#x6839;&#x636E;restart&#x914D;&#x7F6E;&#xFF0C;30&#x5206;&#x949F;&#x5185;&#x5728;&#x540C;&#x4E00;&#x8282;&#x70B9;&#x4E0A;&#x91CD;&#x542F;&#x6700;&#x591A;&#x4E24;&#x6B21;<ul>
+<li>&#x5373;&#x4F7F;&#x5931;&#x8D25;&#x7684;job&#x88AB;<code>stop -purge</code>&#x518D;&#x91CD;&#x65B0;&#x6DFB;&#x52A0;&#xFF0C;&#x4E5F;&#x9700;&#x8981;&#x6839;&#x636E;restart&#x53C2;&#x6570;&#x91CD;&#x542F; </li>
+</ul>
+</li>
+<li>2&#x6B21;&#x91CD;&#x542F;&#x5747;&#x5931;&#x8D25;&#x540E;&#xFF0C;&#x4F1A;&#x6839;&#x636E;reschedule&#x914D;&#x7F6E;&#xFF0C;&#x5728;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x4E0A;&#x6267;&#x884C;</li>
+</ul>
+<p>&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x65E0;&#x9650;reschedule&#x5E26;&#x6765;&#x7684;&#x95EE;&#x9898;&#xFF0C;dtle&#x5B89;&#x88C5;&#x5305;&#x63D0;&#x4F9B;&#x7684;&#x6837;&#x4F8B;job&#x914D;&#x7F6E;&#x4E2D;(<code>&lt;prefix&gt;/usr/share/dtle/scripts/example.job.*</code>)&#xFF0C;&#x9650;&#x5236;reschedule&#x4E3A;&#x6BCF;&#x534A;&#x5C0F;&#x65F6;1&#x6B21;:</p>
+<pre><code>reschedule {
+  attempts = 1
+  interval = &quot;30m&quot;
+  unlimited = false
+}
+# &#x6216;json&#x683C;&#x5F0F;
+&quot;Reschedule&quot;: {
+  &quot;Attempts&quot;: 1,
+  &quot;Interval&quot;: 1800000000000,
+  &quot;Unlimited&quot;: false
+}
+</code></pre>
                                 
                                 </section>
                             
@@ -1092,7 +1190,7 @@
                 </a>
                 
                 
-                <a href="4.4_http_api.html" class="navigation navigation-next " aria-label="Next page: 4.4.HTTP API说明">
+                <a href="4.3.1_tuning.html" class="navigation navigation-next " aria-label="Next page: 4.3.1.性能调优">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1103,7 +1201,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.3.作业(job)配置","level":"1.6.4","depth":2,"next":{"title":"4.4.HTTP API说明","level":"1.6.5","depth":2,"path":"4/4.4_http_api.md","ref":"4/4.4_http_api.md","articles":[]},"previous":{"title":"4.2.命令说明","level":"1.6.3","depth":2,"path":"4/4.2_command.md","ref":"4/4.2_command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"甜橙金融","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dts manual","gitbook":"*"},"file":{"path":"4/4.3_job_configuration.md","mtime":"2020-11-06T08:30:10.273Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-18T06:26:57.086Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.3.作业(job)配置","level":"1.6.4","depth":2,"next":{"title":"4.3.1.性能调优","level":"1.6.5","depth":2,"path":"4/4.3.1_tuning.md","ref":"4/4.3.1_tuning.md","articles":[]},"previous":{"title":"4.2.命令说明","level":"1.6.3","depth":2,"path":"4/4.2_command.md","ref":"4/4.2_command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.3_job_configuration.md","mtime":"2020-11-18T06:29:24.268Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-18T06:29:32.073Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

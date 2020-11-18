@@ -752,10 +752,9 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="dtle-mapping">dtle mapping</h1>
-<h2 id="&#x4F7F;&#x7528;demo&#x53C2;&#x8003;">&#x4F7F;&#x7528;demo&#x53C2;&#x8003;</h2>
-<p>&#x5728;job&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x589E;&#x52A0;&#x56DB;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x53C2;&#x6570;&#x8BE6;&#x60C5;&#x53C2;&#x8003;4.3&#x5C0F;&#x8282;&#xFF0C;&#x56DB;&#x4E2A;&#x53C2;&#x6570;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;</p>
-<h3 id="schema-mapping">schema mapping</h3>
-<h4 id="&#x5355;&#x5E93;mapping">&#x5355;&#x5E93;mapping</h4>
+<p>&#x5728;job&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;Table&#x5B57;&#x6BB5;&#x589E;&#x52A0;&#x82E5;&#x5E72;&#x53C2;&#x6570;&#xFF0C;&#x8BE6;&#x60C5;&#x53C2;&#x8003;<a href="../4/4.3_job_configuration.html">4.3 &#x4F5C;&#x4E1A;&#x914D;&#x7F6E;</a>&#xFF0C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;</p>
+<h2 id="schema-mapping">schema mapping</h2>
+<h3 id="&#x5355;&#x5E93;mapping">&#x5355;&#x5E93;mapping</h3>
 <p>job.json&#x4E2D;ReplicateDoDb&#x914D;&#x7F6E;&#xFF1A;</p>
 <pre><code> &quot;ReplicateDoDb&quot;:[
                     {
@@ -763,10 +762,10 @@
                         &quot;TableSchemaRename&quot;:&quot;demoRename&quot;
                     }
                 ],
-</code></pre><h4 id="&#x5355;&#x5E93;mapping&#x7ED3;&#x679C;">&#x5355;&#x5E93;mapping&#x7ED3;&#x679C;</h4>
+</code></pre><h3 id="&#x5355;&#x5E93;mapping&#x7ED3;&#x679C;">&#x5355;&#x5E93;mapping&#x7ED3;&#x679C;</h3>
 <pre><code>src : demo
 dest: demoRename
-</code></pre><h4 id="&#x591A;&#x5E93;mapping">&#x591A;&#x5E93;mapping</h4>
+</code></pre><h3 id="&#x591A;&#x5E93;mapping">&#x591A;&#x5E93;mapping</h3>
 <p>job.json&#x4E2D;ReplicateDoDb&#x914D;&#x7F6E;&#xFF1A;</p>
 <pre><code> &quot;ReplicateDoDb&quot;:[
                     { 
@@ -774,11 +773,11 @@ dest: demoRename
                         &quot;TableSchemaRename&quot;:&quot;rename${1}&quot;,
                     }
                 ],
-</code></pre><h4 id="&#x591A;&#x5E93;mapping&#x7ED3;&#x679C;">&#x591A;&#x5E93;mapping&#x7ED3;&#x679C;</h4>
+</code></pre><h3 id="&#x591A;&#x5E93;mapping&#x7ED3;&#x679C;">&#x591A;&#x5E93;mapping&#x7ED3;&#x679C;</h3>
 <pre><code>src : test1src,test2src,test3src,cust
 dest: renametest1, renametest2, renametest3
-</code></pre><h3 id="table-mapping">table mapping</h3>
-<h4 id="&#x5355;&#x8868;mapping">&#x5355;&#x8868;mapping</h4>
+</code></pre><h2 id="table-mapping">table mapping</h2>
+<h3 id="&#x5355;&#x8868;mapping">&#x5355;&#x8868;mapping</h3>
 <p>job.json&#x4E2D;ReplicateDoDb&#x914D;&#x7F6E;&#xFF1A;</p>
 <pre><code> &quot;ReplicateDoDb&quot;:[
                     {
@@ -791,10 +790,10 @@ dest: renametest1, renametest2, renametest3
                         ]
                     }
                 ],
-</code></pre><h4 id="&#x5355;&#x8868;mapping&#x7ED3;&#x679C;">&#x5355;&#x8868;mapping&#x7ED3;&#x679C;</h4>
+</code></pre><h3 id="&#x5355;&#x8868;mapping&#x7ED3;&#x679C;">&#x5355;&#x8868;mapping&#x7ED3;&#x679C;</h3>
 <pre><code>src : demo.testDemo
 dest: demo.renameDemo
-</code></pre><h4 id="&#x591A;&#x8868;mapping">&#x591A;&#x8868;mapping</h4>
+</code></pre><h3 id="&#x591A;&#x8868;mapping">&#x591A;&#x8868;mapping</h3>
 <p>job.json&#x4E2D;ReplicateDoDb&#x914D;&#x7F6E;&#xFF1A;</p>
 <pre><code> &quot;ReplicateDoDb&quot;:[
                     {
@@ -807,10 +806,29 @@ dest: demo.renameDemo
                         ]
                     }
                 ],
-</code></pre><h4 id="&#x591A;&#x8868;mapping&#x7ED3;&#x679C;">&#x591A;&#x8868;mapping&#x7ED3;&#x679C;</h4>
+</code></pre><h3 id="&#x591A;&#x8868;mapping&#x7ED3;&#x679C;">&#x591A;&#x8868;mapping&#x7ED3;&#x679C;</h3>
 <pre><code>src : demo.test1Shard,demo.test2Shard,demo.customer,demo.test3Shard
 dest: demo.test1Rename,demo.test2Rename,demo.test3Rename
+</code></pre><h2 id="&#x5217;mapping">&#x5217;mapping</h2>
+<p>src table</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> demo.colmap (<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span>, val1 <span class="hljs-built_in">int</span>, val2 <span class="hljs-built_in">int</span>)
 </code></pre>
+<p>dst table</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> demo.colmap (val2 <span class="hljs-built_in">int</span>, <span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span>)
+</code></pre>
+<p>&#x4F7F;&#x7528; <code>ColumnMapFrom</code> &#x8C03;&#x6574;&#x5217;&#x987A;&#x5E8F;&#x5E76;&#x5FFD;&#x7565; <code>val1</code> &#x5217;&#x3002;&#x6CE8;&#x610F;&#x9884;&#x5148;&#x521B;&#x5EFA;&#x597D;&#x8868;&#x3002;</p>
+<pre><code class="lang-json"><span class="hljs-string">&quot;ReplicateDoDb&quot;</span>: [{
+    <span class="hljs-string">&quot;TableSchema&quot;</span>:<span class="hljs-string">&quot;demo&quot;</span>,
+    <span class="hljs-string">&quot;Tables&quot;</span>:[{
+        <span class="hljs-string">&quot;TableName&quot;</span>: <span class="hljs-string">&quot;colmap&quot;</span>,
+        <span class="hljs-string">&quot;ColumnMapFrom&quot;</span>: [<span class="hljs-string">&quot;val1&quot;</span>, <span class="hljs-string">&quot;id&quot;</span>]
+    }]
+}],
+<span class="hljs-string">&quot;SkipCreateDbTable&quot;</span>: <span class="hljs-literal">true</span>,
+<span class="hljs-string">&quot;DropTableIfExists&quot;</span>: <span class="hljs-literal">false</span>,
+</code></pre>
+<p>&#x6682;&#x4E0D;&#x652F;&#x6301;&#x5217;&#x91CD;&#x547D;&#x540D;&#x548C;&#x6B63;&#x5219;&#x5339;&#x914D;&#x3002;</p>
+
                                 
                                 </section>
                             
@@ -853,7 +871,7 @@ dest: demo.test1Rename,demo.test2Rename,demo.test3Rename
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.8.dtle mapping支持","level":"1.5.9","depth":2,"next":{"title":"3.9.Binlog Relay (中继)","level":"1.5.10","depth":2,"path":"3/3.9_binlog_relay.md","ref":"3/3.9_binlog_relay.md","articles":[]},"previous":{"title":"3.7.DCL支持度","level":"1.5.8","depth":2,"path":"3/3.7_DCL.md","ref":"3/3.7_DCL.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"3/3.8_dtle_mapping.md","mtime":"2020-11-02T08:51:56.989Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-02T09:55:45.747Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.8.dtle mapping支持","level":"1.5.9","depth":2,"next":{"title":"3.9.Binlog Relay (中继)","level":"1.5.10","depth":2,"path":"3/3.9_binlog_relay.md","ref":"3/3.9_binlog_relay.md","articles":[]},"previous":{"title":"3.7.DCL支持度","level":"1.5.8","depth":2,"path":"3/3.7_DCL.md","ref":"3/3.7_DCL.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"3/3.8_dtle_mapping.md","mtime":"2020-11-18T06:29:24.264Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-18T06:29:32.073Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

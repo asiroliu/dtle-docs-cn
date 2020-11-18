@@ -4,11 +4,11 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>4.4.HTTP API说明 · dts manual</title>
+        <title>4.4.HTTP API说明 · dtle manual</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        <meta name="author" content="甜橙金融">
+        <meta name="author" content="ActionTech">
         
         
     
@@ -53,10 +53,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="4.5_mysql_user_privileges.html" />
+    <link rel="next" href="4.4.1_http_api_oldv2.html" />
     
     
-    <link rel="prev" href="4.3_job_configuration.html" />
+    <link rel="prev" href="4.3.1_tuning.html" />
     
 
     </head>
@@ -207,6 +207,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../2/2.0.1_interface.html">
+            
+                <a href="../2/2.0.1_interface.html">
+            
+                    
+                    2.0.1.HTTP API、nomad 命令行工具 和 Web界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.4.2" data-path="../2/2.1_mysql_replication_n_1.html">
@@ -267,6 +286,19 @@
             
                     
                     2.5.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../2/2.6_multi_node.html">
+            
+                <a href="../2/2.6_multi_node.html">
+            
+                    
+                    2.6.多nomad server部署
             
                 </a>
             
@@ -337,7 +369,7 @@
                 <a href="../3/3.3_impact_on_dest.html">
             
                     
-                    3.3.对目标端数据库的影响
+                    3.3.对目标端数据库的影响(gtid_executed表)
             
                 </a>
             
@@ -397,12 +429,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.9" data-path="../3/3.8_dts_mapping.html">
+        <li class="chapter " data-level="1.5.9" data-path="../3/3.8_dtle_mapping.html">
             
-                <a href="../3/3.8_dts_mapping.html">
+                <a href="../3/3.8_dtle_mapping.html">
             
                     
-                    3.8.dts mapping支持
+                    3.8.dtle mapping支持
             
                 </a>
             
@@ -416,6 +448,32 @@
             
                     
                     3.9.Binlog Relay (中继)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../3/3.10_consul.html">
+            
+                <a href="../3/3.10_consul.html">
+            
+                    
+                    3.10.consul 上的 job 数据管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../3/3.11_delay.html">
+            
+                <a href="../3/3.11_delay.html">
+            
+                    
+                    3.11.延迟监控
             
                 </a>
             
@@ -494,7 +552,20 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.5" data-path="4.4_http_api.html">
+        <li class="chapter " data-level="1.6.5" data-path="4.3.1_tuning.html">
+            
+                <a href="4.3.1_tuning.html">
+            
+                    
+                    4.3.1.性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.6" data-path="4.4_http_api.html">
             
                 <a href="4.4_http_api.html">
             
@@ -507,12 +578,38 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.6" data-path="4.5_mysql_user_privileges.html">
+        <li class="chapter " data-level="1.6.7" data-path="4.4.1_http_api_oldv2.html">
+            
+                <a href="4.4.1_http_api_oldv2.html">
+            
+                    
+                    4.4.1.旧版（2.x）HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="4.5_mysql_user_privileges.html">
             
                 <a href="4.5_mysql_user_privileges.html">
             
                     
                     4.5.MySQL 用户权限说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="4.6_dtle_2to3.html">
+            
+                <a href="4.6_dtle_2to3.html">
+            
+                    
+                    4.6.dtle 2升级到3
             
                 </a>
             
@@ -655,522 +752,84 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="http-api-&#x8BF4;&#x660E;">HTTP API &#x8BF4;&#x660E;</h1>
-<h2 id="&#x5217;&#x51FA;&#x6240;&#x6709;&#x4F5C;&#x4E1A;">&#x5217;&#x51FA;&#x6240;&#x6709;&#x4F5C;&#x4E1A;</h2>
-<p>API: <code>GET /v1/jobs</code></p>
-<p>&#x6837;&#x4F8B;: </p>
-<pre><code>&gt; curl -XGET &quot;172.17.5.6:8190/v1/jobs&quot; | jq
-&lt; [
-  {
-    &quot;CreateIndex&quot;: 59,
-    &quot;ID&quot;: &quot;8ce4b408-8c64-41b9-04d7-baf451348e89&quot;,
-    &quot;JobModifyIndex&quot;: 469,
-    &quot;JobSummary&quot;: {
-      &quot;Constraints&quot;: null,
-      &quot;CreateIndex&quot;: 59,
-      &quot;Datacenters&quot;: [
-        &quot;dc1&quot;
-      ],
-      &quot;EnforceIndex&quot;: false,
-      &quot;Failover&quot;: false,
-      &quot;ID&quot;: &quot;8ce4b408-8c64-41b9-04d7-baf451348e89&quot;,
-      &quot;JobModifyIndex&quot;: 469,
-      &quot;ModifyIndex&quot;: 469,
-      &quot;Name&quot;: &quot;test1-2&quot;,
-      &quot;Orders&quot;: [],
-      &quot;Region&quot;: &quot;global&quot;,
-      &quot;Status&quot;: &quot;running&quot;,
-      &quot;StatusDescription&quot;: &quot;&quot;,
-      &quot;Tasks&quot;: [
-        {
-          &quot;Config&quot;: {
-            &quot;ExpandSyntaxSupport&quot;: false,
-            &quot;NatsAddr&quot;: &quot;127.0.0.1:8193&quot;,
-            &quot;ReplChanBufferSize&quot;: &quot;600&quot;,
-            &quot;ReplicateDoDb&quot;: [
-              {
-                &quot;TableSchema&quot;: &quot;db1&quot;,
-                &quot;Tables&quot;: [
-                  {
-                    &quot;TableName&quot;: &quot;tb1&quot;
-                  }
-                ]
-              }
-            ],
-            &quot;ChunkSize&quot;: &quot;2000&quot;,
-            &quot;ApproveHeterogeneous&quot;: true,
-            &quot;DropTableIfExists&quot;: false,
-            &quot;ConnectionConfig&quot;: {
-              &quot;Password&quot;: &quot;*&quot;,
-              &quot;Host&quot;: &quot;172.100.9.3&quot;,
-              &quot;Port&quot;: &quot;3306&quot;,
-              &quot;User&quot;: &quot;lx1&quot;
-            },
-            &quot;TrafficAgainstLimits&quot;: 0,
-            &quot;Gtid&quot;: &quot;8868d98f-af5e-11e8-9aa9-0242ac110002:1-171&quot;,
-            &quot;SkipCreateDbTable&quot;: false
-          },
-          &quot;ConfigLock&quot;: {},
-          &quot;Constraints&quot;: null,
-          &quot;Driver&quot;: &quot;MySQL&quot;,
-          &quot;Leader&quot;: false,
-          &quot;NodeID&quot;: &quot;&quot;,
-          &quot;NodeName&quot;: &quot;dts&quot;,
-          &quot;Type&quot;: &quot;Src&quot;
-        },
-        {
-          &quot;Config&quot;: {
-            &quot;NatsAddr&quot;: &quot;127.0.0.1:8193&quot;,
-            &quot;Gtid&quot;: &quot;8868d98f-af5e-11e8-9aa9-0242ac110002:1-171&quot;,
-            &quot;SkipCreateDbTable&quot;: false,
-            &quot;DropTableIfExists&quot;: false,
-            &quot;ExpandSyntaxSupport&quot;: false,
-            &quot;ReplChanBufferSize&quot;: &quot;600&quot;,
-            &quot;ApproveHeterogeneous&quot;: true,
-            &quot;ConnectionConfig&quot;: {
-              &quot;User&quot;: &quot;test1&quot;,
-              &quot;Password&quot;: &quot;*&quot;,
-              &quot;Host&quot;: &quot;172.100.9.6&quot;,
-              &quot;Port&quot;: &quot;3306&quot;
-            }
-          },
-          &quot;ConfigLock&quot;: {},
-          &quot;Constraints&quot;: null,
-          &quot;Driver&quot;: &quot;MySQL&quot;,
-          &quot;Leader&quot;: true,
-          &quot;NodeID&quot;: &quot;&quot;,
-          &quot;NodeName&quot;: &quot;dts&quot;,
-          &quot;Type&quot;: &quot;Dest&quot;
-        }
-      ],
-      &quot;Type&quot;: &quot;synchronous&quot;
-    },
-    &quot;ModifyIndex&quot;: 469,
-    &quot;Name&quot;: &quot;test1-2&quot;,
-    &quot;Status&quot;: &quot;running&quot;,
-    &quot;StatusDescription&quot;: &quot;&quot;,
-    &quot;Type&quot;: &quot;synchronous&quot;
-  },
-  {
-    &quot;CreateIndex&quot;: 66,
-    &quot;ID&quot;: &quot;ae2a74ac-1ee7-7f82-4b52-2f1ca759eab5&quot;,
-    &quot;JobModifyIndex&quot;: 469,
-    &quot;JobSummary&quot;: {
-      &quot;Constraints&quot;: null,
-      &quot;CreateIndex&quot;: 66,
-      &quot;Datacenters&quot;: [
-        &quot;dc1&quot;
-      ],
-      &quot;EnforceIndex&quot;: false,
-      &quot;Failover&quot;: false,
-      &quot;ID&quot;: &quot;ae2a74ac-1ee7-7f82-4b52-2f1ca759eab5&quot;,
-      &quot;JobModifyIndex&quot;: 469,
-      &quot;ModifyIndex&quot;: 469,
-      &quot;Name&quot;: &quot;test1-2&quot;,
-      &quot;Orders&quot;: [],
-      &quot;Region&quot;: &quot;global&quot;,
-      &quot;Status&quot;: &quot;running&quot;,
-      &quot;StatusDescription&quot;: &quot;&quot;,
-      &quot;Tasks&quot;: [
-        {
-          &quot;Config&quot;: {
-            &quot;ConnectionConfig&quot;: {
-              &quot;Host&quot;: &quot;172.100.9.3&quot;,
-              &quot;Port&quot;: &quot;3306&quot;,
-              &quot;User&quot;: &quot;lx1&quot;,
-              &quot;Password&quot;: &quot;*&quot;
-            },
-            &quot;TrafficAgainstLimits&quot;: 0,
-            &quot;NatsAddr&quot;: &quot;127.0.0.1:8193&quot;,
-            &quot;ReplicateDoDb&quot;: [
-              {
-                &quot;Tables&quot;: [
-                  {
-                    &quot;TableName&quot;: &quot;tb1&quot;
-                  }
-                ],
-                &quot;TableSchema&quot;: &quot;db1&quot;
-              }
-            ],
-            &quot;DropTableIfExists&quot;: false,
-            &quot;ExpandSyntaxSupport&quot;: false,
-            &quot;ChunkSize&quot;: &quot;2000&quot;,
-            &quot;SkipCreateDbTable&quot;: false,
-            &quot;Gtid&quot;: &quot;8868d98f-af5e-11e8-9aa9-0242ac110002:1-171&quot;,
-            &quot;ApproveHeterogeneous&quot;: true,
-            &quot;ReplChanBufferSize&quot;: &quot;600&quot;
-          },
-          &quot;ConfigLock&quot;: {},
-          &quot;Constraints&quot;: null,
-          &quot;Driver&quot;: &quot;MySQL&quot;,
-          &quot;Leader&quot;: false,
-          &quot;NodeID&quot;: &quot;&quot;,
-          &quot;NodeName&quot;: &quot;dts&quot;,
-          &quot;Type&quot;: &quot;Src&quot;
-        },
-        {
-          &quot;Config&quot;: {
-            &quot;DropTableIfExists&quot;: false,
-            &quot;ExpandSyntaxSupport&quot;: false,
-            &quot;NatsAddr&quot;: &quot;127.0.0.1:8193&quot;,
-            &quot;ReplChanBufferSize&quot;: &quot;600&quot;,
-            &quot;ApproveHeterogeneous&quot;: true,
-            &quot;ConnectionConfig&quot;: {
-              &quot;Port&quot;: &quot;3306&quot;,
-              &quot;User&quot;: &quot;test1&quot;,
-              &quot;Password&quot;: &quot;*&quot;,
-              &quot;Host&quot;: &quot;172.100.9.6&quot;
-            },
-            &quot;Gtid&quot;: &quot;8868d98f-af5e-11e8-9aa9-0242ac110002:1-171&quot;,
-            &quot;SkipCreateDbTable&quot;: false
-          },
-          &quot;ConfigLock&quot;: {},
-          &quot;Constraints&quot;: null,
-          &quot;Driver&quot;: &quot;MySQL&quot;,
-          &quot;Leader&quot;: true,
-          &quot;NodeID&quot;: &quot;&quot;,
-          &quot;NodeName&quot;: &quot;dts&quot;,
-          &quot;Type&quot;: &quot;Dest&quot;
-        }
-      ],
-      &quot;Type&quot;: &quot;synchronous&quot;
-    },
-    &quot;ModifyIndex&quot;: 469,
-    &quot;Name&quot;: &quot;test1-2&quot;,
-    &quot;Status&quot;: &quot;running&quot;,
-    &quot;StatusDescription&quot;: &quot;&quot;,
-    &quot;Type&quot;: &quot;synchronous&quot;
-  }
-]
-</code></pre><h2 id="&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x4F5C;&#x4E1A;&#x7684;&#x4FE1;&#x606F;">&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x4F5C;&#x4E1A;&#x7684;&#x4FE1;&#x606F;</h2>
-<p>API: <code>GET /v1/job/{ID}</code></p>
-<p>&#x6837;&#x4F8B;: </p>
-<pre><code>&gt; curl -XGET &quot;172.17.5.6:8190/v1/job/8ce4b408-8c64-41b9-04d7-baf451348e89&quot; | jq
-&lt; {
-  &quot;Constraints&quot;: null,
-  &quot;CreateIndex&quot;: 59,
-  &quot;Datacenters&quot;: [
-    &quot;dc1&quot;
-  ],
-  &quot;EnforceIndex&quot;: false,
-  &quot;Failover&quot;: false,
-  &quot;ID&quot;: &quot;8ce4b408-8c64-41b9-04d7-baf451348e89&quot;,
-  &quot;JobModifyIndex&quot;: 471,
-  &quot;ModifyIndex&quot;: 471,
-  &quot;Name&quot;: &quot;test1-2&quot;,
-  &quot;Orders&quot;: [],
-  &quot;Region&quot;: &quot;global&quot;,
-  &quot;Status&quot;: &quot;running&quot;,
-  &quot;StatusDescription&quot;: &quot;&quot;,
-  &quot;Tasks&quot;: [
-    {
-      &quot;Config&quot;: {
-        &quot;ConnectionConfig&quot;: {
-          &quot;Host&quot;: &quot;172.100.9.3&quot;,
-          &quot;Port&quot;: &quot;3306&quot;,
-          &quot;User&quot;: &quot;lx1&quot;,
-          &quot;Password&quot;: &quot;111111&quot;
-        },
-        &quot;ChunkSize&quot;: &quot;2000&quot;,
-        &quot;ApproveHeterogeneous&quot;: true,
-        &quot;DropTableIfExists&quot;: false,
-        &quot;ReplChanBufferSize&quot;: &quot;600&quot;,
-        &quot;ReplicateDoDb&quot;: [
-          {
-            &quot;TableSchema&quot;: &quot;db1&quot;,
-            &quot;Tables&quot;: [
-              {
-                &quot;TableName&quot;: &quot;tb1&quot;
-              }
-            ]
-          }
-        ],
-        &quot;NatsAddr&quot;: &quot;127.0.0.1:8193&quot;,
-        &quot;TrafficAgainstLimits&quot;: 0,
-        &quot;Gtid&quot;: &quot;8868d98f-af5e-11e8-9aa9-0242ac110002:1-171&quot;,
-        &quot;SkipCreateDbTable&quot;: false,
-        &quot;ExpandSyntaxSupport&quot;: false
-      },
-      &quot;ConfigLock&quot;: {},
-      &quot;Constraints&quot;: null,
-      &quot;Driver&quot;: &quot;MySQL&quot;,
-      &quot;Leader&quot;: false,
-      &quot;NodeID&quot;: &quot;&quot;,
-      &quot;NodeName&quot;: &quot;dts&quot;,
-      &quot;Type&quot;: &quot;Src&quot;
-    },
-    {
-      &quot;Config&quot;: {
-        &quot;Gtid&quot;: &quot;8868d98f-af5e-11e8-9aa9-0242ac110002:1-171&quot;,
-        &quot;SkipCreateDbTable&quot;: false,
-        &quot;DropTableIfExists&quot;: false,
-        &quot;ExpandSyntaxSupport&quot;: false,
-        &quot;ReplChanBufferSize&quot;: &quot;600&quot;,
-        &quot;ApproveHeterogeneous&quot;: true,
-        &quot;ConnectionConfig&quot;: {
-          &quot;Host&quot;: &quot;172.100.9.6&quot;,
-          &quot;Port&quot;: &quot;3306&quot;,
-          &quot;User&quot;: &quot;test1&quot;,
-          &quot;Password&quot;: &quot;111111&quot;
-        },
-        &quot;NatsAddr&quot;: &quot;127.0.0.1:8193&quot;
-      },
-      &quot;ConfigLock&quot;: {},
-      &quot;Constraints&quot;: null,
-      &quot;Driver&quot;: &quot;MySQL&quot;,
-      &quot;Leader&quot;: true,
-      &quot;NodeID&quot;: &quot;&quot;,
-      &quot;NodeName&quot;: &quot;dts&quot;,
-      &quot;Type&quot;: &quot;Dest&quot;
-    }
-  ],
-  &quot;Type&quot;: &quot;synchronous&quot;
-}
-</code></pre><h2 id="&#x83B7;&#x53D6;-&#x670D;&#x52A1;&#x7AEF;&#x96C6;&#x7FA4;-&#x7684;leader&#x8282;&#x70B9;&#x4FE1;&#x606F;">&#x83B7;&#x53D6; &#x670D;&#x52A1;&#x7AEF;&#x96C6;&#x7FA4; &#x7684;leader&#x8282;&#x70B9;&#x4FE1;&#x606F;</h2>
-<p>API: <code>GET /v1/leader</code></p>
-<p>&#x6837;&#x4F8B;: </p>
-<pre><code>&gt; curl -XGET &quot;172.17.5.6:8190/v1/leader&quot;
-&lt; &quot;172.17.5.6:8191&quot;
-</code></pre><h2 id="&#x5217;&#x51FA;-&#x670D;&#x52A1;&#x7AEF;&#x96C6;&#x7FA4;-&#x7684;&#x8282;&#x70B9;">&#x5217;&#x51FA; &#x670D;&#x52A1;&#x7AEF;&#x96C6;&#x7FA4; &#x7684;&#x8282;&#x70B9;</h2>
-<p>API: <code>GET /v1/members</code></p>
-<p>&#x6837;&#x4F8B;: </p>
-<pre><code>&gt; curl -XGET &quot;172.17.5.6:8190/v1/members&quot; | jq
-&lt; {
-  &quot;Members&quot;: [
-    {
-      &quot;Addr&quot;: &quot;172.17.5.6&quot;,
-      &quot;DelegateCur&quot;: 4,
-      &quot;DelegateMax&quot;: 5,
-      &quot;DelegateMin&quot;: 2,
-      &quot;Name&quot;: &quot;udp-6.global&quot;,
-      &quot;Port&quot;: 8192,
-      &quot;ProtocolCur&quot;: 2,
-      &quot;ProtocolMax&quot;: 5,
-      &quot;ProtocolMin&quot;: 1,
-      &quot;Status&quot;: &quot;alive&quot;,
-      &quot;Tags&quot;: {
-        &quot;port&quot;: &quot;8191&quot;,
-        &quot;bootstrap&quot;: &quot;1&quot;,
-        &quot;role&quot;: &quot;server&quot;,
-        &quot;region&quot;: &quot;global&quot;,
-        &quot;dc&quot;: &quot;dc1&quot;,
-        &quot;build&quot;: &quot;9.9.9.9&quot;
-      }
-    }
-  ],
-  &quot;ServerDC&quot;: &quot;dc1&quot;,
-  &quot;ServerName&quot;: &quot;udp-6&quot;,
-  &quot;ServerRegion&quot;: &quot;global&quot;
-}
-</code></pre><h2 id="&#x5217;&#x51FA;&#x6240;&#x6709;&#x8282;&#x70B9;">&#x5217;&#x51FA;&#x6240;&#x6709;&#x8282;&#x70B9;</h2>
-<p>API: <code>GET /v1/nodes</code></p>
-<p>&#x6837;&#x4F8B;: </p>
-<pre><code>&gt; curl -XGET &quot;172.17.5.6:8190/v1/nodes&quot; | jq
-&lt; [
-  {
-    &quot;CreateIndex&quot;: 4,
+<p>(&#x9002;&#x7528;dtle 3.x nomad &#x63D2;&#x4EF6;)</p>
+<p>nomad &#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#x4E00;&#x4E2A;web&#x670D;&#x52A1;&#xFF0C;&#x53EF;&#x4F7F;&#x7528;curl&#x5DE5;&#x5177;&#x5411;&#x5176;&#x53D1;&#x9001;HTTP&#x8BF7;&#x6C42;&#x3002;</p>
+<h2 id="&#x4F5C;&#x4E1A;&#x7BA1;&#x7406;">&#x4F5C;&#x4E1A;&#x7BA1;&#x7406;</h2>
+<p>&#x5B8C;&#x6574;&#x53EF;&#x53C2;&#x8003;</p>
+<ul>
+<li><a href="https://www.nomadproject.io/api-docs/jobs" target="_blank">https://www.nomadproject.io/api-docs/jobs</a></li>
+<li><a href="https://www.nomadproject.io/api-docs/allocations" target="_blank">https://www.nomadproject.io/api-docs/allocations</a></li>
+</ul>
+<p>&#x5E38;&#x7528;&#x5982;&#x4E0B;&#xFF1A;</p>
+<h3 id="&#x524D;&#x7F6E;&#x77E5;&#x8BC6;&#xFF1A;nomad-&#x4E2D;-job&#x3001;task&#x3001;alloc&#x7684;&#x6982;&#x5FF5;">&#x524D;&#x7F6E;&#x77E5;&#x8BC6;&#xFF1A;nomad &#x4E2D; job&#x3001;task&#x3001;alloc&#x7684;&#x6982;&#x5FF5;</h3>
+<p>job&#x5305;&#x542B;&#x591A;&#x4E2A;task&#x3002;&#x4E00;&#x4E2A;dtle job&#x6709;src&#x548C;dest&#x4E24;&#x4E2A;task&#x3002;</p>
+<p>task&#x5728;nomad&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x6267;&#x884C;&#xFF0C;&#x79F0;&#x4E3A;allocation&#x3002;&#x540C;&#x4E00;&#x4E2A;task&#x7684;&#x591A;&#x6B21;&#x6267;&#x884C;&#xFF08;&#x5982;&#x5931;&#x8D25;-&#x91CD;&#x8BD5;&#xFF09;&#x4F1A;&#x521B;&#x5EFA;&#x591A;&#x4E2A;allocation&#x3002;</p>
+<h3 id="&#x5217;&#x51FA;&#x6240;&#x6709;job">&#x5217;&#x51FA;&#x6240;&#x6709;job</h3>
+<pre><code>curl -XGET 127.0.0.1:4646/v1/jobs | jq
+</code></pre><h3 id="&#x6DFB;&#x52A0;job">&#x6DFB;&#x52A0;job</h3>
+<pre><code>curl -XPOST -data @job.json 127.0.0.1:4646/v1/jobs | jq
+</code></pre><p>job.json&#x7684;&#x5185;&#x5BB9;&#x8BF4;&#x660E;&#x53C2;&#x770B; <a href="4.3_job_configuration.html">&#x4F5C;&#x4E1A;(job)&#x914D;&#x7F6E;</a></p>
+<h3 id="&#x83B7;&#x53D6;&#x67D0;&#x4E2A;job&#x4FE1;&#x606F;">&#x83B7;&#x53D6;&#x67D0;&#x4E2A;job&#x4FE1;&#x606F;</h3>
+<pre><code>curl -XGET 127.0.0.1:4646/v1/job/&lt;job_name&gt; | jq
+</code></pre><h3 id="&#x5217;&#x51FA;&#x67D0;job&#x7684;&#x6240;&#x6709;allocation">&#x5217;&#x51FA;&#x67D0;job&#x7684;&#x6240;&#x6709;allocation</h3>
+<pre><code>curl -XGET &quot;127.0.0.1:4646/v1/job/&lt;job_name&gt;/allocations | jq
+</code></pre><h3 id="&#x67E5;&#x770B;&#x67D0;&#x4E2A;allocation&#x7684;&#x6267;&#x884C;&#x72B6;&#x6001;">&#x67E5;&#x770B;&#x67D0;&#x4E2A;allocation&#x7684;&#x6267;&#x884C;&#x72B6;&#x6001;</h3>
+<pre><code>curl -XGET &quot;127.0.0.1:4646/v1/allocation/&lt;alloc_id&gt;&quot; | jq
+</code></pre><h3 id="&#x533A;&#x522B;&#x4EFB;&#x52A1;&#x5904;&#x4E8E;&#x5168;&#x91CF;&#x8FD8;&#x662F;&#x589E;&#x91CF;&#x72B6;&#x6001;">&#x533A;&#x522B;&#x4EFB;&#x52A1;&#x5904;&#x4E8E;&#x5168;&#x91CF;&#x8FD8;&#x662F;&#x589E;&#x91CF;&#x72B6;&#x6001;</h3>
+<pre><code>curl -XGET &quot;127.0.0.1:4646/v1/job/&lt;jobId&gt;/allocations&quot; | jq | grep job_stage
+</code></pre><pre><code>            &quot;DisplayMessage&quot;: &quot;job_stage_full&quot;,
+            &quot;DriverMessage&quot;: &quot;job_stage_full&quot;,
+            &quot;DisplayMessage&quot;: &quot;job_stage_incr&quot;,
+            &quot;DriverMessage&quot;: &quot;job_stage_incr&quot;,
+</code></pre><ul>
+<li>&#x5F53;&#x7ED3;&#x679C;&#x4E2D; <strong>&#x53EA;</strong> &#x51FA;&#x73B0; job_stage_full &#x65F6;&#xFF0C;&#x4EFB;&#x52A1;&#x5904;&#x4E8E;&#x5168;&#x91CF;&#x9636;&#x6BB5;</li>
+<li>&#x5F53;&#x7ED3;&#x679C;&#x51FA;&#x73B0; job_stage_incr &#x65F6;&#xFF0C;&#x4EFB;&#x52A1;&#x5904;&#x4E8E;&#x589E;&#x91CF;&#x9636;&#x6BB5;</li>
+</ul>
+<h3 id="&#x505C;&#x6B62;&#xFF08;&#x5220;&#x9664;&#xFF09;job">&#x505C;&#x6B62;&#xFF08;&#x5220;&#x9664;&#xFF09;job</h3>
+<pre><code>curl -XDELETE 127.0.0.1:4646/v1/job/my-job
+# DELETE&#x540E;job&#x4FE1;&#x606F;&#x4ECD;&#x4F1A;&#x5728;nomad&#x4E0A;&#x4FDD;&#x7559;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x4F9B;&#x67E5;&#x8BE2;&#xFF0C;&#x76F4;&#x5230;nomad&#x81EA;&#x52A8;&#x56DE;&#x6536;&#xFF08;gc&#xFF09;
+# &#x6307;&#x5B9A;purge&#x53EF;&#x7ACB;&#x523B;&#x5220;&#x9664;
+curl -XDELETE 127.0.0.1:4646/v1/job/my-job?purge=true
+</code></pre><p>dtle 3.x &#x79FB;&#x9664;&#x4E86;&#x6682;&#x505C;/&#x6062;&#x590D;job&#x7684;&#x529F;&#x80FD;. &#x53EF;&#x4F7F;&#x7528;&#x5220;&#x9664;/&#x6DFB;&#x52A0;job&#x6765;&#x8FBE;&#x6210;&#x76F8;&#x540C;&#x7684;&#x6548;&#x679C;&#x3002;</p>
+<ul>
+<li>&#x6CE8;&#x610F;&#x4FDD;&#x7559;&#x6DFB;&#x52A0;job&#x65F6;&#x4F7F;&#x7528;&#x7684;job&#x914D;&#x7F6E;&#x6587;&#x4EF6;</li>
+<li>job&#x5220;&#x9664;&#x540E;&#x8FDB;&#x5EA6;&#xFF08;Gtid&#xFF09;&#x4ECD;&#x7136;&#x4FDD;&#x5B58;&#x5728;consul kv&#x4E2D;<ul>
+<li>&#x4F4D;&#x7F6E;&#xFF1A;<code>dtle/&lt;job_name&gt;/Gtid</code></li>
+<li>&#x518D;&#x6B21;&#x6DFB;&#x52A0;job&#x65F6;&#xFF0C;consul&#x4E2D;&#x4FDD;&#x5B58;&#x7684;Gtid&#x4F18;&#x5148;&#x4E8E;job&#x914D;&#x7F6E;&#x4E2D;&#x7684;&#x9879;&#x76EE;</li>
+</ul>
+</li>
+</ul>
+<p>&#x5982;&#x679C;&#x8981;&#x540E;&#x7EED;&#x6DFB;&#x52A0;&#x540C;&#x540D;job&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x60F3;&#x4ECE;consul&#x4FDD;&#x5B58;&#x7684;&#x4F4D;&#x7F6E;&#x7EE7;&#x7EED;&#xFF08;&#x800C;&#x662F;&#x4ECE;job&#x914D;&#x7F6E;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#xFF09;&#xFF0C;&#x5219;
+&#x9700;&#x8981;&#x5220;&#x9664;consul&#x91CD;&#x7684;&#x6570;&#x636E;&#x3002;&#x89C1; <a href="../3/3.10_consul.html">consul &#x4E0A;&#x7684; job &#x6570;&#x636E;&#x7BA1;&#x7406;</a>&#x3002;</p>
+<h2 id="&#x8282;&#x70B9;&#x7BA1;&#x7406;">&#x8282;&#x70B9;&#x7BA1;&#x7406;</h2>
+<p>&#x66F4;&#x591A;&#x53EF;&#x53C2;&#x8003;</p>
+<ul>
+<li><a href="https://www.nomadproject.io/api-docs/nodes" target="_blank">https://www.nomadproject.io/api-docs/nodes</a></li>
+<li><a href="https://www.nomadproject.io/api-docs/status" target="_blank">https://www.nomadproject.io/api-docs/status</a></li>
+</ul>
+<p>&#x5217;&#x51FA;&#x6240;&#x6709;&#x8282;&#x70B9;&#xFF1A;</p>
+<pre><code>curl -XGET &quot;127.0.0.1:4646/v1/nodes&quot; | jq
+[{
+    &quot;Address&quot;: &quot;127.0.0.1&quot;,
     &quot;Datacenter&quot;: &quot;dc1&quot;,
-    &quot;HTTPAddr&quot;: &quot;172.17.5.6:8190&quot;,
-    &quot;ID&quot;: &quot;8f05de6f-34ef-5989-9a20-c9f8bc9817b0&quot;,
-    &quot;ModifyIndex&quot;: 43,
-    &quot;Name&quot;: &quot;udp-6&quot;,
+    &quot;Drivers&quot;: {
+      &quot;dtle&quot;: {
+        &quot;Attributes&quot;: {
+          &quot;driver.dtle&quot;: &quot;true&quot;,
+          &quot;driver.dtle.version&quot;: &quot;9.9.9.9&quot;,
+          &quot;driver.dtle.full_version&quot;: &quot;9.9.9.9-master-eeb399e9&quot;
+        },
+        &quot;Detected&quot;: true,
+        &quot;Healthy&quot;: true,
+      }
+    },
+    &quot;ID&quot;: &quot;0e70636d-b274-c139-185e-e37dcf7a4bca&quot;,
+    &quot;Name&quot;: &quot;nomad0&quot;,
     &quot;Status&quot;: &quot;ready&quot;,
-    &quot;StatusDescription&quot;: &quot;&quot;
-  }
-]
-</code></pre><h2 id="&#x5217;&#x51FA;&#x67D0;&#x4F5C;&#x4E1A;&#x7684;&#x6240;&#x6709;&#x4EFB;&#x52A1;&#x6267;&#x884C;">&#x5217;&#x51FA;&#x67D0;&#x4F5C;&#x4E1A;&#x7684;&#x6240;&#x6709;&#x4EFB;&#x52A1;&#x6267;&#x884C;</h2>
-<p>API: <code>GET /job/&lt;jobId&gt;/allocations</code></p>
-<p>&#x6837;&#x4F8B;: </p>
-<pre><code>&gt; curl -XGET &quot;172.17.5.6:8190/v1/job/8ce4b408-8c64-41b9-04d7-baf451348e89/allocations&quot; | jq
-&lt; [
-  {
-    &quot;ClientDescription&quot;: &quot;&quot;,
-    &quot;ClientStatus&quot;: &quot;running&quot;,
-    &quot;CreateIndex&quot;: 61,
-    &quot;CreateTime&quot;: 1538993511593515300,
-    &quot;DesiredDescription&quot;: &quot;&quot;,
-    &quot;DesiredStatus&quot;: &quot;run&quot;,
-    &quot;EvalID&quot;: &quot;f67f2020-a326-6d12-2239-6da8f9dd3e4e&quot;,
-    &quot;ID&quot;: &quot;33a7a1bb-8eb4-11a2-bd2c-0c7e0457dfc2&quot;,
-    &quot;JobID&quot;: &quot;8ce4b408-8c64-41b9-04d7-baf451348e89&quot;,
-    &quot;ModifyIndex&quot;: 63,
-    &quot;Name&quot;: &quot;test1-2.Src&quot;,
-    &quot;NodeID&quot;: &quot;b32743aa-5c69-0853-239c-a69237e97c45&quot;,
-    &quot;Task&quot;: &quot;Src&quot;,
-    &quot;TaskStates&quot;: {
-      &quot;Src&quot;: {
-        &quot;Events&quot;: [
-          {
-            &quot;DiskLimit&quot;: 0,
-            &quot;DriverError&quot;: &quot;&quot;,
-            &quot;DriverMessage&quot;: &quot;&quot;,
-            &quot;ExitCode&quot;: 0,
-            &quot;FailedSibling&quot;: &quot;&quot;,
-            &quot;FailsTask&quot;: false,
-            &quot;KillError&quot;: &quot;&quot;,
-            &quot;KillReason&quot;: &quot;&quot;,
-            &quot;KillTimeout&quot;: 0,
-            &quot;Message&quot;: &quot;&quot;,
-            &quot;RestartReason&quot;: &quot;&quot;,
-            &quot;SetupError&quot;: &quot;&quot;,
-            &quot;StartDelay&quot;: 0,
-            &quot;TaskSignal&quot;: &quot;&quot;,
-            &quot;TaskSignalReason&quot;: &quot;&quot;,
-            &quot;Time&quot;: &quot;2018-10-08T10:11:51.603015093Z&quot;,
-            &quot;Type&quot;: &quot;Received&quot;
-          },
-          {
-            &quot;DiskLimit&quot;: 0,
-            &quot;DriverError&quot;: &quot;&quot;,
-            &quot;DriverMessage&quot;: &quot;&quot;,
-            &quot;ExitCode&quot;: 0,
-            &quot;FailedSibling&quot;: &quot;&quot;,
-            &quot;FailsTask&quot;: false,
-            &quot;KillError&quot;: &quot;&quot;,
-            &quot;KillReason&quot;: &quot;&quot;,
-            &quot;KillTimeout&quot;: 0,
-            &quot;Message&quot;: &quot;&quot;,
-            &quot;RestartReason&quot;: &quot;&quot;,
-            &quot;SetupError&quot;: &quot;&quot;,
-            &quot;StartDelay&quot;: 0,
-            &quot;TaskSignal&quot;: &quot;&quot;,
-            &quot;TaskSignalReason&quot;: &quot;&quot;,
-            &quot;Time&quot;: &quot;2018-10-08T10:11:51.603322601Z&quot;,
-            &quot;Type&quot;: &quot;Started&quot;
-          }
-        ],
-        &quot;Failed&quot;: false,
-        &quot;FinishedAt&quot;: null,
-        &quot;StartedAt&quot;: &quot;2018-10-08T10:11:51.603998869Z&quot;,
-        &quot;State&quot;: &quot;running&quot;
-      }
-    }
-  },
-  {
-    &quot;ClientDescription&quot;: &quot;&quot;,
-    &quot;ClientStatus&quot;: &quot;running&quot;,
-    &quot;CreateIndex&quot;: 61,
-    &quot;CreateTime&quot;: 1538993511593515300,
-    &quot;DesiredDescription&quot;: &quot;&quot;,
-    &quot;DesiredStatus&quot;: &quot;run&quot;,
-    &quot;EvalID&quot;: &quot;f67f2020-a326-6d12-2239-6da8f9dd3e4e&quot;,
-    &quot;ID&quot;: &quot;83a46402-2c98-ffa1-b953-1cc038d91a7c&quot;,
-    &quot;JobID&quot;: &quot;8ce4b408-8c64-41b9-04d7-baf451348e89&quot;,
-    &quot;ModifyIndex&quot;: 63,
-    &quot;Name&quot;: &quot;test1-2.Dest&quot;,
-    &quot;NodeID&quot;: &quot;b32743aa-5c69-0853-239c-a69237e97c45&quot;,
-    &quot;Task&quot;: &quot;Dest&quot;,
-    &quot;TaskStates&quot;: {
-      &quot;Dest&quot;: {
-        &quot;Events&quot;: [
-          {
-            &quot;DiskLimit&quot;: 0,
-            &quot;DriverError&quot;: &quot;&quot;,
-            &quot;DriverMessage&quot;: &quot;&quot;,
-            &quot;ExitCode&quot;: 0,
-            &quot;FailedSibling&quot;: &quot;&quot;,
-            &quot;FailsTask&quot;: false,
-            &quot;KillError&quot;: &quot;&quot;,
-            &quot;KillReason&quot;: &quot;&quot;,
-            &quot;KillTimeout&quot;: 0,
-            &quot;Message&quot;: &quot;&quot;,
-            &quot;RestartReason&quot;: &quot;&quot;,
-            &quot;SetupError&quot;: &quot;&quot;,
-            &quot;StartDelay&quot;: 0,
-            &quot;TaskSignal&quot;: &quot;&quot;,
-            &quot;TaskSignalReason&quot;: &quot;&quot;,
-            &quot;Time&quot;: &quot;2018-10-08T10:11:51.603156346Z&quot;,
-            &quot;Type&quot;: &quot;Received&quot;
-          },
-          {
-            &quot;DiskLimit&quot;: 0,
-            &quot;DriverError&quot;: &quot;&quot;,
-            &quot;DriverMessage&quot;: &quot;&quot;,
-            &quot;ExitCode&quot;: 0,
-            &quot;FailedSibling&quot;: &quot;&quot;,
-            &quot;FailsTask&quot;: false,
-            &quot;KillError&quot;: &quot;&quot;,
-            &quot;KillReason&quot;: &quot;&quot;,
-            &quot;KillTimeout&quot;: 0,
-            &quot;Message&quot;: &quot;&quot;,
-            &quot;RestartReason&quot;: &quot;&quot;,
-            &quot;SetupError&quot;: &quot;&quot;,
-            &quot;StartDelay&quot;: 0,
-            &quot;TaskSignal&quot;: &quot;&quot;,
-            &quot;TaskSignalReason&quot;: &quot;&quot;,
-            &quot;Time&quot;: &quot;2018-10-08T10:11:51.603388746Z&quot;,
-            &quot;Type&quot;: &quot;Started&quot;
-          }
-        ],
-        &quot;Failed&quot;: false,
-        &quot;FinishedAt&quot;: null,
-        &quot;StartedAt&quot;: &quot;2018-10-08T10:11:51.603690587Z&quot;,
-        &quot;State&quot;: &quot;running&quot;
-      }
-    }
-  }
-]
-</code></pre><h2 id="&#x67E5;&#x770B;&#x67D0;&#x4E2A;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7684;&#x72B6;&#x6001;">&#x67E5;&#x770B;&#x67D0;&#x4E2A;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7684;&#x72B6;&#x6001;</h2>
-<p>API: <code>GET /agent/allocation/&lt;allocId&gt;/stats</code></p>
-<p>&#x6837;&#x4F8B;: </p>
-<pre><code>&gt; curl -XGET &quot;172.17.5.6:8190/v1/agent/allocation/33a7a1bb-8eb4-11a2-bd2c-0c7e0457dfc2/stats&quot; | jq
-&lt; {
-  &quot;Tasks&quot;: {
-    &quot;Src&quot;: {
-      &quot;Backlog&quot;: &quot;0/600&quot;,
-      &quot;BufferStat&quot;: {
-        &quot;ApplierGroupTxQueueSize&quot;: 0,
-        &quot;ApplierTxQueueSize&quot;: 0,
-        &quot;ExtractorTxQueueSize&quot;: 0,
-        &quot;SendBySizeFull&quot;: 0,
-        &quot;SendByTimeout&quot;: 0
-      },
-      &quot;CurrentCoordinates&quot;: {
-        &quot;ExecutedGtidSet&quot;: &quot;&quot;,
-        &quot;File&quot;: &quot;1.000002&quot;,
-        &quot;GtidSet&quot;: &quot;8868d98f-af5e-11e8-9aa9-0242ac110002:171&quot;,
-        &quot;Position&quot;: 44918,
-        &quot;ReadMasterLogPos&quot;: 0,
-        &quot;RelayMasterLogFile&quot;: &quot;&quot;,
-        &quot;RetrievedGtidSet&quot;: &quot;&quot;
-      },
-      &quot;DelayCount&quot;: null,
-      &quot;ETA&quot;: &quot;0s&quot;,
-      &quot;ExecMasterRowCount&quot;: 14,
-      &quot;ExecMasterTxCount&quot;: 111939,
-      &quot;MsgStat&quot;: {
-        &quot;InBytes&quot;: 0,
-        &quot;InMsgs&quot;: 4,
-        &quot;OutBytes&quot;: 3413,
-        &quot;OutMsgs&quot;: 4,
-        &quot;Reconnects&quot;: 0
-      },
-      &quot;ProgressPct&quot;: &quot;100.0&quot;,
-      &quot;ReadMasterRowCount&quot;: 14,
-      &quot;ReadMasterTxCount&quot;: 111939,
-      &quot;Stage&quot;: &quot;Master has sent all binlog to slave; waiting for more updates&quot;,
-      &quot;TableStats&quot;: null,
-      &quot;ThroughputStat&quot;: null,
-      &quot;Timestamp&quot;: 1539004705449136600
-    }
-  }
-}
-</code></pre><h2 id="&#x521B;&#x5EFA;&#x66F4;&#x65B0;-&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;">&#x521B;&#x5EFA;/&#x66F4;&#x65B0; &#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;</h2>
-<p>API: <code>POST /v1/jobs</code></p>
-<p>&#x6837;&#x4F8B;: <strong>job1.json&#x7684;&#x5185;&#x5BB9;&#x8BF4;&#x660E;&#x53C2;&#x770B;<a href="4.1_node_configuration.html">&#x4F5C;&#x4E1A;(job)&#x914D;&#x7F6E;</a></strong></p>
-<pre><code>&gt; curl -H &quot;Accept:application/json&quot; -XPOST &quot;172.17.5.6:8190/v1/jobs&quot; -d @job1.json
-</code></pre><h2 id="&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;">&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;</h2>
-<p>API: <code>POST /v1/job/{ID}</code></p>
-<p>&#x6837;&#x4F8B;: </p>
-<pre><code>&gt; curl -H &quot;Accept:application/json&quot; -XDELETE &quot;172.17.5.6:8190/v1/job/8ce4b408-8c64-41b9-04d7-baf451348e89&quot;
-</code></pre><h2 id="&#x6682;&#x505C;&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;">&#x6682;&#x505C;&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;</h2>
-<p>API: <code>POST /v1/job/{ID}/pause</code></p>
-<p>&#x6837;&#x4F8B;: </p>
-<pre><code>&gt; curl -H &quot;Accept:application/json&quot; -XPOST &quot;172.17.5.6:8190/v1/job/8ce4b408-8c64-41b9-04d7-baf451348e89/pause&quot;
-</code></pre><h2 id="&#x7EE7;&#x7EED;&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;">&#x7EE7;&#x7EED;&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;</h2>
-<p>API: <code>POST /v1/job/{ID}/resume</code></p>
-<p>&#x6837;&#x4F8B;: </p>
-<pre><code>&gt; curl -H &quot;Accept:application/json&quot; -XPOST &quot;172.17.5.6:8190/v1/job/8ce4b408-8c64-41b9-04d7-baf451348e89/resume&quot;
-</code></pre>
+    &quot;Version&quot;: &quot;0.11.2&quot;
+}]
+</code></pre><p>&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x8282;&#x70B9;&#x540D;&#x3001;&#x8282;&#x70B9;ID&#x548C;dtle&#x63D2;&#x4EF6;&#x4FE1;&#x606F;&#xFF08;&#x90E8;&#x5206;&#x9879;&#x7701;&#x7565;&#xFF09;&#x3002;</p>
+
                                 
                                 </section>
                             
@@ -1197,12 +856,12 @@
 
             
                 
-                <a href="4.3_job_configuration.html" class="navigation navigation-prev " aria-label="Previous page: 4.3.作业(job)配置">
+                <a href="4.3.1_tuning.html" class="navigation navigation-prev " aria-label="Previous page: 4.3.1.性能调优">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="4.5_mysql_user_privileges.html" class="navigation navigation-next " aria-label="Next page: 4.5.MySQL 用户权限说明">
+                <a href="4.4.1_http_api_oldv2.html" class="navigation navigation-next " aria-label="Next page: 4.4.1.旧版（2.x）HTTP API说明">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1213,7 +872,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.4.HTTP API说明","level":"1.6.5","depth":2,"next":{"title":"4.5.MySQL 用户权限说明","level":"1.6.6","depth":2,"path":"4/4.5_mysql_user_privileges.md","ref":"4/4.5_mysql_user_privileges.md","articles":[]},"previous":{"title":"4.3.作业(job)配置","level":"1.6.4","depth":2,"path":"4/4.3_job_configuration.md","ref":"4/4.3_job_configuration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"甜橙金融","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dts manual","gitbook":"*"},"file":{"path":"4/4.4_http_api.md","mtime":"2020-11-06T08:30:10.273Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-18T06:26:57.086Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.4.HTTP API说明","level":"1.6.6","depth":2,"next":{"title":"4.4.1.旧版（2.x）HTTP API说明","level":"1.6.7","depth":2,"path":"4/4.4.1_http_api_oldv2.md","ref":"4/4.4.1_http_api_oldv2.md","articles":[]},"previous":{"title":"4.3.1.性能调优","level":"1.6.5","depth":2,"path":"4/4.3.1_tuning.md","ref":"4/4.3.1_tuning.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.4_http_api.md","mtime":"2020-11-18T06:27:40.942Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-18T06:29:32.073Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
