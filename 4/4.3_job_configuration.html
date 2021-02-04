@@ -1127,6 +1127,20 @@ task &#x4E2D;&#x6307;&#x5B9A; driver = &quot;dtle&quot;, &#x5728;config&#x6BB5;&
 <td>UTC</td>
 <td>&#x63A7;&#x5236;&#x65F6;&#x533A;&#x8F6C;&#x6362;&#x3002;</td>
 </tr>
+<tr>
+<td>MessageGroupMaxSize</td>
+<td>&#x5426;</td>
+<td>int</td>
+<td>1</td>
+<td>&#x76EE;&#x6807;&#x7AEF;&#x5411;kafka&#x53D1;&#x9001;&#x6D88;&#x606F;&#x65F6;, &#x7B49;&#x5F85;MySQL&#x4E8B;&#x52A1;&#x6570;&#x636E;&#x5305;&#x8FBE;&#x5230;&#x4E00;&#x5B9A;&#x5927;&#x5C0F;(MessageGroupMaxSize&#x5B57;&#x8282;)&#x540E;&#x5C06;&#x8BE5;&#x5305;&#x5E8F;&#x5217;&#x5316;&#x5E76;&#x53D1;&#x9001;. &#x5355;&#x4F4D;&#x4E3A;&#x5B57;&#x8282;. &#x9ED8;&#x8BA4;&#x503C;1&#x8868;&#x793A;&#x5373;&#x523B;&#x53D1;&#x9001;&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td>MessageGroupTimeout</td>
+<td>&#x5426;</td>
+<td>int</td>
+<td>100</td>
+<td>&#x76EE;&#x6807;&#x7AEF;&#x5411;kafka&#x53D1;&#x9001;&#x6D88;&#x606F;&#x65F6;, &#x7B49;&#x5F85;&#x6570;&#x636E;&#x5305;&#x8FBE;&#x5230;&#x8D85;&#x65F6;&#x65F6;&#x95F4;(MessageGroupTimeout&#x6BEB;&#x79D2;)&#x53D1;&#x9001;&#x8BE5;&#x5305;. &#x5355;&#x4F4D;&#x4E3A;&#x6BEB;&#x79D2;.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="nomad-job-&#x5E38;&#x7528;&#x901A;&#x7528;&#x914D;&#x7F6E;">nomad job &#x5E38;&#x7528;&#x901A;&#x7528;&#x914D;&#x7F6E;</h2>
@@ -1229,7 +1243,7 @@ reschedule { # job or group level
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.3.作业(job)配置","level":"1.6.4","depth":2,"next":{"title":"4.3.1.性能调优","level":"1.6.5","depth":2,"path":"4/4.3.1_tuning.md","ref":"4/4.3.1_tuning.md","articles":[]},"previous":{"title":"4.2.命令说明","level":"1.6.3","depth":2,"path":"4/4.2_command.md","ref":"4/4.2_command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.3_job_configuration.md","mtime":"2021-02-03T07:19:47.672Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-03T07:22:04.666Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.3.作业(job)配置","level":"1.6.4","depth":2,"next":{"title":"4.3.1.性能调优","level":"1.6.5","depth":2,"path":"4/4.3.1_tuning.md","ref":"4/4.3.1_tuning.md","articles":[]},"previous":{"title":"4.2.命令说明","level":"1.6.3","depth":2,"path":"4/4.2_command.md","ref":"4/4.2_command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.3_job_configuration.md","mtime":"2021-02-04T05:48:19.469Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-04T05:48:45.591Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
